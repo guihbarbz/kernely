@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contato — Kernely</title>
+<meta name="description" content="Fale com a Kernely e descubra como podemos ajudar seu negócio a vender mais na internet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="page-transition" id="page-transition"></div>
+<div class="scroll-progress" id="scroll-progress"></div>
+<div class="grain"></div>
+
+<header>
+  <nav>
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M46 34H84V96L84 96" stroke="#57C392" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M46 96V166H84V150" stroke="#57C392" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M150 34L96 96" stroke="#57C392" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M104 104L150 166" stroke="#57C392" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-name">Kernely</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html" class="active">Contato</a>
+    </div>
+    <a class="nav-cta" href="contato.html">Quero um orçamento</a>
+    <button class="nav-menu-btn" id="menu-btn" aria-label="Abrir menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </nav>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Início</a>
+  <a href="servicos.html">Serviços</a>
+  <a href="sobre.html">Sobre</a>
+  <a href="contato.html">Contato</a>
+</div>
+
+<main>
+
+  <section class="page-hero" style="border-bottom:none;padding-bottom:40px;">
+    <div class="wrap">
+      <span class="eyebrow">vamos conversar</span>
+      <h1>Conte um pouco sobre o seu negócio.</h1>
+      <p>Preencha o formulário abaixo. A gente responde com os próximos passos e, se fizer sentido, marca uma conversa.</p>
+    </div>
+  </section>
+
+  <section class="no-border" style="padding-top:0;">
+    <div class="wrap contact-grid">
+      <div class="contact-info reveal">
+        <h2>Fale direto com a gente</h2>
+        <p>Sem formulário automático de atendimento nem espera — sua mensagem chega direto pra quem vai cuidar do seu projeto.</p>
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>
+          <a href="mailto:contato@kernely.com.br">contato@kernely.com.br</a>
+        </div>
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span>Atendimento remoto para todo o Brasil</span>
+        </div>
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <span>Resposta em até 1 dia útil</span>
+        </div>
+      </div>
+
+      <form class="reveal" id="contact-form">
+        <div class="form-row">
+          <div class="field">
+            <label for="nome">Nome</label>
+            <input id="nome" type="text" placeholder="Seu nome" required>
+          </div>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input id="email" type="email" placeholder="voce@empresa.com" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="tipo">Tipo de projeto</label>
+          <select id="tipo">
+            <option>Site institucional</option>
+            <option>Loja virtual</option>
+            <option>Sistema sob medida</option>
+            <option>Ainda não sei</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="msg">Conte sobre o seu negócio</label>
+          <textarea id="msg" placeholder="O que você precisa? Qual o objetivo do site?"></textarea>
+        </div>
+        <button class="btn-primary" type="submit">Enviar mensagem</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M46 34H84V96L84 96" stroke="#57C392" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M46 96V166H84V150" stroke="#57C392" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M150 34L96 96" stroke="#57C392" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M104 104L150 166" stroke="#57C392" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="footer-tag">Kernely — sites que vendem por você.</span>
+      </div>
+      <div class="footer-links">
+        <a href="servicos.html">Serviços</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Kernely</span>
+      <span>feito com atenção aos detalhes</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
