@@ -187,34 +187,52 @@ if(contactForm){
   });
 }
 
-/* ---------- PORTFOLIO AUTOPLAY (TOP FEATURED) ---------- */
+/* ---------- PORTFOLIO SPOTLIGHT (flagship fixo + destaque sutil nos demais) ---------- */
+/* O primeiro card real (Auto Escola Colibri) fica sempre grande, fixo no topo — evitar
+   trocar QUAL card é o "featured" evita o reflow de layout que isso causava na página. */
 const portfolioCards = document.querySelectorAll('.portfolio-card');
 const portfolioGrid = document.querySelector('.portfolio-grid');
 
-if(portfolioCards.length > 0) {
-  let currentIndex = 0;
+if(portfolioCards.length > 1) {
+  let currentIndex = 1;
   let isPaused = false;
 
-  function updateFeatured() {
+  function updateSpotlight() {
     portfolioCards.forEach((card, index) => {
-      if (index === currentIndex) {
-        card.classList.add('featured');
-      } else {
-        card.classList.remove('featured');
-      }
+      if (index === 0) return; // card principal: sempre featured, nunca muda de tamanho
+      card.classList.toggle('spotlight', index === currentIndex);
     });
   }
 
-  updateFeatured();
+  updateSpotlight();
 
   setInterval(() => {
     if (isPaused) return;
-    currentIndex = (currentIndex + 1) % portfolioCards.length;
-    updateFeatured();
+    currentIndex++;
+    if (currentIndex >= portfolioCards.length) currentIndex = 1;
+    updateSpotlight();
   }, 6000);
 
   if(portfolioGrid) {
     portfolioGrid.addEventListener('mouseenter', () => isPaused = true);
     portfolioGrid.addEventListener('mouseleave', () => isPaused = false);
   }
+}
+/* ---------- SCROLL TO TOP BUTTON ---------- */
+const scrollTopBtn = document.getElementById('scroll-top-btn');
+if(scrollTopBtn){
+  const toggleScrollBtn = ()=>{
+    const doc = document.documentElement;
+    const scrollTop = doc.scrollTop || document.body.scrollTop;
+    if(scrollTop > 500){
+      scrollTopBtn.classList.add('show');
+    } else {
+      scrollTopBtn.classList.remove('show');
+    }
+  };
+  document.addEventListener('scroll', toggleScrollBtn, { passive: true });
+  toggleScrollBtn();
+  scrollTopBtn.addEventListener('click', ()=>{
+    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+  });
 }

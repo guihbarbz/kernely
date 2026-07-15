@@ -2,13 +2,81 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Kernely — Sites que vendem por você</title>
 <meta name="description" content="A Kernely cria sites profissionais para empresas que querem vender mais na internet. Design, desenvolvimento web e suporte contínuo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=5">
+
+<!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href="imagens/favicon.svg">
+<link rel="icon" type="image/x-icon" href="imagens/favicon.ico">
+<link rel="apple-touch-icon" href="imagens/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#121214">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kernely">
+<meta property="og:title" content="Kernely — Sites que vendem por você">
+<meta property="og:description" content="A Kernely cria sites profissionais para empresas que querem vender mais na internet. Design, desenvolvimento web e suporte contínuo.">
+<meta property="og:image" content="https://kernely.com.br/imagens/favicon-512.png">
+<meta property="og:url" content="https://kernely.com.br/">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kernely — Sites que vendem por você">
+<meta name="twitter:description" content="A Kernely cria sites profissionais para empresas que querem vender mais na internet.">
+<meta name="twitter:image" content="https://kernely.com.br/imagens/favicon-512.png">
+<link rel="canonical" href="https://kernely.com.br/">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Kernely",
+  "description": "Estúdio de desenvolvimento web focado em sites institucionais, lojas virtuais e sistemas sob medida.",
+  "url": "https://kernely.com.br/",
+  "email": "contato@kernely.com.br",
+  "areaServed": "BR",
+  "slogan": "Code that matters."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quanto tempo leva pra ficar pronto?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Depende do tamanho do projeto, mas a maioria dos sites institucionais fica pronta em poucas semanas depois da etapa de descoberta." }
+    },
+    {
+      "@type": "Question",
+      "name": "Eu preciso entender de tecnologia?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Não. Cuidamos de toda a parte técnica e explicamos cada etapa em uma linguagem simples, sem termos complicados." }
+    },
+    {
+      "@type": "Question",
+      "name": "Consigo atualizar o site sozinho depois?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Entregamos o site pensado pra você conseguir trocar textos e imagens sem depender da gente pra tudo." }
+    },
+    {
+      "@type": "Question",
+      "name": "Vocês dão suporte depois que o site fica pronto?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Oferecemos suporte contínuo pra ajustes, atualizações e qualquer necessidade que surgir depois do lançamento." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto custa um site?",
+      "acceptedAnswer": { "@type": "Answer", "text": "O valor varia de acordo com o que o seu projeto precisa. Conversamos primeiro pra entender o seu negócio e só depois passamos um orçamento sob medida." }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -25,7 +93,7 @@
       <a href="index.html" class="active">Início</a>
       <a href="servicos.html">Serviços</a>
       <a href="sobre.html">Sobre</a>
-      <a href="contato.html">Contato</a>
+      <a href="blog.html">Blog</a>
     </div>
     <a class="nav-cta" href="contato.html">Quero um orçamento</a>
   </nav>
@@ -45,9 +113,9 @@
     <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
     <span>Sobre</span>
   </a>
-  <a href="contato.html">
-    <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-    <span>Contato</span>
+  <a href="blog.html">
+    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+    <span>Blog</span>
   </a>
 </nav>
 
@@ -142,7 +210,7 @@
             Site Amador (O que você perde)
           </div>
           
-          <img src="imagens/erro.png" alt="Exemplo de um site amador e problemático" class="comp-image">
+          <img loading="lazy" src="imagens/erro.png" alt="Exemplo de um site amador e problemático" class="comp-image">
           
           <div class="comp-item">
             <div class="comp-item-icon">
@@ -182,7 +250,7 @@
             Site Kernely (O que você ganha)
           </div>
           
-          <img src="imagens/solução.png" alt="Exemplo de um site profissional e otimizado" class="comp-image">
+          <img loading="lazy" src="imagens/solução.png" alt="Exemplo de um site profissional e otimizado" class="comp-image">
           
           <div class="comp-item">
             <div class="comp-item-icon">
@@ -309,7 +377,7 @@
           <span class="portfolio-badge real">projeto real</span>
           <div class="site-frame">
             <a href="https://colibriautoescola.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-img-link" title="Visitar landing page da Autoescola Colibri">
-              <img src="imagens/colibri-autoescola.png" alt="Página inicial da Autoescola Colibri" class="portfolio-screenshot">
+              <img loading="lazy" src="imagens/colibri-autoescola.png" alt="Página inicial da Autoescola Colibri" class="portfolio-screenshot">
             </a>
             <div class="sf-tech">
               <span class="sf-tech-pill">HTML5</span>
@@ -321,6 +389,7 @@
           <div class="card-content">
             <h3>Auto Escola Colibri</h3>
             <p>Landing page com trajeto animado, avaliações reais em destaque e números do negócio contados na tela.</p>
+            <a href="https://colibriautoescola.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-visit-link">Visitar site ao vivo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
           </div>
         </div>
 
@@ -329,7 +398,7 @@
           <span class="portfolio-badge real">projeto real</span>
           <div class="site-frame">
             <a href="https://link-do-geracao-colibri.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-img-link" title="Visitar site Geração Colibri">
-              <img src="imagens/geração-colibri.png" alt="Página inicial do site Geração Colibri" class="portfolio-screenshot">
+              <img loading="lazy" src="imagens/geração-colibri.png" alt="Página inicial do site Geração Colibri" class="portfolio-screenshot">
             </a>
             <div class="sf-tech">
               <span class="sf-tech-pill">HTML5</span>
@@ -340,6 +409,7 @@
           <div class="card-content">
             <h3>Geração Colibri</h3>
             <p>Site institucional desenvolvido para destacar os diferenciais e serviços do projeto Geração Colibri.</p>
+            <a href="https://link-do-geracao-colibri.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-visit-link">Visitar site ao vivo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
           </div>
         </div>
 
@@ -348,7 +418,7 @@
           <span class="portfolio-badge real">projeto real</span>
           <div class="site-frame">
             <a href="https://guihbarbz.github.io/azulrevisional/" target="_blank" rel="noopener noreferrer" class="portfolio-img-link" title="Visitar site Azul Revisional">
-              <img src="imagens/azul-revisional.png" alt="Página inicial do site Azul Revisional" class="portfolio-screenshot">
+              <img loading="lazy" src="imagens/azul-revisional.png" alt="Página inicial do site Azul Revisional" class="portfolio-screenshot">
             </a>
             <div class="sf-tech">
               <span class="sf-tech-pill">HTML5</span>
@@ -359,6 +429,7 @@
           <div class="card-content">
             <h3>Azul Revisional</h3>
             <p>Site para consultoria financeira focado em alta conversão, evidenciando serviços de redução de parcelas e análise de juros abusivos em financiamentos.</p>
+            <a href="https://guihbarbz.github.io/azulrevisional/" target="_blank" rel="noopener noreferrer" class="portfolio-visit-link">Visitar site ao vivo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
           </div>
         </div>
 
@@ -576,7 +647,7 @@
       <div class="footer-links">
         <a href="servicos.html">Serviços</a>
         <a href="sobre.html">Sobre</a>
-        <a href="contato.html">Contato</a>
+        <a href="blog.html">Blog</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -585,6 +656,20 @@
     </div>
   </div>
 </footer>
+
+<!--
+  WhatsApp flutuante: desativado até a Kernely ter um número oficial.
+  Quando tiver o chip, é só descomentar e trocar SEUNUMERO por 55DDDNUMERO.
+
+  <a href="https://wa.me/SEUNUMERO?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Kernely%20e%20quero%20saber%20mais." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.72-.85-1.99-.94-.27-.1-.46-.15-.66.15-.2.29-.76.94-.93 1.13-.17.2-.34.22-.63.07-.29-.15-1.22-.45-2.32-1.43-.86-.76-1.44-1.71-1.61-2-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.07-.15-.66-1.58-.9-2.17-.24-.57-.48-.49-.66-.5-.17-.01-.37-.01-.56-.01-.2 0-.51.07-.78.37-.27.29-1.02 1-1.02 2.44 0 1.43 1.04 2.82 1.19 3.01.15.2 2.05 3.13 4.97 4.39.69.3 1.24.48 1.66.61.7.22 1.34.19 1.84.12.56-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.27-.19-.56-.34z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.47 3.47 1.29 4.93L2 22l5.31-1.39a9.87 9.87 0 004.73 1.2h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.06h-.01a8.2 8.2 0 01-4.18-1.15l-.3-.18-3.15.83.84-3.07-.2-.31a8.19 8.19 0 01-1.26-4.36c0-4.54 3.7-8.24 8.26-8.24 2.21 0 4.28.86 5.84 2.42a8.2 8.2 0 012.42 5.83c0 4.55-3.7 8.24-8.26 8.24z"/></svg>
+  </a>
+-->
+
+<!-- Voltar ao topo -->
+<button class="scroll-top-btn" id="scroll-top-btn" aria-label="Voltar ao topo">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
 
 <script src="script.js"></script>
 </body>

@@ -1,0 +1,11 @@
+{
+  "name": "Kernely",
+  "short_name": "Kernely",
+  "icons": [
+    { "src": "/imagens/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/imagens/favicon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#121214",
+  "background_color": "#121214",
+  "display": "standalone"
+}

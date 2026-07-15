@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Briefing de Projeto — Kernely</title>
+<meta name="description" content="Conte pra gente sobre o seu negócio antes da nossa call. Leva poucos minutos e agiliza a proposta.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=4">
+
+<link rel="icon" type="image/svg+xml" href="imagens/favicon.svg">
+<link rel="icon" type="image/x-icon" href="imagens/favicon.ico">
+<link rel="apple-touch-icon" href="imagens/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#121214">
+</head>
+<body>
+
+<div class="page-transition" id="page-transition"></div>
+<div class="scroll-progress" id="scroll-progress"></div>
+<div class="grain"></div>
+
+<header>
+  <nav>
+    <a class="brand" href="index.html">
+      <img src="imagens/logo-kernely.png" alt="Logo Kernely" class="logo-img">
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="blog.html">Blog</a>
+    </div>
+    <a class="nav-cta" href="contato.html">Quero um orçamento</a>
+  </nav>
+</header>
+
+<nav class="mobile-bottom-nav">
+  <a href="index.html">
+    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Início</span>
+  </a>
+  <a href="servicos.html">
+    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    <span>Serviços</span>
+  </a>
+  <a href="sobre.html">
+    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    <span>Sobre</span>
+  </a>
+  <a href="blog.html">
+    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+    <span>Blog</span>
+  </a>
+</nav>
+
+<main>
+
+  <section class="page-hero" style="padding-bottom:30px;">
+    <div class="wrap" style="max-width:680px;">
+      <span class="eyebrow">antes da nossa call</span>
+      <h1>Briefing do seu projeto</h1>
+      <p>Leva uns 5 minutos. Quanto mais detalhe você der aqui, mais direta e certeira fica a nossa conversa — e mais rápido sai a proposta.</p>
+    </div>
+  </section>
+
+  <section class="no-border" style="padding-top:0;">
+    <div class="wrap" style="max-width:680px;">
+
+      <!-- PROGRESS -->
+      <div class="briefing-progress" id="briefing-progress">
+        <div class="briefing-progress-bar"><div class="briefing-progress-fill" id="progress-fill" style="width:14.28%;"></div></div>
+        <div class="briefing-progress-label">
+          <span id="progress-text">Seção 1 de 7</span>
+          <span id="progress-title">Sobre você e seu negócio</span>
+        </div>
+      </div>
+
+      <form id="briefing-form" novalidate>
+
+        <!-- SEÇÃO 1 -->
+        <div class="briefing-step active" data-step="1">
+          <h2>Sobre você e seu negócio</h2>
+          <p class="step-desc">Pra gente entender quem é a empresa por trás do projeto.</p>
+
+          <div class="field" style="margin-bottom:18px;">
+            <label for="empresa-nome">Nome da empresa *</label>
+            <input type="text" id="empresa-nome" name="empresa_nome" placeholder="Ex: Auto Escola Colibri">
+          </div>
+          <div class="field" style="margin-bottom:18px;">
+            <label for="empresa-frase">Em uma frase, o que a empresa faz? *</label>
+            <input type="text" id="empresa-frase" name="empresa_frase" placeholder="Ex: Ensinamos pessoas a dirigir com segurança em Guarulhos">
+          </div>
+          <div class="field" style="margin-bottom:18px;">
+            <label for="empresa-tempo">Tempo de mercado / algum número ou credencial forte?</label>
+            <input type="text" id="empresa-tempo" name="empresa_tempo" placeholder="Ex: 12 anos de mercado, +1000 clientes atendidos">
+          </div>
+          <div class="field" style="margin-bottom:18px;">
+            <label for="site-atual">Site atual (se houver)</label>
+            <input type="text" id="site-atual" name="site_atual" placeholder="www.seusite.com.br">
+          </div>
+          <div class="field">
+            <label for="concorrentes">2 a 3 concorrentes diretos (nome ou link)</label>
+            <textarea id="concorrentes" name="concorrentes" placeholder="Um por linha, se possível"></textarea>
+          </div>
+        </div>
+
+        <!-- SEÇÃO 2 -->
+        <div class="briefing-step" data-step="2">
+          <h2>Objetivo do site</h2>
+          <p class="step-desc">O que o site precisa realizar pelo negócio.</p>
+
+          <label style="margin-bottom:10px;">Qual é o principal objetivo? (pode marcar mais de um) *</label>
+          <div class="choice-group" id="objetivo-group">
+            <label class="choice-item"><input type="checkbox" name="objetivo" value="Gerar contatos/leads"> Gerar contatos / leads</label>
+            <label class="choice-item"><input type="checkbox" name="objetivo" value="Passar informações / site institucional"> Passar informações / site institucional</label>
+            <label class="choice-item"><input type="checkbox" name="objetivo" value="Fazer vendas diretas (e-commerce)"> Fazer vendas diretas (e-commerce)</label>
+            <label class="choice-item"><input type="checkbox" name="objetivo" value="Realizar agendamentos de serviços"> Realizar agendamentos de serviços</label>
+          </div>
+
+          <div class="field" style="margin-top:22px;">
+            <label for="acao-visitante">Qual ação você mais quer que o visitante tome?</label>
+            <input type="text" id="acao-visitante" name="acao_visitante" placeholder="Ex: chamar no WhatsApp, ligar, preencher formulário, comprar...">
+          </div>
+        </div>
+
+        <!-- SEÇÃO 3 -->
+        <div class="briefing-step" data-step="3">
+          <h2>Público-alvo</h2>
+          <p class="step-desc">Quem o site precisa convencer.</p>
+
+          <div class="field" style="margin-bottom:18px;">
+            <label for="cliente-ideal">Qual seria o seu cliente ideal? (idade, região, perfil...)</label>
+            <textarea id="cliente-ideal" name="cliente_ideal"></textarea>
+          </div>
+          <div class="field" style="margin-bottom:22px;">
+            <label for="como-chegam">Como esse público chega até vocês hoje?</label>
+            <textarea id="como-chegam" name="como_chegam" placeholder="Indicação, Instagram, Google, porta a porta..."></textarea>
+          </div>
+
+          <label style="margin-bottom:10px;">Será acessado mais pelo celular ou pelo computador?</label>
+          <div class="choice-group">
+            <label class="choice-item"><input type="radio" name="dispositivo" value="Celular"> Principalmente celular</label>
+            <label class="choice-item"><input type="radio" name="dispositivo" value="Computador"> Principalmente computador</label>
+            <label class="choice-item"><input type="radio" name="dispositivo" value="Não sei"> Não sei dizer</label>
+          </div>
+        </div>
+
+        <!-- SEÇÃO 4 -->
+        <div class="briefing-step" data-step="4">
+          <h2>Conteúdo e identidade visual</h2>
+          <p class="step-desc">O que já existe pronto pra usarmos no projeto.</p>
+
+          <label style="margin-bottom:10px;">A empresa já tem logo e paleta de cores definidas?</label>
+          <div class="choice-group">
+            <label class="choice-item"><input type="radio" name="tem_logo" value="Sim" id="tem-logo-sim"> Sim</label>
+            <label class="choice-item"><input type="radio" name="tem_logo" value="Não" id="tem-logo-nao"> Não</label>
+          </div>
+          <div class="field" id="logo-upload-field" style="display:none;margin-top:14px;">
+            <label for="logo-upload">Envie o logo / paleta</label>
+            <div class="file-input-wrap">
+              <input type="file" id="logo-upload" name="logo_upload" accept="image/*,.pdf">
+              <button type="button" class="file-clear-btn" id="logo-clear-btn" aria-label="Remover arquivo selecionado" title="Remover arquivo" style="display:none;">✕</button>
+            </div>
+          </div>
+
+          <div class="field" style="margin-top:22px;margin-bottom:18px;">
+            <label for="conteudos">Já tem conteúdos registrados? (fotos, vídeos, campanhas...)</label>
+            <textarea id="conteudos" name="conteudos"></textarea>
+          </div>
+          <div class="field">
+            <label for="depoimentos-numeros">Tem depoimentos ou números que gostaria de destacar?</label>
+            <textarea id="depoimentos-numeros" name="depoimentos_numeros"></textarea>
+          </div>
+        </div>
+
+        <!-- SEÇÃO 5 -->
+        <div class="briefing-step" data-step="5">
+          <h2>Referências <span style="color:var(--muted);font-weight:400;font-size:1rem;">(opcional)</span></h2>
+          <p class="step-desc">Ajuda a gente a entender seu gosto visual.</p>
+
+          <div class="field" style="margin-bottom:18px;">
+            <label for="sites-gosta">2 a 3 sites que você gosta ou acha atrativos</label>
+            <textarea id="sites-gosta" name="sites_gosta"></textarea>
+          </div>
+          <div class="field" style="margin-bottom:18px;">
+            <label for="sites-gosta-motivo">O que exatamente você gosta neles?</label>
+            <textarea id="sites-gosta-motivo" name="sites_gosta_motivo"></textarea>
+          </div>
+          <div class="field">
+            <label for="sites-naogosta">Algum site que você não gosta? Por quê?</label>
+            <textarea id="sites-naogosta" name="sites_naogosta"></textarea>
+          </div>
+        </div>
+
+        <!-- SEÇÃO 6 -->
+        <div class="briefing-step" data-step="6">
+          <h2>Técnico e logístico</h2>
+          <p class="step-desc">Últimos detalhes práticos antes da proposta.</p>
+
+          <label style="margin-bottom:10px;">Já tem domínio / hospedagem?</label>
+          <div class="choice-group">
+            <label class="choice-item"><input type="radio" name="dominio" value="Sim, já tenho"> Sim, já tenho</label>
+            <label class="choice-item"><input type="radio" name="dominio" value="Não, preciso de ajuda"> Não, preciso de ajuda</label>
+            <label class="choice-item"><input type="radio" name="dominio" value="Não sei o que é isso"> Não sei o que é isso</label>
+          </div>
+
+          <label style="margin:22px 0 10px;display:block;">As edições futuras serão feitas por conta própria ou com a Kernely?</label>
+          <div class="choice-group">
+            <label class="choice-item"><input type="radio" name="edicoes" value="Por conta própria"> Por conta própria</label>
+            <label class="choice-item"><input type="radio" name="edicoes" value="Com a Kernely"> Com a Kernely</label>
+            <label class="choice-item"><input type="radio" name="edicoes" value="Ainda não sei"> Ainda não sei</label>
+          </div>
+
+          <div class="field" style="margin-top:22px;">
+            <label for="prazo-orcamento">Prazo desejado e faixa de orçamento</label>
+            <textarea id="prazo-orcamento" name="prazo_orcamento" placeholder="Ex: preciso pro início de setembro, orçamento entre X e Y"></textarea>
+          </div>
+        </div>
+
+        <!-- SEÇÃO FINAL -->
+        <div class="briefing-step" data-step="7">
+          <h2>Priorização</h2>
+          <p class="step-desc">Se tivesse que escolher só 3 seções essenciais pro site, quais seriam? <span id="priorizacao-count" style="color:var(--accent);">(0/3)</span></p>
+
+          <div class="choice-group" id="priorizacao-group">
+            <label class="choice-item"><input type="checkbox" name="prioridade" value="Sobre"> Sobre</label>
+            <label class="choice-item"><input type="checkbox" name="prioridade" value="Serviços"> Serviços</label>
+            <label class="choice-item"><input type="checkbox" name="prioridade" value="Depoimentos"> Depoimentos</label>
+            <label class="choice-item"><input type="checkbox" name="prioridade" value="Localização"> Localização</label>
+            <label class="choice-item"><input type="checkbox" name="prioridade" value="Blog"> Blog</label>
+            <label class="choice-item"><input type="checkbox" name="prioridade" value="Galeria"> Galeria</label>
+            <label class="choice-item"><input type="checkbox" name="prioridade" value="FAQ"> FAQ</label>
+            <label class="choice-item"><input type="checkbox" name="prioridade" value="Portfólio"> Portfólio</label>
+          </div>
+        </div>
+
+        <!-- RESULTADO -->
+        <div class="briefing-step" data-step="result">
+          <div class="tracking-result">
+            <span class="eyebrow" style="justify-content:center;">briefing recebido</span>
+            <h2>Prontinho! Guarde o seu número de acompanhamento:</h2>
+            <div class="tracking-number" id="tracking-number-display">KNL-00-000000</div>
+            <p style="color:var(--muted);max-width:440px;margin:0 auto 6px;">Vamos usar esse número pra acompanhar sua proposta e o andamento do projeto. Anote ou tire um print.</p>
+            <p style="color:var(--muted);font-size:.85rem;">Em até 1 dia útil entramos em contato pra marcar a call de alinhamento.</p>
+          </div>
+        </div>
+
+        <p id="briefing-error" style="color:#ff6b6b;font-size:.85rem;margin-top:14px;display:none;"></p>
+
+        <div class="briefing-nav" id="briefing-nav">
+          <button type="button" class="btn-ghost" id="btn-back" disabled>Voltar</button>
+          <button type="button" class="btn-primary" id="btn-next">Avançar</button>
+        </div>
+
+      </form>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="imagens/logo-kernely.png" alt="Logo Kernely" class="logo-img-footer">
+        <span class="footer-tag">Kernely — code that matters.</span>
+      </div>
+      <div class="footer-links">
+        <a href="servicos.html">Serviços</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="blog.html">Blog</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Kernely</span>
+      <span>feito com atenção aos detalhes</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+/* ==================== BRIEFING WIZARD ====================
+   TODO: configure um endpoint real pra receber os envios (Formspree, Web3Forms etc).
+   Sem isso, o formulário funciona 100% no navegador (gera o número, valida, mostra
+   a tela final), mas os dados não chegam até vocês — ficam só na tela do cliente.
+*/
+const BRIEFING_ENDPOINT = ""; // TODO: cole aqui a URL do serviço de formulário (ex: "https://formspree.io/f/xxxxxx")
+
+(function(){
+  const form = document.getElementById('briefing-form');
+  if(!form) return;
+
+  const steps = Array.from(form.querySelectorAll('.briefing-step'));
+  const totalSteps = 7; // não conta a tela de resultado
+  const stepTitles = [
+    'Sobre você e seu negócio',
+    'Objetivo do site',
+    'Público-alvo',
+    'Conteúdo e identidade visual',
+    'Referências',
+    'Técnico e logístico',
+    'Priorização'
+  ];
+  let currentIndex = 0; // índice dentro de steps (0 a 6 = seções, depois "result")
+
+  const btnBack = document.getElementById('btn-back');
+  const btnNext = document.getElementById('btn-next');
+  const errorEl = document.getElementById('briefing-error');
+  const progressFill = document.getElementById('progress-fill');
+  const progressText = document.getElementById('progress-text');
+  const progressTitle = document.getElementById('progress-title');
+  const progressWrap = document.getElementById('briefing-progress');
+
+  function showStep(i){
+    steps.forEach((s, idx)=> s.classList.toggle('active', idx === i));
+    errorEl.style.display = 'none';
+    const isResult = steps[i].dataset.step === 'result';
+    progressWrap.style.display = isResult ? 'none' : '';
+    document.getElementById('briefing-nav').style.display = isResult ? 'none' : '';
+    if(!isResult){
+      const stepNum = i + 1;
+      progressFill.style.width = (stepNum/totalSteps*100) + '%';
+      progressText.textContent = `Seção ${stepNum} de ${totalSteps}`;
+      progressTitle.textContent = stepTitles[i];
+      btnBack.disabled = i === 0;
+      btnNext.textContent = i === totalSteps - 1 ? 'Enviar briefing' : 'Avançar';
+    }
+    window.scrollTo({ top: form.offsetTop - 120, behavior: reduceMotion ? 'auto' : 'smooth' });
+  }
+
+  function validateStep(i){
+    const step = steps[i];
+    if(step.dataset.step === '1'){
+      const nome = document.getElementById('empresa-nome').value.trim();
+      const frase = document.getElementById('empresa-frase').value.trim();
+      if(!nome || !frase) return 'Preencha ao menos o nome da empresa e o que ela faz.';
+    }
+    if(step.dataset.step === '2'){
+      const checked = step.querySelectorAll('input[name="objetivo"]:checked');
+      if(checked.length === 0) return 'Selecione ao menos um objetivo.';
+    }
+    return null;
+  }
+
+  // Toggle logo upload field
+  const logoUploadField = document.getElementById('logo-upload-field');
+  document.getElementById('tem-logo-sim').addEventListener('change', ()=>{ logoUploadField.style.display = 'block'; });
+  document.getElementById('tem-logo-nao').addEventListener('change', ()=>{
+    logoUploadField.style.display = 'none';
+    logoInput.value = '';
+    logoClearBtn.style.display = 'none';
+  });
+
+  // File upload: show/hide clear (X) button
+  const logoInput = document.getElementById('logo-upload');
+  const logoClearBtn = document.getElementById('logo-clear-btn');
+  logoInput.addEventListener('change', ()=>{
+    logoClearBtn.style.display = logoInput.files.length ? 'flex' : 'none';
+  });
+  logoClearBtn.addEventListener('click', ()=>{
+    logoInput.value = '';
+    logoClearBtn.style.display = 'none';
+  });
+
+  // Visual "checked" state on choice items
+  form.querySelectorAll('.choice-item input').forEach(input=>{
+    input.addEventListener('change', ()=>{
+      if(input.type === 'radio'){
+        form.querySelectorAll(`input[name="${input.name}"]`).forEach(r=>{
+          r.closest('.choice-item').classList.toggle('checked', r.checked);
+        });
+      } else {
+        input.closest('.choice-item').classList.toggle('checked', input.checked);
+      }
+    });
+  });
+
+  // Limit priorização to 3 choices
+  const priorizacaoGroup = document.getElementById('priorizacao-group');
+  const priorizacaoCount = document.getElementById('priorizacao-count');
+  priorizacaoGroup.addEventListener('change', ()=>{
+    const checkedBoxes = priorizacaoGroup.querySelectorAll('input:checked');
+    priorizacaoCount.textContent = `(${checkedBoxes.length}/3)`;
+    const atLimit = checkedBoxes.length >= 3;
+    priorizacaoGroup.querySelectorAll('input:not(:checked)').forEach(cb=>{
+      cb.disabled = atLimit;
+      cb.closest('.choice-item').classList.toggle('disabled', atLimit);
+    });
+  });
+
+  function generateTrackingNumber(){
+    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    let code = '';
+    for(let i=0;i<6;i++) code += chars[Math.floor(Math.random()*chars.length)];
+    const year = new Date().getFullYear().toString().slice(-2);
+    return `KNL-${year}-${code}`;
+  }
+
+  async function submitBriefing(){
+    const trackingNumber = generateTrackingNumber();
+    document.getElementById('tracking-number-display').textContent = trackingNumber;
+
+    const formData = new FormData(form);
+    formData.append('numero_acompanhamento', trackingNumber);
+
+    if(BRIEFING_ENDPOINT){
+      try{
+        await fetch(BRIEFING_ENDPOINT, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
+      }catch(err){
+        console.error('Falha ao enviar briefing:', err);
+      }
+    } else {
+      console.warn('BRIEFING_ENDPOINT não configurado — briefing não foi enviado a lugar nenhum. Configure no topo deste script.');
+    }
+
+    currentIndex = steps.length - 1;
+    showStep(currentIndex);
+  }
+
+  btnNext.addEventListener('click', ()=>{
+    const error = validateStep(currentIndex);
+    if(error){
+      errorEl.textContent = error;
+      errorEl.style.display = 'block';
+      return;
+    }
+    if(currentIndex === totalSteps - 1){
+      submitBriefing();
+      return;
+    }
+    currentIndex++;
+    showStep(currentIndex);
+  });
+
+  btnBack.addEventListener('click', ()=>{
+    if(currentIndex === 0) return;
+    currentIndex--;
+    showStep(currentIndex);
+  });
+
+  showStep(0);
+})();
+</script>
+</body>
+</html>
