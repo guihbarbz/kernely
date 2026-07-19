@@ -474,6 +474,33 @@ footer { border-top: 1px solid var(--border); padding: 50px 0 36px; position: re
   footer { padding-bottom: 110px !important; }
   .whatsapp-float { bottom: 90px !important; right: 20px !important; width: 52px !important; height: 52px !important; }
   .whatsapp-float svg { width: 26px !important; height: 26px !important; }
+
+  /* ----------------------------------------------------------------------
+     AJUSTES ESPECÍFICOS DA HERO NO MOBILE (GLOBO E SCROLL HINT)
+     ---------------------------------------------------------------------- */
+  
+  /* 1. Corrige o achatamento da tela usando Dynamic Viewport Height (dvh) */
+  .hero-sticky-container {
+    height: 100dvh !important;
+  }
+
+  /* 2. Força o canvas do globo a manter a proporção sem distorcer */
+  .hero-canvas canvas {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  /* 3. Sobe a instrução de scroll para não ficar escondida atrás do menu mobile */
+  /* Força bruta para subir a instrução no mobile e cancelar qualquer trava */
+  .hero-scroll-hint {
+    position: absolute !important;
+    top: auto !important;       /* Cancela qualquer alinhamento pelo topo que esteja travando */
+    bottom: 120px !important;   /* 120px é a altura perfeita para ficar logo acima da pílula */
+    left: 50% !important;
+    transform: translateX(-50%) !important; /* Mantém bem centralizado na tela */
+    z-index: 99 !important;     /* Garante que fique na frente de tudo */
+  }
 }
 
 @media (max-width: 600px) {
