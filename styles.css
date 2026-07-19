@@ -496,7 +496,7 @@ footer { border-top: 1px solid var(--border); padding: 50px 0 36px; position: re
   .hero-scroll-hint {
     position: absolute !important;
     top: auto !important;       /* Cancela qualquer alinhamento pelo topo que esteja travando */
-    bottom: 120px !important;   /* 120px é a altura perfeita para ficar logo acima da pílula */
+    bottom: 85px !important;   /* 120px é a altura perfeita para ficar logo acima da pílula */
     left: 50% !important;
     transform: translateX(-50%) !important; /* Mantém bem centralizado na tela */
     z-index: 99 !important;     /* Garante que fique na frente de tudo */
