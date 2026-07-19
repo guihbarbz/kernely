@@ -43,6 +43,34 @@
   "slogan": "Code that matters."
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quanto custa um site com a Kernely?",
+      "acceptedAnswer": { "@type": "Answer", "text": "O valor varia de acordo com o tipo e o tamanho do projeto. Primeiro entendemos o seu negócio pelo formulário de diagnóstico e pela call de alinhamento, e só depois passamos um orçamento sob medida — sem surpresa." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto tempo leva pra ficar pronto?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A maioria dos sites institucionais fica pronta em poucas semanas depois da etapa de descoberta. Lojas virtuais e sistemas sob medida variam conforme a complexidade, e o prazo é combinado já na proposta." }
+    },
+    {
+      "@type": "Question",
+      "name": "Eu já preciso ter domínio e hospedagem?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Não. Se você já tiver, aproveitamos. Se não tiver, ajudamos a configurar tudo — sem cobrança de taxas escondidas." }
+    },
+    {
+      "@type": "Question",
+      "name": "Consigo pedir ajustes depois que o site estiver no ar?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Oferecemos suporte contínuo pra ajustes, atualizações e qualquer necessidade que surgir depois do lançamento." }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -53,13 +81,7 @@
 <header>
   <nav>
     <a class="brand" href="index.html">
-      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M46 34H84V96L84 96" stroke="#57C392" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M46 96V166H84V150" stroke="#57C392" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M150 34L96 96" stroke="#57C392" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M104 104L150 166" stroke="#57C392" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <span class="brand-name">Kernely</span>
+      <img src="imagens/logo-kernely.png" alt="Logo Kernely" class="logo-img">
     </a>
     <div class="nav-links">
       <a href="index.html">Início</a>
@@ -93,42 +115,291 @@
 
 <main>
 
-  <section class="page-hero" style="position:relative;overflow:hidden;">
-    <div class="blob blob-green" style="width:280px;height:280px;top:-60px;right:-80px;"></div>
-    <div class="wrap" style="position:relative;z-index:1;">
-      <span class="eyebrow">o que fazemos</span>
-      <h1>Soluções web para o seu negócio crescer.</h1>
-      <p>Nosso foco é desenvolvimento web. Também criamos sistemas para desktop quando o projeto realmente exige, mas a internet é sempre o nosso ponto de partida.</p>
-    </div>
-  </section>
-
-  <section class="no-border">
-    <div class="wrap">
-      <div class="card-grid grid-2">
-        <div class="card reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12h18M12 3v18M4 7h16M4 17h16"/></svg></div>
-          <h3>Sites institucionais</h3>
-          <p>O cartão de visitas da sua empresa na internet. Apresentamos seus produtos, serviços e diferenciais de um jeito claro, com um visual que passa confiança para quem visita pela primeira vez.</p>
+  <!-- HERO -->
+  <section class="no-border" style="padding:170px 0 100px;position:relative;overflow:hidden;">
+    <div class="blob blob-green" style="width:340px;height:340px;top:-80px;left:-100px;"></div>
+    <div class="blob blob-cyan" style="width:280px;height:280px;bottom:-100px;right:-60px;animation-delay:-6s;"></div>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">sites profissionais para o seu negócio</span>
+        <h1 style="font-family:var(--display);font-weight:600;font-size:clamp(2.1rem,4.8vw,3.3rem);line-height:1.1;letter-spacing:-.01em;margin-bottom:20px;">Um site que atrai clientes <span class="grad">e vende por você.</span></h1>
+        <p style="color:var(--muted);font-size:1.05rem;max-width:480px;line-height:1.6;margin-bottom:32px;">A Kernely cria sites rápidos, bonitos e fáceis de usar para empresas que querem crescer na internet. Cuidamos de tudo, do planejamento ao lançamento.</p>
+        <div class="hero-ctas">
+          <a class="btn-primary" href="contato.html">Quero meu site</a>
+          <a class="btn-ghost" href="servicos.html">Ver serviços</a>
         </div>
-        <div class="card reveal d1">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg></div>
-          <h3>Lojas virtuais</h3>
-          <p>Uma loja que vende sozinha, 24 horas por dia. Catálogo de produtos, carrinho de compras e pagamento online, tudo organizado para facilitar a vida de quem compra.</p>
+      </div>
+ 
+      <div class="browser" id="hero-browser">
+        <div class="browser-bar">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <div class="browser-url">seunegocio.com.br</div>
         </div>
-        <div class="card reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-          <h3>Sistemas sob medida</h3>
-          <p>Quando um site não é suficiente, desenvolvemos sistemas web feitos para a rotina do seu negócio — como controle de pedidos, agendamentos ou cadastros. Quando faz mais sentido, também entregamos versões para desktop.</p>
-        </div>
-        <div class="card reveal d1">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg></div>
-          <h3>Manutenção e suporte</h3>
-          <p>Depois que o site vai ao ar, continuamos por perto. Atualizações, ajustes e suporte para o seu site nunca ficar parado no tempo.</p>
+        <div class="browser-canvas">
+          <div class="built-content" style="opacity: 1; transform: none; position: relative;">
+            <div class="bc-tag">sua empresa</div>
+            <div class="bc-title">
+              <span id="bc-title-text"></span><span class="bc-cursor"></span>
+            </div>
+            <div class="bc-text">Um site pensado pra transformar visita em cliente — rápido, claro e fácil de navegar em qualquer tela.</div>
+            <span class="bc-btn">Fale conosco</span>
+          </div>
+          <div class="bc-check" style="opacity: 1;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            site pronto
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- 2ª SEÇÃO: SCROLLYTELLING "POR QUE A KERNELY" -->
+  <section class="k-scrolly-section" id="k-scrolly-section">
+    <div class="k-sticky-container">
+      
+      <!-- FASE 1: INTRODUÇÃO -->
+      <div class="k-intro-box" id="k-intro-box">
+        <div class="k-intro-text">
+          <span class="eyebrow"><span class="k-dot"></span>por que a kernely</span>
+          <h2 class="k-main-title">Feito para funcionar,<br>não só pra ser bonito.</h2>
+          <p class="k-main-desc">Cada detalhe do nosso trabalho existe para transformar a sua presença online em uma verdadeira máquina de vendas.</p>
+        </div>
+        <div class="k-logo-hero" id="k-logo-hero">
+          <img class="k-logo-img" id="k-logo-img" src="imagens/logo-kernely.png" alt="Logo Kernely">
+        </div>
+      </div>
+
+      <!-- FASES 2, 3 e 4: DENTRO DO K (DIFERENCIAIS EM ABAS AUTÔNOMAS) -->
+      <div class="k-differentials-stage" id="k-differentials-stage">
+        
+        <!-- Lado Esquerdo: Cards Visuais que alternam junto com cada diferencial -->
+        <div class="k-visual-left">
+          <div class="k-visual-item active" id="k-visual-1">
+            <div class="k-svg-pill-group">
+              <span class="k-svg-pill"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Design exclusivo</span>
+              <span class="k-svg-pill"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Direção de arte</span>
+            </div>
+            <div class="k-dark-card">
+              <h3>Primeira impressão</h3>
+              <p>Cores, tipografia e layout pensados junto com o seu negócio — nada de template genérico que qualquer concorrente também usa.</p>
+            </div>
+          </div>
+
+          <div class="k-visual-item" id="k-visual-2">
+            <div class="k-svg-pill-group">
+              <span class="k-svg-pill"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Código otimizado</span>
+              <span class="k-svg-pill"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Imagens comprimidas</span>
+            </div>
+            <div class="k-dark-card">
+              <h3>Carregamento instantâneo</h3>
+              <p>Sem plugins pesados nem construtores lentos. Só o necessário pra sua página abrir rápido, em qualquer conexão.</p>
+            </div>
+          </div>
+
+          <div class="k-visual-item" id="k-visual-3">
+            <div class="k-svg-pill-group">
+              <span class="k-svg-pill"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>CTA estratégico</span>
+              <span class="k-svg-pill"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Fluxo de conversão</span>
+            </div>
+            <div class="k-dark-card">
+              <h3>Do clique ao contato</h3>
+              <p>Botões de WhatsApp posicionados nos momentos certos da navegação, guiando o visitante até a conversa com você.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lado Direito: Textos dos Diferenciais -->
+        <div class="k-text-right">
+          
+          <!-- Diferencial 1 -->
+          <div class="diff-item active" id="diff-item-1">
+            <span class="diff-badge">DIFERENCIAL 01</span>
+            <h2>Autoridade instantânea</h2>
+            <p>Você não terá apenas "mais um site". Criamos uma experiência visual única, moldada para que o seu cliente perceba o valor do seu serviço logo nos primeiros 3 segundos.</p>
+          </div>
+
+          <!-- Diferencial 2 -->
+          <div class="diff-item" id="diff-item-2">
+            <span class="diff-badge">DIFERENCIAL 02</span>
+            <h2>Velocidade que retém</h2>
+            <p>Mais de 50% dos usuários abandonam sites que demoram mais de 3 segundos para abrir. Nossos códigos limpos garantem carregamento instantâneo e nota máxima no Google.</p>
+          </div>
+
+          <!-- Diferencial 3 -->
+          <div class="diff-item" id="diff-item-3">
+            <span class="diff-badge">DIFERENCIAL 03</span>
+            <h2>O caminho até o WhatsApp</h2>
+            <p>Não adianta ter tráfego se o site não gera contato. Estruturamos os botões, chamadas e layout estrategicamente para guiar o visitante direto para a sua equipe comercial.</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FASE 5: GRID FINAL DO SCROLLYTELLING -->
+  <section class="k-grid-section">
+    <div class="wrap">
+      <div class="k-features-grid">
+        
+        <!-- Coluna 1 -->
+        <div class="k-grid-col reveal">
+          <div class="k-svg-pill-static">
+  <!-- Ícone SVG: Paleta / Layout Visual -->
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: -3px;">
+    <circle cx="13.5" cy="6.5" r=".5" fill="var(--accent)"/>
+    <circle cx="17.5" cy="10.5" r=".5" fill="var(--accent)"/>
+    <circle cx="8.5" cy="7.5" r=".5" fill="var(--accent)"/>
+    <circle cx="6.5" cy="12.5" r=".5" fill="var(--accent)"/>
+    <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>
+  </svg>
+  Visual Exclusivo
+</div>
+          <div class="k-feature-card">
+            <div class="card-line-art">
+              <svg viewBox="0 0 200 80" fill="none" stroke="#57C392" stroke-width="1.5">
+                <path d="M10 70 Q 50 10 90 70 T 170 70" opacity="0.6"/>
+                <path d="M30 70 Q 70 20 110 70 T 190 70" opacity="0.3"/>
+              </svg>
+            </div>
+            <h3>Design profissional</h3>
+            <p>Um visual que passa confiança e representa bem a sua marca, sem parecer um site genérico.</p>
+          </div>
+        </div>
+
+        <!-- Coluna 2 -->
+        <div class="k-grid-col reveal d1">
+          <div class="k-svg-pill-static">
+  <!-- Ícone SVG: Raio / Performance -->
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: -3px;">
+    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+  </svg>
+  Alta Performance
+</div>
+          <div class="k-feature-card">
+            <div class="card-line-art">
+              <svg viewBox="0 0 200 80" fill="none" stroke="#57C392" stroke-width="1.5">
+                <circle cx="100" cy="40" r="28" stroke-dasharray="4 4"/>
+                <path d="M100 24 V 40 L 112 40"/>
+              </svg>
+            </div>
+            <h3>Rápido de carregar</h3>
+            <p>Site lento perde cliente. Construímos tudo pensando em velocidade, no computador e no celular.</p>
+          </div>
+        </div>
+
+        <!-- Coluna 3 -->
+        <div class="k-grid-col reveal d2">
+          <div class="k-svg-pill-static">
+  <!-- Ícone SVG: Gráfico / Conversão -->
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: -3px;">
+    <line x1="18" y1="20" x2="18" y2="10"/>
+    <line x1="12" y1="20" x2="12" y2="4"/>
+    <line x1="6" y1="20" x2="6" y2="14"/>
+    <polyline points="2 20 22 20"/>
+  </svg>
+  Foco em Conversão
+</div>
+          <div class="k-feature-card">
+            <div class="card-line-art">
+              <svg viewBox="0 0 200 80" fill="none" stroke="#57C392" stroke-width="1.5">
+                <path d="M60 40 A 30 30 0 1 1 120 20" stroke-linecap="round"/>
+                <path d="M115 10 L 120 20 L 110 25"/>
+                <circle cx="100" cy="40" r="10"/>
+                <path d="M86 60 Q 100 48 114 60"/>
+              </svg>
+            </div>
+            <h3>Foco em conversão</h3>
+            <p>Cada botão e cada texto pensado pra levar o visitante até o contato ou a compra.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- QUAL SERVIÇO É PRA VOCÊ (AJUDA NA DECISÃO) -->
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">não sabe por onde começar?</span>
+        <h2>Veja qual serviço combina com o seu momento.</h2>
+        <p>Se ainda estiver em dúvida, esse guia rápido já te dá uma direção — e a gente confirma tudo com você na conversa inicial.</p>
+      </div>
+
+      <div class="card-grid grid-3">
+        <div class="quality-card reveal" style="background:var(--bg2);">
+          <div class="quality-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12h18M12 3v18M4 7h16M4 17h16"/></svg></div>
+          <h3>Site institucional</h3>
+          <p style="margin-bottom:14px;">Ideal se você:</p>
+          <p>• Ainda não tem presença online ou o site atual está desatualizado<br>
+          • Quer passar mais credibilidade antes de fechar negócio<br>
+          • Precisa que o cliente encontre horário, serviços e contato com facilidade</p>
+        </div>
+        <div class="quality-card reveal d1" style="background:var(--bg2);">
+          <div class="quality-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg></div>
+          <h3>Loja virtual</h3>
+          <p style="margin-bottom:14px;">Ideal se você:</p>
+          <p>• Já vende por redes sociais e quer profissionalizar o processo<br>
+          • Precisa de catálogo, carrinho e pagamento organizados num só lugar<br>
+          • Quer vender fora do horário comercial, sem depender de atendimento manual</p>
+        </div>
+        <div class="quality-card reveal d2" style="background:var(--bg2);">
+          <div class="quality-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+          <h3>Sistema sob medida</h3>
+          <p style="margin-bottom:14px;">Ideal se você:</p>
+          <p>• Tem um processo repetitivo (pedidos, agendamentos, cadastros) feito hoje na mão<br>
+          • Já tem site, mas precisa de uma ferramenta interna própria<br>
+          • Quer algo pensado especificamente pra rotina do seu negócio</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA (PROCESSO, REDUZ FRICÇÃO) -->
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">como funciona</span>
+        <h2>Do primeiro contato até o site no ar.</h2>
+        <p>Um processo simples, sem reuniões longas e sem enrolação.</p>
+      </div>
+      <div class="process-list">
+        <div class="process-item reveal">
+          <span class="process-num">01</span>
+          <div>
+            <h3>Formulário de diagnóstico</h3>
+            <p>Antes de qualquer reunião, você preenche um formulário rápido contando sobre o seu negócio, seu tempo de mercado e seus diferenciais.</p>
+          </div>
+        </div>
+        <div class="process-item reveal">
+          <span class="process-num">02</span>
+          <div>
+            <h3>Call de alinhamento e orçamento</h3>
+            <p>Com base nas suas respostas, marcamos uma chamada direta ao ponto. Apresentamos a solução ideal pro seu momento e passamos o valor do projeto.</p>
+          </div>
+        </div>
+        <div class="process-item reveal">
+          <span class="process-num">03</span>
+          <div>
+            <h3>Design e desenvolvimento</h3>
+            <p>Com tudo aprovado, construímos o visual e desenvolvemos o código com foco em usabilidade, velocidade e conversão. Você acompanha o andamento.</p>
+          </div>
+        </div>
+        <div class="process-item reveal">
+          <span class="process-num">04</span>
+          <div>
+            <h3>Lançamento e suporte</h3>
+            <p>Colocamos o site no ar e garantimos que tudo funcione. Depois da entrega, continuamos por perto para ajustes e manutenção.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIORIDADE WEB -->
   <section>
     <div class="wrap statement-grid">
       <div class="reveal">
@@ -152,6 +423,80 @@
     </div>
   </section>
 
+  <!-- O QUE VOCÊ GANHA EM TODO PROJETO (CONFIANÇA) -->
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">nosso compromisso</span>
+        <h2>O que você tem garantido em todo projeto.</h2>
+        <p>Independente do serviço contratado, isso não muda.</p>
+      </div>
+      <div class="quality-grid">
+        <div class="quality-card reveal">
+          <div class="quality-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <h3>Resposta em até 1 dia útil</h3>
+          <p>Sem atendimento automático nem espera longa — a sua mensagem chega direto pra quem vai cuidar do seu projeto.</p>
+        </div>
+        <div class="quality-card reveal d1">
+          <div class="quality-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3>Contato direto com os fundadores</h3>
+          <p>Você fala com quem realmente planeja, desenha e programa o seu projeto. Sem intermediários, sem ruído.</p>
+        </div>
+        <div class="quality-card reveal d2">
+          <div class="quality-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <h3>Performance e SEO de verdade</h3>
+          <p>Código limpo e otimizado para o Google. Nada de templates pesados ou construtores lentos.</p>
+        </div>
+        <div class="quality-card reveal d3">
+          <div class="quality-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Suporte contínuo</h3>
+          <p>Depois que o site vai ao ar, continuamos por perto para ajustes, atualizações e qualquer necessidade que surgir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">dúvidas comuns</span>
+        <h2>Perguntas que a gente sempre recebe.</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span>Quanto custa um site com a Kernely?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer"><p>O valor varia de acordo com o tipo e o tamanho do projeto. Primeiro entendemos o seu negócio pelo formulário de diagnóstico e pela call de alinhamento, e só depois passamos um orçamento sob medida — sem surpresa.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span>Quanto tempo leva pra ficar pronto?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer"><p>A maioria dos sites institucionais fica pronta em poucas semanas depois da etapa de descoberta. Lojas virtuais e sistemas sob medida variam conforme a complexidade, e o prazo é combinado já na proposta.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span>Eu já preciso ter domínio e hospedagem?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer"><p>Não. Se você já tiver, aproveitamos. Se não tiver, ajudamos a configurar tudo — sem cobrança de taxas escondidas.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span>Consigo pedir ajustes depois que o site estiver no ar?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer"><p>Sim. Oferecemos suporte contínuo pra ajustes, atualizações e qualquer necessidade que surgir depois do lançamento.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
   <section>
     <div class="wrap">
       <div class="cta-banner reveal">
@@ -168,13 +513,8 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M46 34H84V96L84 96" stroke="#57C392" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M46 96V166H84V150" stroke="#57C392" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M150 34L96 96" stroke="#57C392" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M104 104L150 166" stroke="#57C392" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <span class="footer-tag">Kernely — sites que vendem por você.</span>
+        <img src="imagens/logo-kernely.png" alt="Logo Kernely" class="logo-img-footer">
+        <span class="footer-tag">Kernely — code that matters.</span>
       </div>
       <div class="footer-links">
         <a href="servicos.html">Serviços</a>
@@ -189,20 +529,28 @@
   </div>
 </footer>
 
-<!--
-  WhatsApp flutuante: desativado até a Kernely ter um número oficial.
-  Quando tiver o chip, é só descomentar e trocar SEUNUMERO por 55DDDNUMERO.
-
-  <a href="https://wa.me/SEUNUMERO?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Kernely%20e%20quero%20saber%20mais." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.72-.85-1.99-.94-.27-.1-.46-.15-.66.15-.2.29-.76.94-.93 1.13-.17.2-.34.22-.63.07-.29-.15-1.22-.45-2.32-1.43-.86-.76-1.44-1.71-1.61-2-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.07-.15-.66-1.58-.9-2.17-.24-.57-.48-.49-.66-.5-.17-.01-.37-.01-.56-.01-.2 0-.51.07-.78.37-.27.29-1.02 1-1.02 2.44 0 1.43 1.04 2.82 1.19 3.01.15.2 2.05 3.13 4.97 4.39.69.3 1.24.48 1.66.61.7.22 1.34.19 1.84.12.56-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.27-.19-.56-.34z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.47 3.47 1.29 4.93L2 22l5.31-1.39a9.87 9.87 0 004.73 1.2h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.06h-.01a8.2 8.2 0 01-4.18-1.15l-.3-.18-3.15.83.84-3.07-.2-.31a8.19 8.19 0 01-1.26-4.36c0-4.54 3.7-8.24 8.26-8.24 2.21 0 4.28.86 5.84 2.42a8.2 8.2 0 012.42 5.83c0 4.55-3.7 8.24-8.26 8.24z"/></svg>
-  </a>
--->
-
 <!-- Voltar ao topo -->
 <button class="scroll-top-btn" id="scroll-top-btn" aria-label="Voltar ao topo">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
-<script src="script.js"></script>
+<!-- ==========================================================================
+     BOTÃO FLUTUANTE DO WHATSAPP (BLINDADO E SEMPRE VISÍVEL)
+     ========================================================================== -->
+<a href="https://wa.me/5511995620111?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Kernely%20e%20gostaria%20de%20um%20or%C3%A7amento." 
+   class="whatsapp-float" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   aria-label="Falar no WhatsApp com a Kernely">
+  <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+
+<script src="script-servicos.js"></script>
+</body>
+</html>
+
+<script src="script-servicos.js"></script>
 </body>
 </html>

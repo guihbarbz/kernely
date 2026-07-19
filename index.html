@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=8">
 
 <!-- Favicons -->
 <link rel="icon" type="image/svg+xml" href="imagens/favicon.svg">
@@ -99,7 +99,7 @@
   </nav>
 </header>
 
-<!-- NOVA BARRA DE NAVEGAÇÃO MOBILE (BOTTOM NAV) -->
+<!-- BARRA DE NAVEGAÇÃO MOBILE -->
 <nav class="mobile-bottom-nav">
   <a href="index.html" class="active">
     <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
@@ -121,74 +121,49 @@
 
 <main>
 
-  <!-- HERO -->
-  <section class="no-border" style="padding:170px 0 100px;position:relative;overflow:hidden;">
-    <div class="blob blob-green" style="width:340px;height:340px;top:-80px;left:-100px;"></div>
-    <div class="blob blob-cyan" style="width:280px;height:280px;bottom:-100px;right:-60px;animation-delay:-6s;"></div>
-    <div class="wrap hero-grid">
-      <div>
-        <span class="eyebrow">sites profissionais para o seu negócio</span>
-        <h1 style="font-family:var(--display);font-weight:600;font-size:clamp(2.1rem,4.8vw,3.3rem);line-height:1.1;letter-spacing:-.01em;margin-bottom:20px;">Um site que atrai clientes <span class="grad">e vende por você.</span></h1>
-        <p style="color:var(--muted);font-size:1.05rem;max-width:480px;">A Kernely cria sites rápidos, bonitos e fáceis de usar para empresas que querem crescer na internet. Cuidamos de tudo, do planejamento ao lançamento.</p>
-        <div class="hero-ctas">
-          <a class="btn-primary" href="contato.html">Quero meu site</a>
-          <a class="btn-ghost" href="servicos.html">Ver serviços</a>
-        </div>
+  <!-- ==========================================================================
+       1ª SEÇÃO: HERO ABSTRATA (GLOBO DE PARTÍCULAS 3D + SCROLLYTELLING)
+       ========================================================================== -->
+  <section class="hero-scrolly-section" id="hero-scrolly">
+    <div class="hero-sticky-container">
+      
+      <!-- O Canvas que renderizará o Globo 3D de Partículas e a Atmosfera -->
+      <canvas id="hero-particles-canvas" class="hero-canvas"></canvas>
+
+      <!-- Vídeo Central (Fases 5 a 10: Expansão em Círculo até Fullscreen) -->
+      <!-- Vídeo Central (Agora puxando direto da sua pasta local!) -->
+      <div class="hero-video-wrap" id="hero-video-wrap">
+        <video class="hero-video" id="hero-video" src="imagens/video_site.mp4" autoplay loop muted playsinline></video>
       </div>
 
-      <div class="browser reveal" id="hero-browser">
-        <div class="browser-bar">
-          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-          <div class="browser-url">seunegocio.com.br</div>
+      <!-- 1. CAMADA DIAGONAL DO GLOBO (Fases 1 a 4 - Some quando o vídeo entra) -->
+      <div class="hero-diagonal-overlay" id="hero-diagonal-overlay">
+        
+        <!-- Topo Esquerdo -->
+        <div class="diagonal-top-left">
+          <span class="eyebrow hero-eyebrow">código com precisão global</span>
+          <h1 class="diagonal-title">Uma presença online</h1>
         </div>
-        <div class="browser-canvas">
-          <div class="skeleton-wrap">
-            <div class="skeleton sk-line" style="width:40%;"></div>
-            <div class="skeleton sk-block"></div>
-            <div class="skeleton sk-line" style="width:70%;"></div>
-            <div class="skeleton sk-line" style="width:50%;"></div>
-            <div class="skeleton sk-btn"></div>
-          </div>
-          <div class="built-content">
-            <div class="bc-tag">sua empresa</div>
-            <div class="bc-title"><span id="bc-title-text">Feito para vender.</span><span class="bc-cursor"></span></div>
-            <div class="bc-text">Um site pensado pra transformar visita em cliente — rápido, claro e fácil de navegar em qualquer tela.</div>
-            <span class="bc-btn">Fale conosco</span>
-          </div>
-          <div class="bc-check">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-            site pronto
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- VALUE PROPS -->
-  <section>
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">por que a kernely</span>
-        <h2>Feito pra funcionar, não só pra bonito.</h2>
-        <p>Cada site que criamos tem um objetivo claro: trazer mais clientes e mais vendas pro seu negócio.</p>
+        <!-- Fundo Direito (com subtítulo) -->
+        <div class="diagonal-bottom-right">
+          <h2 class="diagonal-subtitle-main">com impacto mundial.</h2>
+          <p class="diagonal-subtext">Desenvolvemos plataformas web de alta conversão, arquitetadas para posicionar a sua marca como líder e autoridade no mercado digital.</p>
+        </div>
+
       </div>
-      <div class="card-grid grid-3">
-        <div class="card reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7z"/></svg></div>
-          <h3>Design profissional</h3>
-          <p>Um visual que passa confiança e representa bem a sua marca, sem parecer um site genérico.</p>
-        </div>
-        <div class="card reveal d1">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
-          <h3>Rápido de carregar</h3>
-          <p>Site lento perde cliente. Construímos tudo pensando em velocidade, no computador e no celular.</p>
-        </div>
-        <div class="card reveal d2">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2v20M2 12h20"/></svg></div>
-          <h3>Foco em conversão</h3>
-          <p>Cada botão e cada texto pensado pra levar o visitante até o contato ou a compra.</p>
-        </div>
+
+      <!-- 2. CAMADA CENTRAL DO VÍDEO (Fases 5 a 10 - Aparece junto com o vídeo) -->
+      <div class="hero-text-overlay" id="hero-text-overlay" style="opacity: 0;">
+        <h2 class="hero-dynamic-title" id="hero-dynamic-title">Facilidade de edição</h2>
       </div>
+
+      <!-- Indicador de Scroll -->
+      <div class="hero-scroll-hint" id="hero-scroll-hint">
+        <span>rolar para explorar</span>
+        <div class="mouse-icon"><div class="wheel"></div></div>
+      </div>
+
     </div>
   </section>
 
@@ -203,39 +178,28 @@
 
       <div class="comparison-grid reveal">
         
-        <!-- Site Amador (O problema) -->
         <div class="comp-card bad">
           <div class="comp-title">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 6L6 18M6 6l12 12"/></svg>
             Site Amador (O que você perde)
           </div>
-          
           <img loading="lazy" src="imagens/erro.png" alt="Exemplo de um site amador e problemático" class="comp-image">
-          
           <div class="comp-item">
-            <div class="comp-item-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-            </div>
+            <div class="comp-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
             <div class="comp-item-text">
               <h4>Lentidão extrema</h4>
               <p>O cliente desiste de esperar o site carregar e fecha a aba antes de ver o que você faz.</p>
             </div>
           </div>
-
           <div class="comp-item">
-            <div class="comp-item-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
-            </div>
+            <div class="comp-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M12 18h.01"/></svg></div>
             <div class="comp-item-text">
               <h4>Quebrado no celular</h4>
               <p>Textos minúsculos, imagens cortadas e botões que não funcionam na tela que as pessoas mais usam.</p>
             </div>
           </div>
-
           <div class="comp-item">
-            <div class="comp-item-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            </div>
+            <div class="comp-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
             <div class="comp-item-text">
               <h4>Confuso e sem foco</h4>
               <p>O visitante entra, não entende seus diferenciais e não encontra um jeito fácil de pedir orçamento.</p>
@@ -243,39 +207,28 @@
           </div>
         </div>
 
-        <!-- Site Profissional (A Solução) -->
         <div class="comp-card good">
           <div class="comp-title">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg>
             Site Kernely (O que você ganha)
           </div>
-          
           <img loading="lazy" src="imagens/solução.png" alt="Exemplo de um site profissional e otimizado" class="comp-image">
-          
           <div class="comp-item">
-            <div class="comp-item-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            </div>
+            <div class="comp-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
             <div class="comp-item-text">
               <h4>Ultra veloz</h4>
               <p>Abre em milissegundos, segurando a atenção do visitante logo no primeiro contato.</p>
             </div>
           </div>
-
           <div class="comp-item">
-            <div class="comp-item-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
-            </div>
+            <div class="comp-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></div>
             <div class="comp-item-text">
               <h4>Adaptação perfeita</h4>
               <p>Uma experiência fluida e bonita em qualquer tamanho de tela, especialmente nos celulares.</p>
             </div>
           </div>
-
           <div class="comp-item">
-            <div class="comp-item-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
+            <div class="comp-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
             <div class="comp-item-text">
               <h4>Máquina de conversão</h4>
               <p>Design estratégico focado em gerar autoridade imediata e guiar o cliente até a venda.</p>
@@ -294,38 +247,9 @@
     </div>
     <div class="marquee-wrap">
       <div class="marquee-track">
-        <span class="marquee-pill">HTML5</span>
-        <span class="marquee-pill">CSS3</span>
-        <span class="marquee-pill">JavaScript</span>
-        <span class="marquee-pill">React</span>
-        <span class="marquee-pill">Node.js</span>
-        <span class="marquee-pill">Figma</span>
-        <span class="marquee-pill">Git</span>
-        <span class="marquee-pill">SEO</span>
-        <span class="marquee-pill">HTML5</span>
-        <span class="marquee-pill">CSS3</span>
-        <span class="marquee-pill">JavaScript</span>
-        <span class="marquee-pill">React</span>
-        <span class="marquee-pill">Node.js</span>
-        <span class="marquee-pill">Figma</span>
-        <span class="marquee-pill">Git</span>
-        <span class="marquee-pill">SEO</span>
-        <span class="marquee-pill">HTML5</span>
-        <span class="marquee-pill">CSS3</span>
-        <span class="marquee-pill">JavaScript</span>
-        <span class="marquee-pill">React</span>
-        <span class="marquee-pill">Node.js</span>
-        <span class="marquee-pill">Figma</span>
-        <span class="marquee-pill">Git</span>
-        <span class="marquee-pill">SEO</span>
-        <span class="marquee-pill">HTML5</span>
-        <span class="marquee-pill">CSS3</span>
-        <span class="marquee-pill">JavaScript</span>
-        <span class="marquee-pill">React</span>
-        <span class="marquee-pill">Node.js</span>
-        <span class="marquee-pill">Figma</span>
-        <span class="marquee-pill">Git</span>
-        <span class="marquee-pill">SEO</span>
+        <span class="marquee-pill">HTML5</span><span class="marquee-pill">CSS3</span><span class="marquee-pill">JavaScript</span><span class="marquee-pill">React</span><span class="marquee-pill">Node.js</span><span class="marquee-pill">Figma</span><span class="marquee-pill">Git</span><span class="marquee-pill">SEO</span>
+        <span class="marquee-pill">HTML5</span><span class="marquee-pill">CSS3</span><span class="marquee-pill">JavaScript</span><span class="marquee-pill">React</span><span class="marquee-pill">Node.js</span><span class="marquee-pill">Figma</span><span class="marquee-pill">Git</span><span class="marquee-pill">SEO</span>
+        <span class="marquee-pill">HTML5</span><span class="marquee-pill">CSS3</span><span class="marquee-pill">JavaScript</span><span class="marquee-pill">React</span><span class="marquee-pill">Node.js</span><span class="marquee-pill">Figma</span><span class="marquee-pill">Git</span><span class="marquee-pill">SEO</span>
       </div>
     </div>
   </section>
@@ -361,143 +285,85 @@
     </div>
   </section>
 
-  <!-- PORTFÓLIO -->
-  <section>
+  <!-- PORTFÓLIO (SLIDER CATÁLOGO) -->
+  <section id="portfolio-section">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">na prática</span>
-        <h2>Alguns exemplos do que fazemos.</h2>
-        <p>Os primeiros são projetos reais que já entregamos. O último é um conceito que mostra como estruturamos diferentes tipos de sistemas.</p>
+        <h2>Projetos que já entregamos.</h2>
+        <p>Conheça alguns dos sites reais que desenvolvemos para ajudar empresas a atrair mais clientes e vender mais na internet.</p>
       </div>
 
-      <div class="portfolio-grid">
-
-        <!-- REAL 1: Auto Escola Colibri -->
-        <div class="portfolio-card reveal featured">
-          <span class="portfolio-badge real">projeto real</span>
-          <div class="site-frame">
-            <a href="https://colibriautoescola.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-img-link" title="Visitar landing page da Autoescola Colibri">
-              <img loading="lazy" src="imagens/colibri-autoescola.png" alt="Página inicial da Autoescola Colibri" class="portfolio-screenshot">
+      <div class="portfolio-showcase reveal" id="portfolio-showcase">
+        
+        <div class="showcase-card active" data-index="0">
+          <div class="showcase-img-wrap">
+            <a href="https://colibriautoescola.com.br" target="_blank" rel="noopener noreferrer">
+              <img src="imagens/colibri-autoescola.png" alt="Página inicial da Autoescola Colibri" class="showcase-img">
             </a>
-            <div class="sf-tech">
-              <span class="sf-tech-pill">HTML5</span>
-              <span class="sf-tech-pill">CSS3</span>
-              <span class="sf-tech-pill">JavaScript</span>
-              <span class="sf-tech-pill">SVG animado</span>
-            </div>
           </div>
-          <div class="card-content">
+          <div class="showcase-content">
+            <span class="portfolio-badge real">projeto real</span>
             <h3>Auto Escola Colibri</h3>
-            <p>Landing page com trajeto animado, avaliações reais em destaque e números do negócio contados na tela.</p>
-            <a href="https://colibriautoescola.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-visit-link">Visitar site ao vivo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
+            <p>Landing page com trajeto animado, avaliações reais em destaque e números do negócio contados na tela para gerar autoridade imediata.</p>
+            <a href="https://colibriautoescola.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-visit-link">
+              Visitar site ao vivo 
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </a>
           </div>
         </div>
 
-        <!-- REAL 2: Geração Colibri -->
-        <div class="portfolio-card reveal d1">
-          <span class="portfolio-badge real">projeto real</span>
-          <div class="site-frame">
-            <a href="https://link-do-geracao-colibri.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-img-link" title="Visitar site Geração Colibri">
-              <img loading="lazy" src="imagens/geração-colibri.png" alt="Página inicial do site Geração Colibri" class="portfolio-screenshot">
+        <div class="showcase-card" data-index="1">
+          <div class="showcase-img-wrap">
+            <a href="https://link-do-geracao-colibri.com.br" target="_blank" rel="noopener noreferrer">
+              <img src="imagens/geração-colibri.png" alt="Página inicial do site Geração Colibri" class="showcase-img">
             </a>
-            <div class="sf-tech">
-              <span class="sf-tech-pill">HTML5</span>
-              <span class="sf-tech-pill">CSS3</span>
-              <span class="sf-tech-pill">JavaScript</span>
-            </div>
           </div>
-          <div class="card-content">
+          <div class="showcase-content">
+            <span class="portfolio-badge real">projeto real</span>
             <h3>Geração Colibri</h3>
-            <p>Site institucional desenvolvido para destacar os diferenciais e serviços do projeto Geração Colibri.</p>
-            <a href="https://link-do-geracao-colibri.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-visit-link">Visitar site ao vivo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
+            <p>Site institucional completo desenvolvido para destacar os diferenciais, a estrutura e os serviços de impacto do projeto Geração Colibri.</p>
+            <a href="https://link-do-geracao-colibri.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-visit-link">
+              Visitar site ao vivo 
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </a>
           </div>
         </div>
 
-        <!-- REAL 3: Azul Revisional -->
-        <div class="portfolio-card reveal d2">
-          <span class="portfolio-badge real">projeto real</span>
-          <div class="site-frame">
-            <a href="https://guihbarbz.github.io/azulrevisional/" target="_blank" rel="noopener noreferrer" class="portfolio-img-link" title="Visitar site Azul Revisional">
-              <img loading="lazy" src="imagens/azul-revisional.png" alt="Página inicial do site Azul Revisional" class="portfolio-screenshot">
+        <div class="showcase-card" data-index="2">
+          <div class="showcase-img-wrap">
+            <a href="https://guihbarbz.github.io/azulrevisional/" target="_blank" rel="noopener noreferrer">
+              <img src="imagens/azul-revisional.png" alt="Página inicial do site Azul Revisional" class="showcase-img">
             </a>
-            <div class="sf-tech">
-              <span class="sf-tech-pill">HTML5</span>
-              <span class="sf-tech-pill">CSS3</span>
-              <span class="sf-tech-pill">JavaScript</span>
-            </div>
           </div>
-          <div class="card-content">
+          <div class="showcase-content">
+            <span class="portfolio-badge real">projeto real</span>
             <h3>Azul Revisional</h3>
             <p>Site para consultoria financeira focado em alta conversão, evidenciando serviços de redução de parcelas e análise de juros abusivos em financiamentos.</p>
-            <a href="https://guihbarbz.github.io/azulrevisional/" target="_blank" rel="noopener noreferrer" class="portfolio-visit-link">Visitar site ao vivo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
+            <a href="https://guihbarbz.github.io/azulrevisional/" target="_blank" rel="noopener noreferrer" class="portfolio-visit-link">
+              Visitar site ao vivo 
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </a>
           </div>
         </div>
 
-        <!-- CONCEITO 1: Loja virtual -->
-        <div class="portfolio-card reveal">
-          <span class="portfolio-badge concept">conceito</span>
-          <div class="site-frame">
-            <div class="sf-nav"></div>
-            <div class="sf-hero">
-              <svg class="sf-hero-deco" viewBox="0 0 200 120" preserveAspectRatio="none">
-                <rect x="8" y="8" width="48" height="40" rx="6" fill="rgba(87,195,146,.35)"/>
-                <rect x="66" y="8" width="48" height="40" rx="6" fill="rgba(0,240,255,.22)"/>
-                <rect x="124" y="8" width="68" height="40" rx="6" fill="rgba(87,195,146,.22)"/>
-                <rect x="8" y="58" width="48" height="40" rx="6" fill="rgba(0,240,255,.18)"/>
-                <rect x="66" y="58" width="106" height="40" rx="6" fill="rgba(87,195,146,.26)"/>
-              </svg>
-              <div class="sf-hero-title"></div>
-              <div class="sf-hero-sub"></div>
-              <div class="sf-hero-btn"></div>
-            </div>
-            <div class="sf-line" style="width:70%;"></div>
-            <div class="sf-line" style="width:45%;"></div>
-            <div class="sf-tech">
-              <span class="sf-tech-pill">HTML5</span>
-              <span class="sf-tech-pill">CSS3</span>
-              <span class="sf-tech-pill">JavaScript</span>
-              <span class="sf-tech-pill">Node.js</span>
-            </div>
+        <div class="showcase-controls">
+          <button class="showcase-arrow prev-btn" id="prev-project" aria-label="Projeto anterior">
+            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="showcase-dots" id="showcase-dots">
+            <button class="dot-btn active" aria-label="Ver projeto 1" data-slide="0"></button>
+            <button class="dot-btn" aria-label="Ver projeto 2" data-slide="1"></button>
+            <button class="dot-btn" aria-label="Ver projeto 3" data-slide="2"></button>
           </div>
-          <div class="card-content">
-            <h3>Loja virtual — exemplo</h3>
-            <p>Como pensamos uma loja virtual: catálogo em destaque, carrinho visível e checkout simples.</p>
-          </div>
-        </div>
-
-        <!-- CONCEITO 2: Sistema de agendamento -->
-        <div class="portfolio-card reveal d1">
-          <span class="portfolio-badge concept">conceito</span>
-          <div class="site-frame">
-            <div class="sf-nav"></div>
-            <div class="sf-hero">
-              <svg class="sf-hero-deco" viewBox="0 0 200 120" preserveAspectRatio="none">
-                <rect x="8" y="14" width="184" height="14" rx="4" fill="rgba(87,195,146,.28)"/>
-                <rect x="8" y="40" width="140" height="10" rx="4" fill="rgba(228,230,235,.14)"/>
-                <rect x="8" y="58" width="160" height="10" rx="4" fill="rgba(228,230,235,.14)"/>
-                <rect x="8" y="76" width="110" height="10" rx="4" fill="rgba(228,230,235,.14)"/>
-                <rect x="8" y="96" width="70" height="14" rx="4" fill="rgba(0,240,255,.24)"/>
-              </svg>
-              <div class="sf-hero-title"></div>
-              <div class="sf-hero-sub"></div>
-              <div class="sf-hero-btn"></div>
-            </div>
-            <div class="sf-line" style="width:65%;"></div>
-            <div class="sf-line" style="width:50%;"></div>
-            <div class="sf-tech">
-              <span class="sf-tech-pill">React</span>
-              <span class="sf-tech-pill">Node.js</span>
-              <span class="sf-tech-pill">PostgreSQL</span>
-            </div>
-          </div>
-          <div class="card-content">
-            <h3>Sistema de agendamento — exemplo</h3>
-            <p>Um sistema web pra organizar horários, clientes e histórico em um só lugar.</p>
-          </div>
+          <button class="showcase-arrow next-btn" id="next-project" aria-label="Próximo projeto">
+            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
         </div>
 
       </div>
-      <p style="text-align:center;color:var(--muted);font-family:var(--mono);font-size:.78rem;margin-top:30px;">mais projetos reais em breve, conforme novos clientes forem lançados</p>
+
+      <p style="text-align:center;color:var(--muted);font-family:var(--mono);font-size:.78rem;margin-top:30px;">mais projetos em breve, conforme novos clientes forem lançados</p>
     </div>
   </section>
 
@@ -510,7 +376,6 @@
         <p>Sem reuniões longas e improdutivas. Nosso fluxo é otimizado para respeitar o seu tempo e entregar o melhor projeto.</p>
       </div>
       <div class="process-list">
-        
         <div class="process-item reveal">
           <span class="process-num">01</span>
           <div>
@@ -518,7 +383,6 @@
             <p>Antes de qualquer reunião, enviamos um formulário rápido para entender o seu negócio, seu tempo de mercado, diferenciais e o que a empresa faz em essência.</p>
           </div>
         </div>
-        
         <div class="process-item reveal">
           <span class="process-num">02</span>
           <div>
@@ -526,7 +390,6 @@
             <p>Com base nas suas respostas prévias, marcamos uma chamada de vídeo direta ao ponto. Apresentamos a solução ideal para o seu momento e passamos o preço do projeto.</p>
           </div>
         </div>
-        
         <div class="process-item reveal">
           <span class="process-num">03</span>
           <div>
@@ -534,7 +397,6 @@
             <p>Com tudo aprovado, colocamos a mão na massa. Construímos o visual e desenvolvemos o código com foco total em usabilidade, velocidade e conversão.</p>
           </div>
         </div>
-        
         <div class="process-item reveal">
           <span class="process-num">04</span>
           <div>
@@ -542,36 +404,42 @@
             <p>Colocamos o site no ar e garantimos que tudo funcione perfeitamente. Mesmo após a entrega, continuamos por perto para dar suporte e realizar manutenções.</p>
           </div>
         </div>
-        
       </div>
 
-      <!-- SLOGAN ANIMADO -->
       <div class="reveal" style="display: flex; justify-content: center; margin-top: 40px;">
         <h2 class="slogan-typewriter">code that matters.</h2>
       </div>
-
     </div>
   </section>
 
-  <!-- COMPROMISSOS -->
+  <!-- COMPROMISSO -->
   <section>
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">nosso compromisso</span>
-        <h2>O que você pode esperar da gente.</h2>
+        <h2>O padrão de qualidade Kernely.</h2>
+        <p>Mais do que entregar um site bonito, garantimos que a base técnica do seu projeto esteja pronta para escalar o seu negócio sem dor de cabeça.</p>
       </div>
-      <div class="stat-row reveal">
-        <div class="stat-cell">
-          <div class="stat-num"><span data-count="100" data-suffix="%">0%</span></div>
-          <div class="stat-label">de atenção em cada projeto</div>
+      <div class="quality-grid">
+        <div class="quality-card reveal">
+          <div class="quality-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <h3>Performance e SEO de Verdade</h3>
+          <p>Código limpo e otimizado para o Google. Nada de templates pesados ou construtores lentos que fazem seu cliente desistir de esperar.</p>
         </div>
-        <div class="stat-cell">
-          <div class="stat-num"><span data-count="1">0</span></div>
-          <div class="stat-label">dia útil para te responder</div>
+        <div class="quality-card reveal d1">
+          <div class="quality-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M12 18h.01"/></svg></div>
+          <h3>Responsividade Absoluta</h3>
+          <p>Seu site desenhado para funcionar de forma fluida em qualquer tamanho de tela, garantindo a melhor experiência no celular do seu cliente.</p>
         </div>
-        <div class="stat-cell">
-          <div class="stat-num"><span data-count="2">0</span></div>
-          <div class="stat-label">fundadores cuidando do seu site, sem intermediários</div>
+        <div class="quality-card reveal d2">
+          <div class="quality-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Segurança e Estabilidade</h3>
+          <p>Aplicação de boas práticas de desenvolvimento web, proteção de dados e configuração de domínio e hospedagem sem complicação técnica.</p>
+        </div>
+        <div class="quality-card reveal d3">
+          <div class="quality-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3>Contato Direto e Sem Enrolação</h3>
+          <p>Você fala diretamente com quem planeja, desenha e programa o seu projeto. Sem intermediários, sem gerentes de conta e sem ruído na comunicação.</p>
         </div>
       </div>
     </div>
@@ -586,38 +454,23 @@
       </div>
       <div class="faq-list">
         <div class="faq-item reveal">
-          <button class="faq-question">
-            <span>Quanto tempo leva pra ficar pronto?</span>
-            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
+          <button class="faq-question"><span>Quanto tempo leva pra ficar pronto?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
           <div class="faq-answer"><p>Depende do tamanho do projeto, mas a maioria dos sites institucionais fica pronta em poucas semanas depois da etapa de descoberta.</p></div>
         </div>
         <div class="faq-item reveal">
-          <button class="faq-question">
-            <span>Eu preciso entender de tecnologia?</span>
-            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
+          <button class="faq-question"><span>Eu preciso entender de tecnologia?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
           <div class="faq-answer"><p>Não. Cuidamos de toda a parte técnica e explicamos cada etapa em uma linguagem simples, sem termos complicados.</p></div>
         </div>
         <div class="faq-item reveal">
-          <button class="faq-question">
-            <span>Consigo atualizar o site sozinho depois?</span>
-            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
+          <button class="faq-question"><span>Consigo atualizar o site sozinho depois?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
           <div class="faq-answer"><p>Sim. Entregamos o site pensado pra você conseguir trocar textos e imagens sem depender da gente pra tudo.</p></div>
         </div>
         <div class="faq-item reveal">
-          <button class="faq-question">
-            <span>Vocês dão suporte depois que o site fica pronto?</span>
-            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
+          <button class="faq-question"><span>Vocês dão suporte depois que o site fica pronto?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
           <div class="faq-answer"><p>Sim. Oferecemos suporte contínuo pra ajustes, atualizações e qualquer necessidade que surgir depois do lançamento.</p></div>
         </div>
         <div class="faq-item reveal">
-          <button class="faq-question">
-            <span>Quanto custa um site?</span>
-            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
+          <button class="faq-question"><span>Quanto custa um site?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
           <div class="faq-answer"><p>O valor varia de acordo com o que o seu projeto precisa. Conversamos primeiro pra entender o seu negócio e só depois passamos um orçamento sob medida.</p></div>
         </div>
       </div>
@@ -657,19 +510,12 @@
   </div>
 </footer>
 
-<!--
-  WhatsApp flutuante: desativado até a Kernely ter um número oficial.
-  Quando tiver o chip, é só descomentar e trocar SEUNUMERO por 55DDDNUMERO.
-
-  <a href="https://wa.me/SEUNUMERO?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Kernely%20e%20quero%20saber%20mais." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.72-.85-1.99-.94-.27-.1-.46-.15-.66.15-.2.29-.76.94-.93 1.13-.17.2-.34.22-.63.07-.29-.15-1.22-.45-2.32-1.43-.86-.76-1.44-1.71-1.61-2-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.07-.15-.66-1.58-.9-2.17-.24-.57-.48-.49-.66-.5-.17-.01-.37-.01-.56-.01-.2 0-.51.07-.78.37-.27.29-1.02 1-1.02 2.44 0 1.43 1.04 2.82 1.19 3.01.15.2 2.05 3.13 4.97 4.39.69.3 1.24.48 1.66.61.7.22 1.34.19 1.84.12.56-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.27-.19-.56-.34z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.47 3.47 1.29 4.93L2 22l5.31-1.39a9.87 9.87 0 004.73 1.2h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.06h-.01a8.2 8.2 0 01-4.18-1.15l-.3-.18-3.15.83.84-3.07-.2-.31a8.19 8.19 0 01-1.26-4.36c0-4.54 3.7-8.24 8.26-8.24 2.21 0 4.28.86 5.84 2.42a8.2 8.2 0 012.42 5.83c0 4.55-3.7 8.24-8.26 8.24z"/></svg>
-  </a>
--->
-
-<!-- Voltar ao topo -->
-<button class="scroll-top-btn" id="scroll-top-btn" aria-label="Voltar ao topo">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-</button>
+<a href="https://wa.me/5511995620111?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Kernely%20e%20gostaria%20de%20um%20or%C3%A7amento." 
+   class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp com a Kernely">
+  <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
 
 <script src="script.js"></script>
 </body>
