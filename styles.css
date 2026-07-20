@@ -435,17 +435,48 @@ footer { border-top: 1px solid var(--border); padding: 50px 0 36px; position: re
   .k-feature-card { padding: 30px 24px; }
 }
 
+/* ==========================================================================
+   CORREÇÃO DO ALINHAMENTO E CENTRALIZAÇÃO DA HERO NO MOBILE
+   ========================================================================== */
 @media (max-width: 860px) {
-  .grid-3 { grid-template-columns: 1fr; }
-  .hero-diagonal-overlay { padding: 0 24px; justify-content: space-around; }
-  .diagonal-top-left, .diagonal-bottom-right { align-self: center; text-align: center; align-items: center; transform: none; max-width: 100%; }
-  .diagonal-title, .diagonal-subtitle-main { font-size: clamp(2rem, 8vw, 2.8rem); }
-  .diagonal-subtext { font-size: 0.92rem; max-width: 340px; }
-  .k-sticky-container { flex-direction: column; justify-content: center; text-align: center; padding: 0 24px; }
-  .k-intro-text { max-width: 100%; }
-  .k-logo-wrap { position: relative; right: auto; width: 220px; height: 220px; margin-top: 40px; }
-  .portfolio-showcase { padding: 24px; }
-  .showcase-card.active { grid-template-columns: 1fr; gap: 24px; }
+  /* 1. Contêiner principal da Hero: distribui os textos com folga segura do menu */
+  .hero-diagonal-overlay {
+    justify-content: space-between !important; 
+    padding-top: 105px !important;    /* Distância perfeita abaixo da logo */
+    padding-bottom: 250px !important; /* Respiro maior para afastar o texto do menu inferior */
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* 2. Garante centralização absoluta dos dois blocos de texto no mobile */
+  .diagonal-top-left, 
+  .diagonal-bottom-right {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  /* 3. Centraliza a instrução de scroll "ROLAR PARA EXPLORAR" perfeitamente na horizontal e vertical */
+  .hero-scroll-hint {
+    position: fixed !important;
+    bottom: 95px !important;    /* Fica confortavelmente logo acima do menu oval */
+    left: 50% !important;
+    transform: translateX(-50%) !important; /* Puxa para o centro exato da tela */
+    z-index: 99999 !important;
+    pointer-events: none;
+    width: max-content !important;
+    text-align: center !important;
+  }
+  
+  /* 4. Reposiciona o globo no centro visual exato da tela do celular */
+  .hero-canvas {
+    top: -10% !important; /* Sobe levemente o globo para ele não invadir o texto debaixo */
+  }
 }
 
 @media (max-width: 800px) {
