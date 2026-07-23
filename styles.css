@@ -159,7 +159,7 @@ nav {
 /* --- 05. SCROLLYTELLING "POR QUE A KERNELY" (ZOOM NO K) --- */
 .k-scrolly-section {
   position: relative;
-  height: 400vh; /* Calibrado para durar exatas 4 fases (Intro + 3 Diferenciais) */
+  height: 400vh;
   background-color: var(--bg);
   padding: 0 !important; margin: 0 !important; overflow: clip;
 }
@@ -183,7 +183,6 @@ nav {
   display: flex; 
   align-items: center; 
   justify-content: center;
-  /* Centraliza a mira exatamente no meio do "K" verde para que ele cubra a tela inteira de forma equilibrada */
   transform-origin: 50% 35%; 
   will-change: transform, opacity; 
   z-index: 1;
@@ -200,7 +199,6 @@ nav {
 }
 .k-differentials-stage.active { opacity: 1; visibility: visible; pointer-events: auto; }
 
-/* Lado Esquerdo: Cards Visuais (.k-visual-item) */
 .k-visual-left { position: relative; width: 100%; flex: 1; max-width: 500px; min-height: 380px; display: flex; align-items: center; }
 .k-visual-item {
   position: absolute; top: 50%; left: 0; width: 100%; transform: translateY(-50%) scale(0.95);
@@ -224,7 +222,6 @@ nav {
 .k-dark-card h3 { font-family: var(--display); font-size: 1.5rem; font-weight: 700; color: #FFFFFF; margin-bottom: 12px; letter-spacing: -0.01em; }
 .k-dark-card p { color: var(--muted); font-size: 0.96rem; line-height: 1.65; margin: 0; }
 
-/* Lado Direito: Textos dos Diferenciais (.diff-item) */
 .k-text-right { position: relative; width: 100%; flex: 1; max-width: 480px; min-height: 300px; display: flex; align-items: center; }
 .diff-item {
   position: absolute; top: 50%; left: 0; width: 100%; transform: translateY(-50%) translateX(30px);
@@ -257,7 +254,6 @@ nav {
 }
 .k-feature-card:hover { transform: translateY(-6px); border-color: rgba(87, 195, 146, 0.4); box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6); }
 
-/* Trava de segurança para impedir que o SVG estoure a tela */
 .card-line-art { width: 100%; height: 90px; margin-bottom: 24px; display: flex; align-items: center; justify-content: flex-start; overflow: hidden; }
 .card-line-art svg { width: auto; max-width: 100%; height: 100%; max-height: 80px; stroke: var(--accent); display: block; }
 .k-feature-card h3 { font-family: var(--display); font-size: 1.3rem; font-weight: 700; color: #FFF; margin-bottom: 12px; letter-spacing: -0.01em; }
@@ -274,7 +270,6 @@ section.no-border { border-top: none; }
 .section-head h2 { font-family: var(--display); font-weight: 600; font-size: clamp(1.6rem, 3.2vw, 2.3rem); letter-spacing: -.01em; margin-bottom: 14px; }
 .section-head p { color: var(--muted); font-size: 1rem; }
 
-/* Animação suave .reveal com trava de segurança para o conteúdo não sumir */
 @media (max-width: 9999px) {
   .reveal { opacity: 1 !important; transform: none !important; transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal:not(.in):not(.force-visible) { opacity: 0 !important; transform: translateY(28px) !important; }
@@ -329,31 +324,266 @@ section.no-border { border-top: none; }
 @keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-25%); } }
 .marquee-pill { font-family: var(--mono); font-size: .85rem; color: var(--muted); border: 1px solid var(--border); border-radius: 999px; padding: 10px 20px; white-space: nowrap; background: var(--bg2); }
 
-/* --- 12. PORTFÓLIO SHOWCASE SLIDER --- */
-.portfolio-showcase { background: var(--bg2); border: 1px solid var(--border); border-radius: 20px; padding: 40px; overflow: hidden; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4); }
-.showcase-card { display: none; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; opacity: 0; transform: translateX(15px); transition: opacity 0.5s ease, transform 0.5s ease; }
-.showcase-card.active { display: grid; opacity: 1; transform: translateX(0); }
-.showcase-img-wrap { width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); background: var(--bg3); aspect-ratio: 16 / 9; }
-.showcase-img-wrap a { display: block; width: 100%; height: 100%; }
-.showcase-img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.4s ease; }
-.showcase-img-wrap:hover .showcase-img { transform: scale(1.03); }
-.portfolio-badge { font-family: var(--mono); font-size: 0.7rem; padding: 5px 14px; border-radius: 999px; display: inline-block; margin-bottom: 16px; color: var(--accent); background: rgba(87, 195, 146, 0.12); border: 1px solid rgba(87, 195, 146, 0.25); }
-.showcase-content h3 { font-family: var(--display); font-weight: 600; font-size: clamp(1.4rem, 2.5vw, 1.8rem); margin-bottom: 12px; }
-.showcase-content p { color: var(--muted); font-size: 0.98rem; margin-bottom: 10px; }
-.portfolio-visit-link { display: inline-flex !important; align-items: center !important; gap: 8px !important; margin-top: 14px !important; font-weight: 600 !important; color: var(--accent) !important; width: max-content; transition: color 0.2s !important; }
-.portfolio-visit-link svg { width: 18px !important; height: 18px !important; stroke: currentColor !important; stroke-width: 2.2 !important; transition: transform 0.2s !important; }
-.portfolio-visit-link:hover { color: var(--accent2) !important; }
-.portfolio-visit-link:hover svg { transform: translate(3px, -3px) !important; }
-.showcase-controls { display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--border); }
-.showcase-dots { display: flex; align-items: center; gap: 12px; }
-.showcase-arrow { width: 44px; height: 44px; border-radius: 50%; background: var(--bg3); border: 1px solid var(--border); color: var(--text); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.25s ease; }
-.showcase-arrow:hover { background: rgba(87, 195, 146, 0.15); border-color: var(--accent); color: var(--accent); transform: scale(1.08); }
-.arrow-icon { width: 20px; height: 20px; stroke: currentColor; transition: transform 0.2s; }
-.dot-btn { width: 12px; height: 12px; border-radius: 50%; background: rgba(228, 230, 235, 0.2); border: none; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; }
-.dot-btn.active { width: 38px; border-radius: 999px; background: rgba(87, 195, 146, 0.2); }
-.dot-btn.active::after {
-  content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: var(--progress, 0%);
-  background: var(--accent); border-radius: 999px; box-shadow: 0 0 10px rgba(87, 195, 146, 0.8);
+/* --- 12. CARDS INTERATIVOS COM EXPANSÃO HORIZONTAL & MODAL --- */
+.k-interactive-portfolio {
+  padding: 120px 0;
+  background-color: var(--bg);
+  position: relative;
+  z-index: 2;
+}
+
+.portfolio-cards-container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  height: 520px;
+}
+
+.p-card {
+  flex: 1;
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  transition: flex 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s ease, border-color 0.3s ease;
+  will-change: flex;
+}
+
+.portfolio-cards-container:hover .p-card {
+  opacity: 0.6;
+}
+
+.portfolio-cards-container .p-card:hover {
+  flex: 2.5;
+  opacity: 1;
+  border-color: rgba(87, 195, 146, 0.5);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* --- CAMADA 1: ESTADO BASE --- */
+.p-card-base {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0;
+}
+
+.p-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  /* PREENCHE 100% DO CARD: Elimina qualquer borda ou espaço vazio nas laterais e no topo */
+  object-fit: cover; 
+  /* ANCORA NA BASE: A logo fica travada na parte inferior do card e NUNCA é cortada */
+  object-position: center bottom; 
+  z-index: -1;
+  transition: transform 0.6s ease;
+}
+
+.p-logo-wrap {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.p-logo-text {
+  font-family: var(--display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+  letter-spacing: -0.02em;
+}
+
+.p-card:hover .p-card-base {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
+
+.p-card-hover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0;
+  transform: scale(1.08);
+  transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.p-hover-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.15) rotate(-3deg); 
+  transition: transform 0.6s ease;
+}
+
+.p-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 11, 13, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.p-plus-btn {
+  position: relative;
+  z-index: 3;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.p-card:hover .p-card-hover {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.p-card:hover .p-plus-btn:hover {
+  transform: scale(1.15) rotate(90deg);
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #121214;
+}
+
+/* ==========================================================================
+   ESTILO DO MODAL LIGHTBOX
+   ========================================================================== */
+.p-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 9, 10, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.p-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.p-modal-content {
+  background: #121316;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  width: 100%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+  transform: translateY(30px) scale(0.95);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 40px;
+}
+
+.p-modal-overlay.active .p-modal-content {
+  transform: translateY(0) scale(1);
+}
+
+.p-modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.p-modal-close:hover {
+  background: rgba(255, 60, 60, 0.2);
+  border-color: #ff4d4d;
+  color: #ff4d4d;
+  transform: rotate(90deg);
+}
+
+.p-modal-showcase {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 36px;
+  background: #090A0C;
+  border: 1px solid var(--border);
+  max-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-mockup-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.p-modal-info h2 {
+  font-family: var(--display);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+}
+
+.modal-divider {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #0055FF 0%, var(--accent) 100%);
+  margin-bottom: 24px;
+  border-radius: 2px;
+}
+
+.p-modal-info p {
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 850px;
 }
 
 /* --- 13. QUALIDADE, PROCESSO & TYPEWRITER --- */
@@ -438,20 +668,15 @@ footer { border-top: 1px solid var(--border); padding: 50px 0 36px; position: re
 /* ==========================================================================
    CORREÇÃO DO ALINHAMENTO E CENTRALIZAÇÃO DA HERO NO MOBILE
    ========================================================================== */
-/* ==========================================================================
-   CORREÇÃO DO ALINHAMENTO E CENTRALIZAÇÃO DA HERO NO MOBILE
-   ========================================================================== */
 @media (max-width: 860px) {
-  /* 1. Remove o flexbox e os paddings que estavam esmagando o texto */
   .hero-diagonal-overlay {
     display: block !important;
     padding: 0 20px !important; 
   }
 
-  /* 2. Prega o primeiro texto no TOPO, logo abaixo da logo */
   .diagonal-top-left {
     position: absolute !important;
-    top: 100px !important; /* Distância exata da logo */
+    top: 100px !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     width: 100% !important;
@@ -460,10 +685,9 @@ footer { border-top: 1px solid var(--border); padding: 50px 0 36px; position: re
     margin: 0 !important;
   }
 
-  /* 3. Prega o segundo texto no FUNDO, acima do menu e da instrução de scroll */
   .diagonal-bottom-right {
     position: absolute !important;
-    bottom: 160px !important; /* Distância segura do rodapé/menu */
+    bottom: 160px !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     width: 100% !important;
@@ -475,13 +699,20 @@ footer { border-top: 1px solid var(--border); padding: 50px 0 36px; position: re
     margin: 0 !important;
   }
 
-  /* 4. Ajusta o globo para ele não ficar gigante e vazar por trás dos textos */
   .hero-canvas {
+    width: 100vw !important;
+    left: 50% !important;
     top: 0 !important;
-    transform: scale(0.85) !important; /* Reduz o globo em 15% para dar respiro */
+    transform: translateX(-50%) scale(0.85) !important;
+    overflow: visible !important;
   }
 
-  /* 5. Mantém a instrução de scroll perfeita no lugar que já funcionou! */
+  .hero-canvas canvas {
+    width: 100vw !important;
+    max-width: none !important;
+    object-fit: cover !important;
+  }
+
   .hero-scroll-hint {
     position: fixed !important;
     bottom: 95px !important;
@@ -491,6 +722,31 @@ footer { border-top: 1px solid var(--border); padding: 50px 0 36px; position: re
     pointer-events: none;
     width: max-content !important;
     text-align: center !important;
+  }
+
+  .portfolio-cards-container {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .p-card {
+    height: 320px;
+    flex: none !important;
+    width: 100%;
+  }
+
+  .portfolio-cards-container:hover .p-card {
+    opacity: 1;
+  }
+
+  .p-modal-content {
+    padding: 24px;
+    border-radius: 20px;
+  }
+  
+  .p-modal-close {
+    top: 16px;
+    right: 16px;
   }
 }
 
@@ -521,31 +777,23 @@ footer { border-top: 1px solid var(--border); padding: 50px 0 36px; position: re
   .whatsapp-float { bottom: 90px !important; right: 20px !important; width: 52px !important; height: 52px !important; }
   .whatsapp-float svg { width: 26px !important; height: 26px !important; }
 
-  /* ----------------------------------------------------------------------
-     AJUSTES ESPECÍFICOS DA HERO NO MOBILE (GLOBO E SCROLL HINT)
-     ---------------------------------------------------------------------- */
-  
-  /* 1. Corrige o achatamento da tela usando Dynamic Viewport Height (dvh) */
   .hero-sticky-container {
     height: 100dvh !important;
   }
 
-  /* 2. Força o canvas do globo a manter a proporção sem distorcer */
   .hero-canvas canvas {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
   }
 
-  /* 3. Sobe a instrução de scroll para não ficar escondida atrás do menu mobile */
-  /* Força bruta para subir a instrução no mobile e cancelar qualquer trava */
   .hero-scroll-hint {
     position: absolute !important;
-    top: auto !important;       /* Cancela qualquer alinhamento pelo topo que esteja travando */
-    bottom: 85px !important;   /* 120px é a altura perfeita para ficar logo acima da pílula */
+    top: auto !important;
+    bottom: 85px !important;
     left: 50% !important;
-    transform: translateX(-50%) !important; /* Mantém bem centralizado na tela */
-    z-index: 99 !important;     /* Garante que fique na frente de tudo */
+    transform: translateX(-50%) !important;
+    z-index: 99 !important;
   }
 }
 
@@ -557,4 +805,432 @@ footer { border-top: 1px solid var(--border); padding: 50px 0 36px; position: re
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
   .reveal { opacity: 1 !important; transform: none !important; }
+}
+
+/* ==========================================================================
+   SEÇÃO DE SERVIÇOS COM FUNDO ABSTRACT "COSMOS" & EFEITO VIDRO FOSCO
+   ========================================================================== */
+.k-services-showcase {
+  position: relative;
+  padding: 140px 0;
+  background-image: url('imagens/bg-cosmos.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.k-services-showcase::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg, 
+    var(--bg) 0%, 
+    rgba(18, 18, 20, 0.40) 25%, 
+    rgba(18, 18, 20, 0.40) 75%, 
+    var(--bg) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.k-services-showcase .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- EFEITO GLASSMORPHISM (VIDRO FOSCO) NOS CARDS --- */
+.bento-card {
+  background: rgba(22, 22, 25, 0.75) !important; 
+  backdrop-filter: blur(16px); 
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.card-main-dev {
+  background: rgba(13, 14, 16, 0.85) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(87, 195, 146, 0.35) !important;
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.6),
+    inset 0 0 60px rgba(87, 195, 146, 0.08) !important;
+}
+
+.card-cta {
+  background: var(--accent) !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none !important;
+}
+
+/* --- PARTE 1: MANIFESTO COM TECNOLOGIAS FLUTUANTES --- */
+.services-manifesto {
+  text-align: center;
+  margin-bottom: 100px;
+  position: relative;
+}
+
+.manifesto-center {
+  position: relative;
+  max-width: 800px;
+  margin: 40px auto 0;
+  padding: 60px 20px !important;
+}
+
+.manifesto-title {
+  font-family: var(--display);
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.manifesto-title .highlight-text {
+  font-weight: 700;
+  color: #FFFFFF;
+  background: linear-gradient(90deg, #FFFFFF 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================================
+   OPÇÃO 1: PÍLULAS FLUTUANTES "HI-TECH NODE" (BLINDADAS E SEM COLISÃO)
+   ========================================================================== */
+.tech-badge {
+  position: absolute;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  background: rgba(18, 18, 20, 0.85) !important;
+  border: 1px solid rgba(87, 195, 146, 0.4) !important;
+  padding: 8px 18px;
+  border-radius: 999px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.6),
+    0 0 15px rgba(87, 195, 146, 0.12);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  pointer-events: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.03em;
+  z-index: 10;
+  transform: none !important;
+}
+
+.tech-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent);
+  flex-shrink: 0;
+}
+
+.tech-tl { top: -15px; left: 0%; }
+.tech-tc { top: -30px; left: 50%; transform: translateX(-50%) !important; }
+.tech-tr { top: 15px; right: -2%; }
+.tech-bl { bottom: -15px; left: 5%; }
+.tech-br { bottom: 10px; right: 2%; }
+
+@media (max-width: 1100px) {
+  .tech-tl { left: 5%; }
+  .tech-tr { right: 5%; }
+  .tech-bl { left: 5%; }
+  .tech-br { right: 5%; }
+}
+
+/* --- PARTE 2: BENTO GRID DE SERVIÇOS --- */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(220px, auto);
+  gap: 20px;
+  width: 100%;
+}
+
+.bento-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bento-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(87, 195, 146, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.bento-content h3 {
+  font-family: var(--display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.bento-highlight {
+  font-family: var(--display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.bento-desc, .bento-content p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.card-seo {
+  grid-column: span 1;
+  background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, var(--bg2) 100%);
+}
+
+.card-design {
+  grid-column: span 1;
+  background: linear-gradient(180deg, rgba(0, 240, 255, 0.08) 0%, var(--bg2) 100%);
+  border-color: rgba(0, 240, 255, 0.2);
+}
+
+.card-main-dev {
+  grid-column: span 2;
+  grid-row: span 2;
+  background: #0D0E10;
+  border: 1px solid rgba(87, 195, 146, 0.3);
+  box-shadow: inset 0 0 60px rgba(87, 195, 146, 0.05);
+  justify-content: flex-start;
+}
+
+.bento-tag {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  background: rgba(87, 195, 146, 0.1);
+  padding: 6px 14px;
+  border-radius: 999px;
+  width: max-content;
+  margin-bottom: 24px;
+  display: inline-block;
+}
+
+.card-main-dev h3 {
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  margin-bottom: 24px;
+}
+
+.bento-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: var(--display);
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+  font-weight: 600;
+}
+
+.bento-list .muted {
+  color: rgba(255, 255, 255, 0.25);
+  text-decoration: line-through;
+}
+
+.bento-list .active {
+  color: var(--accent);
+}
+
+.card-ops {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.card-custom {
+  grid-column: span 2;
+  background: linear-gradient(90deg, var(--bg2) 0%, rgba(87, 195, 146, 0.05) 100%);
+}
+
+.card-cta {
+  grid-column: span 1;
+  background: var(--accent);
+  color: #121214 !important;
+  border: none;
+  cursor: pointer;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+}
+
+.card-cta:hover {
+  background: #4ab381;
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(87, 195, 146, 0.4);
+}
+
+.card-cta h3 {
+  color: #121214 !important;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.cta-arrow {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 20px;
+  transition: transform 0.3s ease;
+}
+
+.card-cta:hover .cta-arrow {
+  transform: translateX(10px);
+}
+
+/* --- RESPONSIVIDADE PARA TABLETS E CELULARES --- */
+@media (max-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card-main-dev {
+    grid-column: span 2;
+  }
+  .card-custom {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .manifesto-title {
+    font-size: 2.2rem;
+  }
+  
+  .tech-badge {
+    display: none !important;
+  }
+
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-seo, .card-design, .card-main-dev, 
+  .card-ops, .card-custom, .card-cta {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .bento-card {
+    padding: 28px 24px;
+  }
+  .tech-tl, .tech-tr, .tech-bl, .tech-br {
+    display: none;
+  }
+  
+  .tech-tc {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none !important;
+    display: inline-flex;
+    margin-bottom: 20px;
+  }
+}
+
+/* --- CONTROLES MOBILE (ESCONDIDOS NO DESKTOP POR PADRÃO) --- */
+.mobile-portfolio-controls {
+  display: none;
+}
+
+/* --- RESPONSIVIDADE MOBILE PARA CARROSSEL E SETINHAS --- */
+@media (max-width: 860px) {
+  
+  .portfolio-cards-container {
+    display: block; /* Remove o grid flexbox horizontal no mobile */
+    height: auto;
+    min-height: 380px;
+    position: relative;
+  }
+  
+  /* ESCONDE TODOS OS CARDS NO CELULAR POR PADRÃO */
+  .portfolio-cards-container .p-card {
+    display: none !important;
+    width: 100%;
+    height: 500px;
+    animation: fadeInCard 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* MOSTRA APENAS O CARD COM A CLASSE ATIVA */
+  .portfolio-cards-container .p-card.mobile-active {
+    display: block !important;
+  }
+
+  @keyframes fadeInCard {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* EXIBE E ESTILIZA AS SETINHAS REDONDAS (IGUAL À REFERÊNCIA) */
+  .mobile-portfolio-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  .m-nav-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    outline: none;
+  }
+
+  .m-nav-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Setinha da Esquerda (Branca com borda e ícone azul/ciano) */
+  .m-nav-btn.prev-btn {
+    background: transparent;
+    border: 2px solid #0066FF;
+    color: #0066FF;
+  }
+
+  .m-nav-btn.prev-btn:hover, .m-nav-btn.prev-btn:active {
+    background: rgba(0, 102, 255, 0.15);
+    transform: scale(0.92);
+  }
+
+  /* Setinha da Direita (Sólida azul brilhante com ícone branco) */
+  .m-nav-btn.next-btn {
+    background: #0066FF;
+    border: 2px solid #0066FF;
+    color: #FFFFFF;
+    box-shadow: 0 8px 20px rgba(0, 102, 255, 0.4);
+  }
+
+  .m-nav-btn.next-btn:hover, .m-nav-btn.next-btn:active {
+    background: #0052cc;
+    transform: scale(0.92);
+  }
 }

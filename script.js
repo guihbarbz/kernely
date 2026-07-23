@@ -86,59 +86,66 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 });
 
 /* ==========================================================================
-   PORTFÓLIO SHOWCASE SLIDER
+   SISTEMA INTERATIVO DO MODAL DE PORTFÓLIO
    ========================================================================== */
-const showcaseContainer = document.getElementById('portfolio-showcase');
-const showcaseCards = document.querySelectorAll('.showcase-card');
-const dotBtns = document.querySelectorAll('.dot-btn');
-const prevBtn = document.getElementById('prev-project');
-const nextBtn = document.getElementById('next-project');
+const portfolioProjects = [
+  {
+    title: "Autoescola Colibri",
+    image: "imagens/colibri-autoescola.png",
+    description: "Landing page com trajeto animado, avaliações reais em destaque e números do negócio contados na tela para gerar autoridade imediata e aumentar pedidos de matrícula.",
+    link: "https://colibriautoescola.com.br"
+  },
+  {
+    title: "Geração Colibri",
+    image: "imagens/geração-colibri.png",
+    description: "Site institucional completo desenvolvido para destacar os diferenciais, a estrutura e os serviços de impacto do projeto Geração Colibri de forma limpa e responsiva.",
+    link: "https://link-do-geracao-colibri.com.br"
+  },
+  {
+    title: "Azul Revisional",
+    image: "imagens/azul-revisional.png",
+    description: "Site para consultoria financeira focado em alta conversão, evidenciando serviços de redução de parcelas e análise de juros abusivos em financiamentos com máxima autoridade.",
+    link: "https://guihbarbz.github.io/azulrevisional/"
+  }
+];
 
-if (showcaseContainer && showcaseCards.length > 0) {
-  let currentSlide = 0, isPaused = false, elapsed = 0;
-  const duration = 6000;
-  let lastTime = performance.now(), timerRaF;
+function openPortfolioModal(index) {
+  const modal = document.getElementById('portfolio-modal');
+  const modalImg = document.getElementById('modal-img');
+  const modalTitle = document.getElementById('modal-title');
+  const modalDesc = document.getElementById('modal-desc');
+  const modalLink = document.getElementById('modal-link');
 
-  function updateTimerUI(progress) {
-    const activeDot = document.querySelector('.dot-btn.active');
-    if (activeDot) activeDot.style.setProperty('--progress', `${progress * 100}%`);
+  const project = portfolioProjects[index];
+
+  modalImg.src = project.image;
+  modalTitle.textContent = project.title;
+  modalDesc.textContent = project.description;
+  
+  if (modalLink) {
+    modalLink.href = project.link;
   }
 
-  function goToSlide(index) {
-    currentSlide = (index + showcaseCards.length) % showcaseCards.length;
-    elapsed = 0;
-    showcaseCards.forEach((card, idx) => card.classList.toggle('active', idx === currentSlide));
-    dotBtns.forEach((dot, idx) => {
-      dot.classList.toggle('active', idx === currentSlide);
-      dot.style.setProperty('--progress', '0%');
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePortfolioModal() {
+  const modal = document.getElementById('portfolio-modal');
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const modalOverlay = document.getElementById('portfolio-modal');
+  if (modalOverlay) {
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) {
+        closePortfolioModal();
+      }
     });
   }
-
-  function animateLoop(now) {
-    const delta = now - lastTime;
-    lastTime = now;
-    if (!isPaused) {
-      elapsed += delta;
-      const progress = Math.min(elapsed / duration, 1);
-      updateTimerUI(progress);
-      if (elapsed >= duration) goToSlide(currentSlide + 1);
-    }
-    timerRaF = requestAnimationFrame(animateLoop);
-  }
-
-  goToSlide(0);
-  lastTime = performance.now();
-  timerRaF = requestAnimationFrame(animateLoop);
-
-  showcaseContainer.addEventListener('mouseenter', () => isPaused = true);
-  showcaseContainer.addEventListener('mouseleave', () => { isPaused = false; lastTime = performance.now(); });
-  showcaseContainer.addEventListener('touchstart', () => isPaused = true, { passive: true });
-  showcaseContainer.addEventListener('touchend', () => setTimeout(() => { isPaused = false; lastTime = performance.now(); }, 2000), { passive: true });
-
-  dotBtns.forEach((dot, idx) => dot.addEventListener('click', () => goToSlide(idx)));
-  if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
-  if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
-}
+});
 
 /* ==========================================================================
    1ª SEÇÃO: GLOBO 3D + VÍDEO CENTRAL + CARROSSEL DE FRASES EM LOOPING
@@ -175,7 +182,6 @@ if (heroSection && !reduceMotion) {
   let globeOpacity = 1;
   let targetMouseX = 0, targetMouseY = 0;
 
-  // Motor do Carrossel Automático de Frases
   if (dynamicTitle) {
     dynamicTitle.textContent = videoPhrases[0];
     setInterval(() => {
@@ -194,7 +200,6 @@ if (heroSection && !reduceMotion) {
     }, 2400);
   }
 
-  // Motor de Scroll Compacto (5 Fases)
   function handleHeroScroll() {
     const rect = heroSection.getBoundingClientRect();
     const sectionTop = rect.top;
@@ -249,14 +254,12 @@ if (heroSection && !reduceMotion) {
   window.addEventListener('scroll', handleHeroScroll, { passive: true });
   handleHeroScroll();
 
-  // Interatividade de Paralaxe com o Mouse
   let mouseX = 0, mouseY = 0;
   window.addEventListener('mousemove', (e) => {
     mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
     mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
   });
 
-  // Renderizador 3D do Globo no Canvas
   if (canvas) {
     const ctx = canvas.getContext('2d');
     let width, height, globePoints = [], atmospherePoints = [];
@@ -325,7 +328,10 @@ if (heroSection && !reduceMotion) {
           const rotX = globeRotationX - (targetMouseY * 0.4);
           const cosY = Math.cos(rotY), sinY = Math.sin(rotY);
           const cosX = Math.cos(rotX), sinX = Math.sin(rotX);
-          const baseRadius = Math.min(width, height) * 0.28 * globeScale;
+          const isMobileScreen = width <= 768;
+          const radiusMultiplier = isMobileScreen ? 0.19 : 0.28;
+          
+          const baseRadius = Math.min(width, height) * radiusMultiplier * globeScale;
           const centerX = width / 2, centerY = height / 2;
           const fov = 4.0;
 
@@ -381,3 +387,67 @@ if (heroSection && !reduceMotion) {
     render3D();
   }
 }
+
+/* ==========================================================================
+   CARROSSEL MOBILE AUTOMÁTICO (PORTFÓLIO - 4 SEGUNDOS + LOOPING)
+   ========================================================================== */
+let currentMobileSlideIndex = 0;
+let mobileSlideTimer = null;
+
+function showMobileCard(index) {
+  const cards = document.querySelectorAll('.portfolio-cards-container .p-card');
+  if (!cards.length) return;
+
+  // Lógica de Looping Infinito:
+  // Se passar do último, volta pro primeiro (0). Se voltar antes do primeiro, vai pro último.
+  if (index >= cards.length) {
+    currentMobileSlideIndex = 0;
+  } else if (index < 0) {
+    currentMobileSlideIndex = cards.length - 1;
+  } else {
+    currentMobileSlideIndex = index;
+  }
+
+  // Remove a classe ativa de todos os cards e aplica apenas no card atual
+  cards.forEach((card, idx) => {
+    if (idx === currentMobileSlideIndex) {
+      card.classList.add('mobile-active');
+    } else {
+      card.classList.remove('mobile-active');
+    }
+  });
+}
+
+// Avançar para a próxima arte
+function nextMobileCard() {
+  showMobileCard(currentMobileSlideIndex + 1);
+  resetMobileTimer(); // Reinicia os 4 segundos ao clicar na seta
+}
+
+// Voltar para a arte anterior
+function prevMobileCard() {
+  showMobileCard(currentMobileSlideIndex - 1);
+  resetMobileTimer(); // Reinicia os 4 segundos ao clicar na seta
+}
+
+// Inicia o loop automático de 4 em 4 segundos
+function startMobileTimer() {
+  if (mobileSlideTimer) clearInterval(mobileSlideTimer);
+  mobileSlideTimer = setInterval(() => {
+    // Só avança automaticamente se a tela for mobile/tablet (menor que 860px)
+    if (window.innerWidth <= 860) {
+      showMobileCard(currentMobileSlideIndex + 1);
+    }
+  }, 4000); // 4000 milissegundos = 4 segundos
+}
+
+// Reinicia o tempo se o usuário interagir (evita pular o card bem na hora que ele clica)
+function resetMobileTimer() {
+  startMobileTimer();
+}
+
+// Inicializa o carrossel assim que o site carregar
+document.addEventListener('DOMContentLoaded', () => {
+  showMobileCard(0);
+  startMobileTimer();
+});
