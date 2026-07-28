@@ -90,10 +90,10 @@
       <img src="imagens/logo-kernely.png" alt="Logo Kernely" class="logo-img">
     </a>
     <div class="nav-links">
-      <a href="index.html" class="active">Início</a>
+      <a href="/" class="active">Início</a>
       <a href="servicos.html">Serviços</a>
       <a href="sobre.html">Sobre</a>
-      <a href="blog.html">Blog</a>
+      <a href="simulador.html">Simulador</a>
     </div>
     <a class="nav-cta" href="contato.html">Quero um orçamento</a>
   </nav>
@@ -113,9 +113,9 @@
     <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
     <span>Sobre</span>
   </a>
-  <a href="blog.html">
-    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-    <span>Blog</span>
+  <a href="simulador.html">
+    <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+    <span>Simulador</span>
   </a>
 </nav>
 
@@ -131,8 +131,9 @@
       <canvas id="hero-particles-canvas" class="hero-canvas"></canvas>
 
       <!-- Vídeo Central (Fases 5 a 10: Expansão em Círculo até Fullscreen) -->
+      <!-- NOVO CÓDIGO COM WEBP -->
       <div class="hero-video-wrap" id="hero-video-wrap">
-        <video class="hero-video" id="hero-video" src="imagens/video_site.mp4" autoplay loop muted playsinline webkit-playsinline></video>
+        <img class="hero-video" id="hero-video" src="imagens/video_site.webp" alt="Animação de fundo do universo">
       </div>
 
       <!-- 1. CAMADA DIAGONAL DO GLOBO (Fases 1 a 4 - Some quando o vídeo entra) -->
@@ -413,82 +414,205 @@
     </div>
   </section>
 
-  <!-- PROCESS -->
-  <section style="padding-bottom: 30px;">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">como funciona</span>
-        <h2>Um processo simples, focado em resultados.</h2>
-        <p>Sem reuniões longas e improdutivas. Nosso fluxo é otimizado para respeitar o seu tempo e entregar o melhor projeto.</p>
+  <!-- ==========================================================================
+     TIMELINE PASSO A PASSO (FIEL À IMAGEM DE REFERÊNCIA DESKTOP & MOBILE)
+     ========================================================================== -->
+<section class="k-timeline-section" id="processo">
+  <div class="wrap k-timeline-wrap">
+    
+    <div class="section-head reveal">
+      <span class="eyebrow">como funciona</span>
+      <h2>Nosso passo a passo até o site no ar.</h2>
+      <p>Um fluxo de trabalho estruturado, transparente e sem pontas soltas para transformar a sua ideia em uma máquina de vendas.</p>
+    </div>
+
+    <!-- LINHA DO TEMPO EM 10 ETAPAS -->
+    <div class="k-timeline-grid reveal d1">
+      
+      <!-- 1º PASSO (Ímpar: Topo) -->
+      <div class="k-t-item odd">
+        <div class="k-t-info">
+          <span class="k-t-label">1º</span>
+          <p class="k-t-desc">Preenchimento do formulário para iniciar o projeto.</p>
+        </div>
+        <div class="k-t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <div class="k-t-node"><span>1</span></div>
       </div>
-      <div class="process-list">
-        <div class="process-item reveal">
-          <span class="process-num">01</span>
-          <div>
-            <h3>Formulário de diagnóstico</h3>
-            <p>Antes de qualquer reunião, enviamos um formulário rápido para entender o seu negócio, seu tempo de mercado, diferenciais e o que a empresa faz em essência.</p>
-          </div>
+
+      <!-- 2º PASSO (Par: Fundo) -->
+      <div class="k-t-item even">
+        <div class="k-t-node"><span>2</span></div>
+        <div class="k-t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
+        <div class="k-t-info">
+          <span class="k-t-label">2º</span>
+          <p class="k-t-desc">Call de alinhamento do projeto;</p>
         </div>
-        <div class="process-item reveal">
-          <span class="process-num">02</span>
-          <div>
-            <h3>Call de alinhamento e orçamento</h3>
-            <p>Com base nas suas respostas prévias, marcamos uma chamada de vídeo direta ao ponto. Apresentamos a solução ideal para o seu momento e passamos o preço do projeto.</p>
-          </div>
+      </div>
+
+      <!-- 3º PASSO (Ímpar: Topo) -->
+      <div class="k-t-item odd">
+        <div class="k-t-info">
+          <span class="k-t-label">3º</span>
+          <p class="k-t-desc">Estudo dos concorrentes;</p>
         </div>
-        <div class="process-item reveal">
-          <span class="process-num">03</span>
-          <div>
-            <h3>Design e desenvolvimento</h3>
-            <p>Com tudo aprovado, colocamos a mão na massa. Construímos o visual e desenvolvemos o código com foco total em usabilidade, velocidade e conversão.</p>
-          </div>
+        <div class="k-t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+        <div class="k-t-node"><span>3</span></div>
+      </div>
+
+      <!-- 4º PASSO (Par: Fundo) -->
+      <div class="k-t-item even">
+        <div class="k-t-node"><span>4</span></div>
+        <div class="k-t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <div class="k-t-info">
+          <span class="k-t-label">4º</span>
+          <p class="k-t-desc">Planejamento e projeção inicial;</p>
         </div>
-        <div class="process-item reveal">
-          <span class="process-num">04</span>
-          <div>
-            <h3>Lançamento e suporte</h3>
-            <p>Colocamos o site no ar e garantimos que tudo funcione perfeitamente. Mesmo após a entrega, continuamos por perto para dar suporte e realizar manutenções.</p>
+      </div>
+
+      <!-- 5º PASSO (Ímpar: Topo) -->
+      <div class="k-t-item odd">
+        <div class="k-t-info">
+          <span class="k-t-label">5º</span>
+          <p class="k-t-desc">Desenvolvimento da página inicial;</p>
+        </div>
+        <div class="k-t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+        <div class="k-t-node"><span>5</span></div>
+      </div>
+
+      <!-- 6º PASSO (Par: Fundo) -->
+      <div class="k-t-item even">
+        <div class="k-t-node"><span>6</span></div>
+        <div class="k-t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg></div>
+        <div class="k-t-info">
+          <span class="k-t-label">6º</span>
+          <p class="k-t-desc">Apresentação e aprovação;</p>
+        </div>
+      </div>
+
+      <!-- 7º PASSO (Ímpar: Topo) -->
+      <div class="k-t-item odd">
+        <div class="k-t-info">
+          <span class="k-t-label">7º</span>
+          <p class="k-t-desc">Desenvolvimento completo do projeto;</p>
+        </div>
+        <div class="k-t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <div class="k-t-node"><span>7</span></div>
+      </div>
+
+      <!-- 8º PASSO (Par: Fundo) -->
+      <div class="k-t-item even">
+        <div class="k-t-node"><span>8</span></div>
+        <div class="k-t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><polyline points="9 10 11 12 15 8"/></svg></div>
+        <div class="k-t-info">
+          <span class="k-t-label">8º</span>
+          <p class="k-t-desc">Apresentação do projeto e aprovação final;</p>
+        </div>
+      </div>
+
+      <!-- 9º PASSO (Ímpar: Topo) -->
+      <div class="k-t-item odd">
+        <div class="k-t-info">
+          <span class="k-t-label">9º</span>
+          <p class="k-t-desc">Otimizações Finais para performance e responsividade;</p>
+        </div>
+        <div class="k-t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="k-t-node"><span>9</span></div>
+      </div>
+
+      <!-- 10º PASSO (Par: Fundo) -->
+      <div class="k-t-item even">
+        <div class="k-t-node"><span>10</span></div>
+        <div class="k-t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <div class="k-t-info">
+          <span class="k-t-label">10º</span>
+          <p class="k-t-desc">Publicação do Site em seu domínio.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+  <!-- ==========================================================================
+     SEÇÃO DE AVALIAÇÕES / DEPOIMENTOS DOS CLIENTES (PROVA SOCIAL)
+     ========================================================================== -->
+<section class="k-testimonials-section">
+  <div class="wrap">
+    
+    <div class="section-head reveal">
+      <span class="eyebrow">prova social</span>
+      <h2>O que nossos clientes dizem.</h2>
+      <p>A melhor garantia da nossa engenharia é o resultado e a satisfação de quem já transformou sua presença digital e suas vendas com a Kernely.</p>
+    </div>
+
+    <!-- GRID DE 3 DEPOIMENTOS -->
+    <div class="testimonials-grid reveal d1">
+      
+      <!-- DEPOIMENTO 1: AUTOESCOLA COLIBRI -->
+      <div class="testimonial-card">
+        <div class="t-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <!-- 💡 COLE O TEXTO DE AVALIAÇÃO DA AUTOESCOLA COLIBRI AQUI: -->
+        <p class="t-quote">"O novo site mudou completamente a nossa percepção digital na região. A plataforma carrega de forma instantânea no celular dos alunos, os diferenciais ficaram claros e os agendamentos de matrícula tiveram um salto excelente logo após o lançamento."</p>
+        <div class="t-author">
+          <div class="t-avatar">AC</div>
+          <div class="t-info">
+            <h4>Diretoria / Gestão</h4>
+            <span>Autoescola Colibri</span>
           </div>
         </div>
       </div>
 
-      <div class="reveal" style="display: flex; justify-content: center; margin-top: 40px;">
-        <h2 class="slogan-typewriter">code that matters.</h2>
+      <!-- DEPOIMENTO 2: GERAÇÃO COLIBRI -->
+      <div class="testimonial-card">
+        <div class="t-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <!-- 💡 COLE O TEXTO DE AVALIAÇÃO DA GERAÇÃO COLIBRI AQUI: -->
+        <p class="t-quote">"Precisávamos de um site institucional que transmitisse credibilidade, estrutura e clareza sobre o nosso impacto e serviços. A entrega foi rápida, direta ao ponto e a autonomia para gerenciar o projeto nos deu muita segurança."</p>
+        <div class="t-author">
+          <div class="t-avatar">GC</div>
+          <div class="t-info">
+            <h4>Coordenação Geral</h4>
+            <span>Geração Colibri</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- COMPROMISSO -->
-  <section>
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">nosso compromisso</span>
-        <h2>O padrão de qualidade Kernely.</h2>
-        <p>Mais do que entregar um site bonito, garantimos que a base técnica do seu projeto esteja pronta para escalar o seu negócio sem dor de cabeça.</p>
-      </div>
-      <div class="quality-grid">
-        <div class="quality-card reveal">
-          <div class="quality-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-          <h3>Performance e SEO de Verdade</h3>
-          <p>Código limpo e otimizado para o Google. Nada de templates pesados ou construtores lentos que fazem seu cliente desistir de esperar.</p>
+      <!-- DEPOIMENTO 3: AZUL REVISIONAL -->
+      <div class="testimonial-card">
+        <div class="t-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-        <div class="quality-card reveal d1">
-          <div class="quality-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M12 18h.01"/></svg></div>
-          <h3>Responsividade Absoluta</h3>
-          <p>Seu site desenhado para funcionar de forma fluida em qualquer tamanho de tela, garantindo a melhor experiência no celular do seu cliente.</p>
-        </div>
-        <div class="quality-card reveal d2">
-          <div class="quality-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <h3>Segurança e Estabilidade</h3>
-          <p>Aplicação de boas práticas de desenvolvimento web, proteção de dados e configuração de domínio e hospedagem sem complicação técnica.</p>
-        </div>
-        <div class="quality-card reveal d3">
-          <div class="quality-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <h3>Contato Direto e Sem Enrolação</h3>
-          <p>Você fala diretamente com quem planeja, desenha e programa o seu projeto. Sem intermediários, sem gerentes de conta e sem ruído na comunicação.</p>
+        <!-- 💡 COLE O TEXTO DE AVALIAÇÃO DA AZUL REVISIONAL AQUI: -->
+        <p class="t-quote">"No mercado financeiro e de consultoria, autoridade digital é tudo. A arquitetura focada em conversão, a velocidade de carregamento e a apresentação limpa dos serviços elevaram o padrão de qualidade dos contatos que chegam até nós."</p>
+        <div class="t-author">
+          <div class="t-avatar">AR</div>
+          <div class="t-info">
+            <h4>Diretoria Comercial</h4>
+            <span>Azul Revisional</span>
+          </div>
         </div>
       </div>
+
     </div>
+
+  </div>
+</section>
   </section>
 
   <!-- FAQ -->
@@ -523,61 +647,115 @@
     </div>
   </section>
 
-  <!-- CTA -->
-  <section>
-    <div class="wrap">
-      <div class="cta-banner reveal">
-        <h2>Pronto para ter um site que realmente vende?</h2>
-        <p>Conte um pouco sobre o seu negócio e a gente te mostra como pode ficar.</p>
-        <a class="btn-primary" href="contato.html">Falar com a Kernely</a>
-      </div>
+<!-- ==========================================================================
+     SEÇÃO 9: REDES SOCIAIS (SEMPRE ANTES DO FOOTER EM TODAS AS PÁGINAS)
+     ========================================================================== -->
+<section class="k-social-section">
+  <div class="wrap">
+    
+    <div class="section-head reveal" style="text-align: center; margin: 0 auto 50px;">
+      <span class="eyebrow" style="justify-content: center;">redes sociais</span>
+      <h2>Acompanhe a Kernely no Instagram</h2>
+      <p>Bastidores do desenvolvimento, dicas de performance web e nossos projetos mais recentes em tempo real no nosso perfil.</p>
     </div>
-  </section>
 
-</main>
+    <!-- GRID DE POSTS (5 NO DESKTOP / 3 NO MOBILE) -->
+    <div class="insta-grid reveal d1" id="insta-feed-container">
+      <!-- O Javascript irá injetar os seus posts reais do Behold.so aqui automaticamente -->
+    </div>
+
+  </div>
+</section>
 
 <!-- ==========================================================================
-     MODAL LIGHTBOX DO PORTFÓLIO
+     RODAPÉ (FOOTER) — ARQUITETURA EM 4 COLUNAS & SUB-FOOTER LEGAL
      ========================================================================== -->
-<div id="portfolio-modal" class="p-modal-overlay">
-  <div class="p-modal-content">
-    <button class="p-modal-close" onclick="closePortfolioModal()">✕</button>
-    <div class="p-modal-showcase">
-      <img id="modal-img" src="" alt="Showcase Projeto" class="modal-mockup-img">
+<footer class="k-footer">
+  <div class="footer-glow"></div>
+  
+  <div class="wrap footer-main-grid">
+    
+    <!-- COLUNA 1: MARCA & MISSÃO -->
+    <div class="footer-col brand-col">
+      <a href="index.html" class="footer-brand">
+        <img src="imagens/logo-kernely.png" alt="Kernely Logo" class="logo-img-footer">
+      </a>
+      <p class="footer-desc">Engenharia de software e sites de alta performance focados em conversão, velocidade extrema e autoridade digital.</p>
+      <div class="footer-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>100% Código Limpo / Zero Page Builders</span>
+      </div>
     </div>
-    <div class="p-modal-info">
-      <h2 id="modal-title">Nome do Projeto</h2>
-      <div class="modal-divider"></div>
-      <p id="modal-desc">Descrição detalhada do projeto aparecerá aqui.</p>
-      <div style="margin-top: 24px;">
-        <a id="modal-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
-          Acessar Site Ao Vivo
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+
+    <!-- COLUNA 2: NAVEGAÇÃO -->
+    <div class="footer-col">
+      <span class="footer-title">Navegação</span>
+      <ul class="footer-nav">
+        <li><a href="/">Início</a></li>
+        <li><a href="servicos.html">Serviços & Soluções</a></li>
+        <li><a href="sobre.html">Sobre a Kernely</a></li>
+        <li><a href="index.html#processo">Como Funciona</a></li>
+        <li><a href="simulador.html" target="_blank" rel="noopener noreferrer" class="link-highlight">Simular Projeto →</a></li>
+      </ul>
+    </div>
+
+    <!-- COLUNA 3: O QUE CRIAMOS -->
+    <div class="footer-col">
+      <span class="footer-title">O Que Criamos</span>
+      <ul class="footer-nav">
+        <li><a href="servicos.html">Sites Institucionais</a></li>
+        <li><a href="servicos.html">Landing Pages de Vendas</a></li>
+        <li><a href="servicos.html">Sistemas Web & Dashboards</a></li>
+        <li><a href="servicos.html">Aplicações Desktop Executáveis</a></li>
+        <li><a href="servicos.html">Otimização SEO & Performance</a></li>
+      </ul>
+    </div>
+
+    <!-- COLUNA 4: CONTATO & STATUS -->
+    <div class="footer-col contact-col">
+      <span class="footer-title">Conexão Direta</span>
+      
+      <div class="status-indicator">
+        <span class="status-dot"></span>
+        <span class="status-text">Disponível para novos projetos</span>
+      </div>
+
+      <div class="contact-info">
+        <a href="mailto:kernelyltda@gmail.com" class="contact-email">kernelyltda@gmail.com</a>
+        <span class="contact-loc">São Paulo, SP — Atendimento Global</span>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/kernely" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/guih-barbz" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://github.com/kernelyltda" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
         </a>
       </div>
     </div>
-  </div>
-</div>
 
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="imagens/logo-kernely.png" alt="Logo Kernely" class="logo-img-footer">
-        <span class="footer-tag">Kernely — code that matters.</span>
-      </div>
-      <div class="footer-links">
-        <a href="servicos.html">Serviços</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="blog.html">Blog</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Kernely</span>
-      <span>feito com atenção aos detalhes</span>
-    </div>
+  </div>
+
+  <!-- LINHA INFERIOR (SUB-FOOTER) -->
+  <div class="wrap footer-bottom-bar">
+    <div class="fb-left">© 2026 Kernely. Todos os direitos reservados.</div>
+    <div class="fb-center">
+  <a href="termos.html">Termos de Uso</a>
+  <span>•</span>
+  <a href="privacidade.html">Política de Privacidade</a>
+</div>
+    <div class="fb-right">feito com atenção aos detalhes</div>
   </div>
 </footer>
+
+<!-- BOTÃO FLUTUANTE WHATSAPP -->
+<a href="https://wa.me/5511995204050?text=Olá,%20gostaria%20de%20simular%20um%20projeto%20com%20a%20Kernely!" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.19 1.6 6L.05 24l6.15-1.6A11.96 11.96 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.21-3.48-8.52zM12 21.95c-1.8 0-3.55-.48-5.09-1.4l-.36-.22-3.65.95.97-3.56-.24-.37A9.94 9.94 0 0 1 2.05 12c0-5.49 4.47-9.96 9.95-9.96 2.66 0 5.16 1.04 7.04 2.92a9.92 9.92 0 0 1 2.91 7.04c0 5.49-4.47 9.95-9.95 9.95zm5.46-7.44c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17 0-.37-.01-.57-.01-.2 0-.52.08-.79.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.11 3.22 5.11 4.51.71.31 1.27.49 1.7.63.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35z"/></svg>
+</a>
 
 <a href="https://wa.me/5511995620111?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Kernely%20e%20gostaria%20de%20um%20or%C3%A7amento." 
    class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp com a Kernely">
@@ -587,5 +765,35 @@
 </a>
 
 <script src="script.js"></script>
+
+<!-- ==========================================================================
+     MODAL LIGHTBOX DO PORTFÓLIO INTERATIVO
+     ========================================================================== -->
+<div class="p-modal-overlay" id="portfolio-modal" onclick="closePortfolioModal()">
+  <!-- Adicionado onclick no container principal e stopPropagation para blindar cliques -->
+  <div class="p-modal-content" onclick="event.stopPropagation()">
+    <!-- Botão X com chamada explícita de fechamento -->
+    <button class="p-modal-close" onclick="closePortfolioModal(); event.stopPropagation();" aria-label="Fechar modal">✕</button>
+    
+    <div class="p-modal-showcase">
+      <img src="" alt="Apresentação do Projeto" id="modal-img" class="modal-mockup-img">
+    </div>
+
+    <div class="p-modal-info">
+      <h2 id="modal-title">Nome do Projeto</h2>
+      <div class="modal-divider"></div>
+      <p id="modal-desc">Descrição técnica completa do projeto e resultados entregues pela Kernely.</p>
+      
+      <!-- NOVO: Link para ver o site ao vivo -->
+      <div class="modal-actions">
+        <a href="#" target="_blank" rel="noopener noreferrer" id="modal-live-link" class="btn-live-site">
+          <span>Ver o site ao vivo</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

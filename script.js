@@ -99,7 +99,7 @@ const portfolioProjects = [
     title: "Geração Colibri",
     image: "imagens/geração-colibri.png",
     description: "Site institucional completo desenvolvido para destacar os diferenciais, a estrutura e os serviços de impacto do projeto Geração Colibri de forma limpa e responsiva.",
-    link: "https://link-do-geracao-colibri.com.br"
+    link: "https://geracaocolibri.com.br"
   },
   {
     title: "Azul Revisional",
@@ -114,7 +114,9 @@ function openPortfolioModal(index) {
   const modalImg = document.getElementById('modal-img');
   const modalTitle = document.getElementById('modal-title');
   const modalDesc = document.getElementById('modal-desc');
-  const modalLink = document.getElementById('modal-link');
+  
+  // CORREÇÃO: Buscando pelo ID correto do HTML (modal-live-link)
+  const modalLink = document.getElementById('modal-live-link');
 
   const project = portfolioProjects[index];
 
@@ -123,7 +125,12 @@ function openPortfolioModal(index) {
   modalDesc.textContent = project.description;
   
   if (modalLink) {
-    modalLink.href = project.link;
+    if (project.link) {
+      modalLink.href = project.link;
+      modalLink.style.display = "inline-flex"; // Garante que o botão fique visível
+    } else {
+      modalLink.style.display = "none"; // Esconde o botão se algum projeto futuro não tiver link
+    }
   }
 
   modal.classList.add('active');
@@ -451,3 +458,84 @@ document.addEventListener('DOMContentLoaded', () => {
   showMobileCard(0);
   startMobileTimer();
 });
+
+/* ==========================================================================
+   INTEGRAÇÃO COM INSTAGRAM API (BEHOLD.SO) & PREENCHIMENTO INTELIGENTE
+   ========================================================================== */
+function initInstagramFeed() {
+  const container = document.getElementById('insta-feed-container');
+  if (!container) return;
+
+  // A sua URL oficial do Behold.so:
+  const INSTAGRAM_TOKEN_OR_API_URL = "https://feeds.behold.so/EWurJu89BJo4pZEWDj4X"; 
+
+  // Lista de garantia para preencher o grid enquanto você não atinge 5 posts reais:
+  const fallbackPosts = [
+    {
+      permalink: "https://instagram.com/kernely",
+      mediaUrl: "imagens/colibri-autoescola.png",
+      caption: "Transformando a presença digital de grandes marcas com código limpo e alta performance."
+    },
+    {
+      permalink: "https://instagram.com/kernely",
+      mediaUrl: "imagens/geração-colibri.png",
+      caption: "Por que a lentidão no seu site atual está fazendo você perder vendas todos os dias?"
+    },
+    {
+      permalink: "https://instagram.com/kernely",
+      mediaUrl: "imagens/azul-revisional.png",
+      caption: "Design focado em conversão: o segredo por trás de plataformas web que escalam negócios."
+    },
+    {
+      permalink: "https://instagram.com/kernely",
+      mediaUrl: "imagens/colibri-autoescola.png",
+      caption: "Bastidores da nossa engenharia: desenvolvendo animações fluidas e responsividade."
+    },
+    {
+      permalink: "https://instagram.com/kernely",
+      mediaUrl: "imagens/geração-colibri.png",
+      caption: "A sua marca merece um site à altura do seu projeto. Conheça o padrão de entrega Kernely."
+    }
+  ];
+
+  function renderPosts(posts) {
+    container.innerHTML = posts.slice(0, 5).map(post => {
+      // 1. Lê a imagem otimizada do Behold (sizes.medium) para carregar super rápido, ou o mediaUrl padrão
+      const imgUrl = post.sizes?.medium?.mediaUrl || post.mediaUrl || post.media_url || post.image || "";
+      const postUrl = post.permalink || post.url || "#";
+      const textCaption = post.caption || post.prunedCaption || "Ver post no Instagram →";
+
+      return `
+        <a href="${postUrl}" target="_blank" rel="noopener noreferrer" class="insta-card">
+          <img src="${imgUrl}" alt="Post do Instagram Kernely" class="insta-img" loading="lazy">
+          <div class="insta-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </div>
+          <div class="insta-overlay">
+            <p class="insta-caption">${textCaption}</p>
+          </div>
+        </a>
+      `;
+    }).join('');
+  }
+
+  fetch(INSTAGRAM_TOKEN_OR_API_URL)
+    .then(response => response.json())
+    .then(data => {
+      // 2. Busca o array de posts no formato exato do Behold ("data.posts")
+      let realPosts = data.posts || data.data || (Array.isArray(data) ? data : []);
+      
+      if (realPosts.length > 0) {
+        // 3. MÁGICA DO PREENCHIMENTO: Se houver menos de 5 posts reais, completa o resto com o fallback!
+        if (realPosts.length < 5) {
+          realPosts = [...realPosts, ...fallbackPosts.slice(realPosts.length)];
+        }
+        renderPosts(realPosts);
+      } else {
+        renderPosts(fallbackPosts);
+      }
+    })
+    .catch(() => renderPosts(fallbackPosts));
+}
+
+document.addEventListener('DOMContentLoaded', initInstagramFeed);

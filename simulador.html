@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Simulador & Diagnóstico de Projeto — Kernely</title>
+<meta name="description" content="Simule a arquitetura e os requisitos do seu próximo site ou sistema web com a Kernely e receba um diagnóstico técnico em tempo real.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=10">
+
+<!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href="imagens/favicon.svg">
+<link rel="icon" type="image/x-icon" href="imagens/favicon.ico">
+<link rel="apple-touch-icon" href="imagens/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#121214">
+<link rel="canonical" href="https://kernely.com.br/simulador.html">
+</head>
+<body>
+
+<div class="page-transition" id="page-transition"></div>
+<div class="scroll-progress" id="scroll-progress"></div>
+<div class="grain"></div>
+
+<!-- HEADER -->
+<header>
+  <nav>
+    <a class="brand" href="index.html">
+      <img src="imagens/logo-kernely.png" alt="Logo Kernely" class="logo-img">
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="simulador.html" class="active">Simulador</a>
+    </div>
+    <a class="nav-cta" href="contato.html">Quero um orçamento</a>
+  </nav>
+</header>
+
+<!-- BARRA DE NAVEGAÇÃO MOBILE -->
+<nav class="mobile-bottom-nav">
+  <a href="index.html">
+    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Início</span>
+  </a>
+  <a href="servicos.html">
+    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    <span>Serviços</span>
+  </a>
+  <a href="sobre.html">
+    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    <span>Sobre</span>
+  </a>
+  <a href="simulador.html" class="active">
+    <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+    <span>Simulador</span>
+  </a>
+</nav>
+
+<main>
+
+  <!-- SEÇÃO DO SIMULADOR INTERATIVO -->
+  <section class="k-legal-section" style="padding-top: 140px;">
+    <div class="legal-wrap" style="max-width: 920px !important;">
+      
+      <div class="legal-header" style="text-align: center; border-bottom: none; margin-bottom: 30px; padding-bottom: 0;">
+        <span class="eyebrow" style="justify-content: center;">arquitetura sob medida</span>
+        <h1>Simulador de Engenharia</h1>
+        <p class="last-updated" style="font-size: 1rem; max-width: 620px; margin: 10px auto 0;">Selecione as características ideais para o seu projeto. Nossa engine processará os dados para gerar o diagnóstico técnico e a stack recomendada.</p>
+      </div>
+
+      <!-- FORMULÁRIO INTERATIVO -->
+      <div class="simulador-container" style="background: var(--bg2); border: 1px solid var(--border); border-radius: 28px; padding: 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+        
+        <!-- ETAPA 1: TIPO DE SOLUÇÃO (Sem seleções padrão) -->
+        <div class="sim-step" id="step-1">
+          <h3 style="font-family: var(--display); font-size: 1.2rem; margin-bottom: 18px; color: #fff;">1. Qual é o formato principal do seu projeto?</h3>
+          <div class="sim-options-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+            <label class="sim-card" onclick="selectOption(this, 'tipo', 'Site Institucional')">
+              <input type="radio" name="tipo" value="Site Institucional" style="display:none;">
+              <span class="sim-title">Site Institucional</span>
+              <span class="sim-desc">Ideal para empresas que buscam máxima autoridade e posicionamento digital.</span>
+            </label>
+            <label class="sim-card" onclick="selectOption(this, 'tipo', 'Landing Page de Alta Conversão')">
+              <input type="radio" name="tipo" value="Landing Page de Alta Conversão" style="display:none;">
+              <span class="sim-title">Landing Page de Vendas</span>
+              <span class="sim-desc">Focada em campanhas de tráfego pago, velocidade extrema e conversão direta.</span>
+            </label>
+            <label class="sim-card" onclick="selectOption(this, 'tipo', 'Sistema Web / Dashboard')">
+              <input type="radio" name="tipo" value="Sistema Web / Dashboard" style="display:none;">
+              <span class="sim-title">Sistema Web & Dashboards</span>
+              <span class="sim-desc">Plataformas com múltiplos acessos, relatórios e automação de regras de negócio.</span>
+            </label>
+            <label class="sim-card" onclick="selectOption(this, 'tipo', 'Aplicação Executável Desktop')">
+              <input type="radio" name="tipo" value="Aplicação Executável Desktop" style="display:none;">
+              <span class="sim-title">Aplicação Desktop (PC)</span>
+              <span class="sim-desc">Software robusto executável direto no computador para operações de alta exigência.</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- ETAPA 2: OBJETIVO PRINCIPAL -->
+        <div class="sim-step" style="margin-top: 36px;" id="step-2">
+          <h3 style="font-family: var(--display); font-size: 1.2rem; margin-bottom: 18px; color: #fff;">2. Qual é o principal foco estratégico?</h3>
+          <div class="sim-options-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+            <label class="sim-card" onclick="selectOption(this, 'objetivo', 'Captar Contatos e Orçamentos')">
+              <input type="radio" name="objetivo" value="Captar Contatos e Orçamentos" style="display:none;">
+              <span class="sim-title">Captação de Leads</span>
+              <span class="sim-desc">Gerar pedidos de orçamento qualificados.</span>
+            </label>
+            <label class="sim-card" onclick="selectOption(this, 'objetivo', 'Alta Conversão e Vendas')">
+              <input type="radio" name="objetivo" value="Alta Conversão e Vendas" style="display:none;">
+              <span class="sim-title">Vendas Diretas</span>
+              <span class="sim-desc">Foco em fechamento rápido e agendamento.</span>
+            </label>
+            <label class="sim-card" onclick="selectOption(this, 'objetivo', 'Gestão, Relatórios e Processos')">
+              <input type="radio" name="objetivo" value="Gestão, Relatórios e Processos" style="display:none;">
+              <span class="sim-title">Gestão Interna</span>
+              <span class="sim-desc">Organizar dados, relatórios e fluxos.</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- ETAPA 3: PRAZO DESEJADO -->
+        <div class="sim-step" style="margin-top: 36px;" id="step-3">
+          <h3 style="font-family: var(--display); font-size: 1.2rem; margin-bottom: 18px; color: #fff;">3. Qual a expectativa de cronograma?</h3>
+          <div class="sim-options-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+            <label class="sim-card" onclick="selectOption(this, 'prazo', 'Alta Prioridade / Lançamento Rápido')">
+              <input type="radio" name="prazo" value="Alta Prioridade / Lançamento Rápido" style="display:none;">
+              <span class="sim-title">Alta Prioridade</span>
+              <span class="sim-desc">Desenvolvimento acelerado para colocação imediata no ar.</span>
+            </label>
+            <label class="sim-card" onclick="selectOption(this, 'prazo', 'Cronograma Estruturado')">
+              <input type="radio" name="prazo" value="Cronograma Estruturado" style="display:none;">
+              <span class="sim-title">Cronograma Planejado</span>
+              <span class="sim-desc">Desenvolvimento evolutivo com rodadas de alinhamento e testes.</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- BOTÃO DE PROCESSAR DIAGNÓSTICO -->
+        <div style="margin-top: 40px; text-align: center;">
+          <button type="button" onclick="gerarDiagnostico()" class="btn-primary" id="btn-processar" style="width: 100%; padding: 18px; font-size: 1rem; display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: #00F0FF; color: #121214; border-radius: 12px; border: none; cursor: pointer; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 0 25px rgba(0, 240, 255, 0.3); transition: all 0.3s ease;">
+            <span> Processar Diagnóstico Técnico</span>
+          </button>
+          <span id="erro-validacao" style="display: none; color: #ff6b6b; font-size: 0.88rem; margin-top: 12px; font-family: var(--mono);">⚠️ Por favor, selecione uma opção em cada uma das 3 etapas acima.</span>
+        </div>
+
+        <!-- PAINEL DE DIAGNÓSTICO GERADO (Oculto até o clique) -->
+        <div id="painel-diagnostico" style="display: none; margin-top: 48px; padding-top: 40px; border-top: 1px dashed rgba(255,255,255,0.15); animation: fadeInDiag 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;">
+          <div style="background: #101114; border: 1px solid rgba(87, 195, 146, 0.4); border-radius: 20px; padding: 30px; position: relative; overflow: hidden; box-shadow: inset 0 0 40px rgba(87, 195, 146, 0.05);">
+            
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 24px;">
+              <span style="font-family: var(--mono); font-size: 0.78rem; color: var(--accent); background: rgba(87, 195, 146, 0.1); padding: 6px 14px; border-radius: 999px; border: 1px solid rgba(87, 195, 146, 0.3);">DIAGNÓSTICO CONCLUÍDO</span>
+              <span style="font-family: var(--mono); font-size: 0.8rem; color: var(--muted);">Status: <strong style="color: #00F0FF;">100% Viável</strong></span>
+            </div>
+
+            <h4 style="font-family: var(--display); font-size: 1.4rem; color: #fff; margin-bottom: 16px;" id="diag-titulo">Arquitetura Recomendada</h4>
+            <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;" id="diag-desc">Análise técnica processada com base no perfil selecionado.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 30px;" class="diag-metrics-grid">
+              <div style="background: rgba(255,255,255,0.03); padding: 16px; border-radius: 12px; border: 1px solid var(--border);">
+                <span style="font-size: 0.75rem; color: var(--muted); font-family: var(--mono); display: block;">STACK RECOMENDADA</span>
+                <strong style="color: #fff; font-size: 0.95rem; font-family: var(--display);" id="diag-stack">HTML5 / CSS3 / JS Nativo</strong>
+              </div>
+              <div style="background: rgba(255,255,255,0.03); padding: 16px; border-radius: 12px; border: 1px solid var(--border);">
+                <span style="font-size: 0.75rem; color: var(--muted); font-family: var(--mono); display: block;">PERFORMANCE ALVO</span>
+                <strong style="color: var(--accent); font-size: 0.95rem; font-family: var(--display);">98/100 (Google PageSpeed)</strong>
+              </div>
+              <div style="background: rgba(255,255,255,0.03); padding: 16px; border-radius: 12px; border: 1px solid var(--border);">
+                <span style="font-size: 0.75rem; color: var(--muted); font-family: var(--mono); display: block;">ESTIMATIVA DE ENTREGA</span>
+                <strong style="color: #fff; font-size: 0.95rem; font-family: var(--display);" id="diag-prazo">2 a 4 Semanas</strong>
+              </div>
+            </div>
+
+            <div style="background: rgba(0, 240, 255, 0.05); border: 1px solid rgba(0, 240, 255, 0.2); border-radius: 14px; padding: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+              <div>
+                <strong style="color: #fff; font-size: 1rem; display: block; margin-bottom: 4px;">Gostou do escopo técnico?</strong>
+                <span style="color: var(--muted); font-size: 0.88rem;">Envie este diagnóstico pré-montado para um engenheiro da nossa equipe.</span>
+              </div>
+              <button type="button" onclick="enviarPropostaDiagnostico()" class="btn-primary" style="background: var(--accent); color: #121214; font-weight: 600; padding: 12px 24px; border-radius: 8px; border: none; cursor: pointer; white-space: nowrap;">
+                Solicitar Proposta Desta Arquitetura →
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<section class="k-social-section">
+  <div class="wrap">
+   
+    <div class="section-head reveal" style="text-align: center; margin: 0 auto 50px;">
+      <span class="eyebrow" style="justify-content: center;">redes sociais</span>
+      <h2>Acompanhe a Kernely no Instagram</h2>
+      <p>Bastidores do desenvolvimento, dicas de performance web e nossos projetos mais recentes em tempo real no nosso perfil.</p>
+    </div>
+
+
+    <!-- GRID DE POSTS (5 NO DESKTOP / 3 NO MOBILE) -->
+    <div class="insta-grid reveal d1" id="insta-feed-container">
+      <!-- O Javascript irá injetar os seus posts reais do Behold.so aqui automaticamente -->
+    </div>
+
+
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="k-footer">
+  <div class="footer-glow"></div>
+  <div class="wrap footer-main-grid">
+    <div class="footer-col brand-col">
+      <a href="index.html" class="footer-brand"><img src="imagens/logo-kernely.png" alt="Kernely Logo" class="logo-img-footer"></a>
+      <p class="footer-desc">Engenharia de software e sites de alta performance focados em conversão, velocidade extrema e autoridade digital.</p>
+    </div>
+    <div class="footer-col">
+      <span class="footer-title">Navegação</span>
+      <ul class="footer-nav">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="simulador.html" class="link-highlight">Simular Projeto →</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <span class="footer-title">O Que Criamos</span>
+      <ul class="footer-nav">
+        <li><a href="servicos.html">Sites Institucionais</a></li>
+        <li><a href="servicos.html">Landing Pages</a></li>
+        <li><a href="servicos.html">Sistemas Web</a></li>
+        <li><a href="servicos.html">Aplicativos Desktop</a></li>
+      </ul>
+    </div>
+    <div class="footer-col contact-col">
+      <span class="footer-title">Conexão Direta</span>
+      <div class="status-indicator"><span class="status-dot"></span><span class="status-text">Disponível para novos projetos</span></div>
+      <div class="contact-info"><a href="mailto:kernelyltda@gmail.com" class="contact-email">kernelyltda@gmail.com</a><span class="contact-loc">São Paulo, SP</span></div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom-bar">
+    <div class="fb-left">© 2026 Kernely. Todos os direitos reservados.</div>
+    <div class="fb-right">feito com atenção aos detalhes ⚡</div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/5511995620111?text=Olá!%20Simulei%20um%20projeto%20no%20site%20da%20Kernely." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<!-- SCRIPT DE INTERATIVIDADE E DIAGNÓSTICO -->
+<script>
+  function selectOption(cardElement, groupName, value) {
+    const container = cardElement.closest('.sim-options-grid');
+    container.querySelectorAll('.sim-card').forEach(c => c.classList.remove('selected'));
+    cardElement.classList.add('selected');
+    const radio = cardElement.querySelector('input[type="radio"]');
+    if (radio) radio.checked = true;
+    
+    // Esconde mensagem de erro ao clicar
+    document.getElementById('erro-validacao').style.display = 'none';
+  }
+
+  function gerarDiagnostico() {
+    const tipo = document.querySelector('input[name="tipo"]:checked')?.value;
+    const objetivo = document.querySelector('input[name="objetivo"]:checked')?.value;
+    const prazo = document.querySelector('input[name="prazo"]:checked')?.value;
+
+    // Validação: Garante que o usuário selecionou as 3 opções
+    if (!tipo || !objetivo || !prazo) {
+      document.getElementById('erro-validacao').style.display = 'inline-block';
+      return;
+    }
+
+    const painel = document.getElementById('painel-diagnostico');
+    const titulo = document.getElementById('diag-titulo');
+    const desc = document.getElementById('diag-desc');
+    const stack = document.getElementById('diag-stack');
+    const prazoEl = document.getElementById('diag-prazo');
+
+    // Lógica inteligente de recomendação de arquitetura
+    if (tipo.includes("Landing Page")) {
+      titulo.innerText = "Arquitetura de Conversão Acelerada";
+      desc.innerText = "Recomendamos o desenvolvimento nativo sem page builders para garantir carregamento instantâneo, otimização extrema de SEO e máxima retenção de tráfego pago.";
+      stack.innerText = "HTML5 / CSS3 / JS Nativo";
+      prazoEl.innerText = prazo.includes("Alta Prioridade") ? "10 a 15 Dias" : "2 a 3 Semanas";
+    } else if (tipo.includes("Sistema Web")) {
+      titulo.innerText = "Plataforma Web Escalável & Segura";
+      desc.innerText = "Para processar regras de negócio e relatórios, indicamos uma arquitetura SPA (Single Page Application) com backend robusto e banco de dados em nuvem de alta disponibilidade.";
+      stack.innerText = "Angular / Node.js / Cloud";
+      prazoEl.innerText = prazo.includes("Alta Prioridade") ? "3 a 4 Semanas" : "5 a 8 Semanas";
+    } else if (tipo.includes("Aplicação Executável")) {
+      titulo.innerText = "Software Desktop de Alta Capacidade";
+      desc.innerText = "Aplicação compilada para execução local no hardware, ideal para regras complexas, controle de licitações ou sistemas que exigem processamento intensivo sem depender de abas de navegador.";
+      stack.innerText = "Java / Electron / SQLite";
+      prazoEl.innerText = prazo.includes("Alta Prioridade") ? "4 a 6 Semanas" : "6 a 10 Semanas";
+    } else {
+      titulo.innerText = "Presença Institucional de Alta Autoridade";
+      desc.innerText = "Estrutura moderna e responsiva projetada para posicionar sua empresa como líder de mercado, com design exclusivo e autonomia para atualizações.";
+      stack.innerText = "Stack Kernely Clean Code";
+      prazoEl.innerText = prazo.includes("Alta Prioridade") ? "2 a 3 Semanas" : "3 a 5 Semanas";
+    }
+
+    // Exibe o painel com animação e rola suavemente até ele
+    painel.style.display = 'block';
+    setTimeout(() => {
+      painel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 100);
+  }
+
+  function enviarPropostaDiagnostico() {
+    const tipo = document.querySelector('input[name="tipo"]:checked').value;
+    const objetivo = document.querySelector('input[name="objetivo"]:checked').value;
+    const prazo = document.querySelector('input[name="prazo"]:checked').value;
+    const stack = document.getElementById('diag-stack').innerText;
+    const tempo = document.getElementById('diag-prazo').innerText;
+
+    const mensagem = `⚡ *DIAGNÓSTICO KERNELY GERADO* ⚡\n\n*Formato:* ${tipo}\n*Foco:* ${objetivo}\n*Expectativa:* ${prazo}\n\n*Stack Recomendada:* ${stack}\n*Tempo Estimado:* ${tempo}\n\nGostaria de solicitar um orçamento para esta arquitetura!`;
+    const url = `https://wa.me/5511995620111?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, '_blank');
+  }
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
