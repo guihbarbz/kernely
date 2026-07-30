@@ -31,16 +31,72 @@
 <meta name="twitter:image" content="https://kernely.com.br/imagens/favicon-512.png">
 <link rel="canonical" href="https://kernely.com.br/sobre.html">
 
+<!-- DADOS ESTRUTURADOS (SEO & GEO) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": "https://kernely.com.br/#organization",
   "name": "Kernely",
-  "description": "Estúdio de desenvolvimento web focado em sites institucionais, lojas virtuais e sistemas sob medida.",
+  "alternateName": "Kernely Engenharia Web",
+  "slogan": "Code that matters.",
   "url": "https://kernely.com.br/",
-  "email": "contato@kernely.com.br",
+  "logo": "https://kernely.com.br/imagens/logo-kernely.png",
+  "image": "https://kernely.com.br/imagens/capa-og.jpg",
+  "description": "Engenharia de software focada em alta performance. Desenvolvemos Sistemas Web com painéis hierárquicos, Aplicações Desktop executáveis e Sites Otimizados para conversão.",
+  "email": "kernelyltda@gmail.com",
   "areaServed": "BR",
-  "slogan": "Code that matters."
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "São Paulo",
+    "addressRegion": "SP",
+    "addressCountry": "BR"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+55-11-99562-0111",
+    "email": "kernelyltda@gmail.com",
+    "contactType": "Atendimento Comercial",
+    "areaServed": "BR",
+    "availableLanguage": "Portuguese"
+  },
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Desenvolvimento de Sistemas Web e Dashboards"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Desenvolvimento de Aplicações Desktop Executáveis"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Criação de Landing Pages e Sites Institucionais"
+      }
+    }
+  ],
+  "knowsAbout": [
+    "Desenvolvimento Web",
+    "Sites Institucionais",
+    "Landing Pages de Alta Conversão",
+    "Sistemas Web e Dashboards",
+    "Aplicações Desktop Executáveis",
+    "SEO",
+    "GEO (Generative Engine Optimization)"
+  ],
+  "sameAs": [
+    "https://www.instagram.com/kernely",
+    "https://github.com/kernelyltda",
+    "https://linkedin.com/company/kernely"
+  ]
 }
 </script>
 </head>
@@ -53,27 +109,22 @@
 <header>
   <nav>
     <a class="brand" href="index.html">
-      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M46 34H84V96L84 96" stroke="#57C392" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M46 96V166H84V150" stroke="#57C392" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M150 34L96 96" stroke="#57C392" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M104 104L150 166" stroke="#57C392" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <span class="brand-name">Kernely</span>
+      <img src="imagens/logo-kernely.png" alt="Logo Kernely" class="logo-img">
     </a>
     <div class="nav-links">
-      <a href="index.html">Início</a>
+      <a href="/">Início</a>
       <a href="servicos.html">Serviços</a>
       <a href="sobre.html" class="active">Sobre</a>
-      <a href="blog.html">Blog</a>
+      <a href="simulador.html">Simulador</a>
     </div>
-    <a class="nav-cta" href="contato.html">Quero um orçamento</a>
+    <a class="nav-cta" href="https://wa.me/5511995620111?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20com%20a%20Kernely." target="_blank" rel="noopener noreferrer">Quero um orçamento</a>
   </nav>
 </header>
 
-<!-- NOVA BARRA DE NAVEGAÇÃO MOBILE (BOTTOM NAV) -->
+
+<!-- BARRA DE NAVEGAÇÃO MOBILE -->
 <nav class="mobile-bottom-nav">
-  <a href="index.html">
+  <a href="index.html" >
     <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
     <span>Início</span>
   </a>
@@ -85,126 +136,303 @@
     <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
     <span>Sobre</span>
   </a>
-  <a href="blog.html">
-    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-    <span>Blog</span>
+  <a href="simulador.html">
+    <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+    <span>Simulador</span>
   </a>
 </nav>
 
+
 <main>
 
-  <section class="page-hero" style="position:relative;overflow:hidden;">
-    <div class="blob blob-cyan" style="width:260px;height:260px;top:-70px;left:-70px;"></div>
-    <div class="wrap" style="position:relative;z-index:1;">
-      <span class="eyebrow">quem somos</span>
-      <h1>Um estúdio pequeno, focado no que importa.</h1>
-      <p>A Kernely nasceu para resolver um problema simples: muita empresa ainda não tem um site que realmente ajuda a vender.</p>
+  <!-- SEÇÃO 1: HERO MANIFESTO -->
+  <section class="no-border hero-services-section" style="padding: 190px 0 130px; position: relative; overflow: hidden; background: radial-gradient(circle at 50% -20%, rgba(0, 240, 255, 0.08) 0%, transparent 70%);">
+    
+    <!-- Efeitos de Fundo Orgânicos -->
+    <div class="blob blob-green" style="width: 450px; height: 450px; top: 10%; left: -150px; opacity: 0.12;"></div>
+    <div class="blob blob-cyan" style="width: 400px; height: 400px; bottom: -10%; right: -100px; opacity: 0.15;"></div>
+
+    <div class="wrap" style="max-width: 900px; text-align: center; position: relative; z-index: 2;">
+      
+      <!-- Pílulas flutuantes decorativas (Stack e Diferenciais) -->
+      <div class="tech-badge tech-tl" style="top: 15%; left: -10%;">Java </div>
+      <div class="tech-badge tech-tr" style="top: 28%; right: -12%;">Angular UI</div>
+      <div class="tech-badge tech-bl" style="bottom: 25%; left: -15%;">API's</div>
+      <div class="tech-badge tech-br" style="bottom: 5%; right: -10%;">Clean Code</div>
+
+      <span class="eyebrow" style="justify-content: center; margin-bottom: 24px;">nosso manifesto</span>
+      
+      <h1 style="font-family: var(--display); font-weight: 700; font-size: clamp(2.8rem, 6vw, 4.6rem); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 24px; color: #FFF;">
+        Nascemos para elevar o padrão do <br><span class="grad">código na internet.</span>
+      </h1>
+      
+      <p style="color: var(--muted); font-size: clamp(1.05rem, 1.3vw, 1.15rem); line-height: 1.6; margin: 0 auto 40px; max-width: 720px;">
+        A internet está saturada de plataformas genéricas, lentas e sistemas que não escalam. A Kernely surgiu como uma resposta técnica a essa mediocridade. Unimos engenharia robusta e design de conversão para colocar sua empresa no topo da cadeia digital.
+      </p>
+
+      <!-- Barra de Status / Pilares Visuais -->
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-top: 40px;">
+        
+        <div style="background: rgba(22, 22, 25, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); padding: 10px 22px; border-radius: 999px; display: flex; align-items: center; gap: 10px; backdrop-filter: blur(12px);">
+          <span style="display: block; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent);"></span>
+          <span style="color: #E4E6EB; font-family: var(--mono); font-size: 0.85rem; font-weight: 600;">Alta Performance</span>
+        </div>
+        
+        <div style="background: rgba(22, 22, 25, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); padding: 10px 22px; border-radius: 999px; display: flex; align-items: center; gap: 10px; backdrop-filter: blur(12px);">
+          <span style="display: block; width: 8px; height: 8px; background: var(--accent2); border-radius: 50%; box-shadow: 0 0 10px var(--accent2);"></span>
+          <span style="color: #E4E6EB; font-family: var(--mono); font-size: 0.85rem; font-weight: 600;">Zero Page Builders</span>
+        </div>
+        
+        <div style="background: rgba(22, 22, 25, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); padding: 10px 22px; border-radius: 999px; display: flex; align-items: center; gap: 10px; backdrop-filter: blur(12px);">
+          <span style="display: block; width: 8px; height: 8px; background: #9D00FF; border-radius: 50%; box-shadow: 0 0 10px #9D00FF;"></span>
+          <span style="color: #E4E6EB; font-family: var(--mono); font-size: 0.85rem; font-weight: 600;">Segurança B2B</span>
+        </div>
+
+      </div>
+
     </div>
   </section>
 
-  <section class="no-border">
-    <div class="wrap statement-grid">
-      <div class="reveal">
-        <p class="statement">O nome Kernely vem de <span>kernel</span> — a parte central de um computador, aquela que não pode faltar pra tudo funcionar. É assim que pensamos cada projeto: <span>só o que realmente faz o seu site funcionar</span>, sem enfeite desnecessário.</p>
-      </div>
-      <div class="diff-list reveal">
-        <div class="diff-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2v20M2 12h20"/></svg>
-          <div><h3>Direto ao ponto</h3><p>Sem enrolação e sem cobrar por coisas que o seu site não precisa.</p></div>
-        </div>
-        <div class="diff-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h8"/></svg>
-          <div><h3>Você acompanha tudo</h3><p>Mostramos o site em construção desde as primeiras semanas — nada de sumir e voltar só no final.</p></div>
-        </div>
-        <div class="diff-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 4h16v12H7l-3 4V4z"/></svg>
-          <div><h3>Atendimento direto</h3><p>Você fala com quem realmente está construindo o seu site, sem intermediários.</p></div>
-        </div>
-        <div class="diff-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7z"/></svg>
-          <div><h3>Feito sob medida</h3><p>Cada negócio é diferente, então cada site é pensado especificamente para o seu.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
+  <!-- SEÇÃO 2: A ENGENHARIA & BASTIDORES (A NOSSA STACK) -->
+  <section style="padding: 80px 0; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
     <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">o que priorizamos</span>
-        <h2>Desenvolvimento web em primeiro lugar.</h2>
-        <p>Focamos em sites e sistemas web porque é ali que a maioria dos clientes encontra e escolhe uma empresa hoje em dia. Sistemas para desktop também fazem parte do que fazemos, mas apenas quando o projeto realmente precisa.</p>
+      <div class="section-head reveal" style="max-width: 700px; margin-bottom: 50px;">
+        <span class="eyebrow">under the hood</span>
+        <h2>A tecnologia por trás das nossas entregas.</h2>
+        <p>Não terceirizamos a qualidade. Nossa fundação operacional é construída sobre tecnologias consolidadas no mercado corporativo, permitindo entregar tanto estabilidade de ponta quanto velocidade comercial.</p>
       </div>
-      <div class="card-grid grid-3">
-        <div class="card reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg></div>
-          <h3>Foco na web</h3>
-          <p>É onde o seu cliente já está procurando por você.</p>
+
+      <div class="quality-grid reveal d1">
+        
+        <div class="quality-card" style="background: var(--bg);">
+          <div class="quality-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3>Lógica e Escalabilidade</h3>
+          <p>Utilizamos <strong>Java</strong> para arquitetar backends robustos, blindando regras de negócios vitais e garantindo aplicações corporativas de altíssima segurança. No frontend, combinamos a fluidez do <strong>Angular</strong> com interfaces componentizadas modernas para uma experiência reativa e imersiva para o seu cliente.</p>
         </div>
-        <div class="card reveal d1">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-          <h3>Sistemas quando necessário</h3>
-          <p>Se o negócio pedir, também entregamos versões para desktop.</p>
+
+        <div class="quality-card" style="background: var(--bg);">
+          <div class="quality-icon" style="color: var(--accent2); background: rgba(0, 240, 255, 0.1);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <h3 style="color: #FFF;">Engenharia Aumentada por IA</h3>
+          <p>Integramos a <strong>Inteligência Artificial de codificação</strong> de ponta em nosso fluxo diário. O uso de IA generativa no ciclo de desenvolvimento não apenas acelera drasticamente as entregas, mas garante correções milimétricas em rotinas de programação, unindo a força de processamento computacional à nossa visão estratégica humana.</p>
         </div>
-        <div class="card reveal d2">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg></div>
-          <h3>Compromisso de longo prazo</h3>
-          <p>Continuamos acompanhando o site depois que ele entra no ar.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 3: OS 3 PILARES INEGOCIÁVEIS -->
+  <section style="padding: 120px 0;">
+    <div class="wrap">
+      <div class="section-head reveal" style="text-align: center; margin: 0 auto 60px;">
+        <span class="eyebrow" style="justify-content: center;">como trabalhamos</span>
+        <h2>Nossos três pilares inegociáveis.</h2>
+        <p>A cultura técnica da Kernely é baseada em regras rígidas de qualidade. Quando você inicia um projeto conosco, estas são as nossas garantias de conduta.</p>
+      </div>
+
+      <div class="k-features-grid reveal d1">
+        
+        <div class="k-feature-card">
+          <div class="card-line-art">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3>Zero Page Builders</h3>
+          <p>Baniu-se o uso de templates genéricos, plugins pesados, Wix ou Elementor. Cada linha de HTML, CSS e JavaScript que escrevemos é compilada de forma nativa e limpa. É isso que garante sites com carregamento quase instantâneo e estabilidade vitalícia para o SEO.</p>
+        </div>
+
+        <div class="k-feature-card">
+          <div class="card-line-art">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent2)" stroke-width="1.5"><path d="M12 20v-6M6 20V10M18 20V4"/></svg>
+          </div>
+          <h3>Design Orientado a Dados</h3>
+          <p>Nenhuma tela ou dashboard é criado apenas por intuição estética. Preferimos a modernidade funcional: opções de <em>dark-mode</em>, catálogos orientados a cards e paletas que respeitam mapas de calor, garantindo que o usuário interaja exatamente onde o seu negócio precisa.</p>
+        </div>
+
+        <div class="k-feature-card">
+          <div class="card-line-art">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3>Autonomia e Transparência</h3>
+          <p>Não retemos os dados do cliente como reféns. Ao término de um projeto escopado, você recebe domínio sobre o que foi produzido. Construímos interfaces e painéis de acesso hierárquico para que sua gestão consiga escalar o sistema internamente com segurança e facilidade.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 4: O ECOSSISTEMA DE PROJETOS -->
+  <section style="padding: 100px 0; background: var(--bg2); border-top: 1px solid var(--border);">
+    <div class="wrap">
+      
+      <div class="section-head reveal" style="max-width: 800px; margin-bottom: 50px;">
+        <span class="eyebrow">ecossistema kernely</span>
+        <h2>Versatilidade arquitetônica para qualquer negócio.</h2>
+        <p>A inteligência do nosso código permite uma adaptação brutal a qualquer modelo comercial. Entregamos soluções complexas e seguras para nichos que exigem alta capacidade de resposta.</p>
+      </div>
+
+      <div class="bento-grid reveal d1" style="grid-template-columns: repeat(2, 1fr);">
+        
+        <div class="bento-card" style="background: var(--bg);">
+          <div class="bento-content">
+            <span class="bento-tag">B2B & CONVERSÃO</span>
+            <h3 style="font-size: 1.5rem;">Credibilidade Comercial</h3>
+            <p style="color: var(--muted); margin-bottom: 0;">Posicionamos marcas exigentes através de sites focados em gerar leads altamente qualificados, desenvolvendo desde landin pages dinâmicas para <strong>Centros de Formação de Condutores</strong> até ecossistemas institucionais completos para <strong>Consultorias Financeiras</strong> e gestão de recebíveis.</p>
+          </div>
+        </div>
+
+        <div class="bento-card" style="background: linear-gradient(135deg, rgba(0, 240, 255, 0.05) 0%, var(--bg) 100%);">
+          <div class="bento-content">
+            <span class="bento-tag" style="background: rgba(0, 240, 255, 0.1); color: var(--accent2);">SOFTWARE & DASHBOARDS</span>
+            <h3 style="font-size: 1.5rem;">Sistemas e Aplicações Complexas</h3>
+            <p style="color: var(--muted); margin-bottom: 0;">Trabalhamos muito além de sites. Estruturamos plataformas de <strong>gestão de tarefas com controle de acessos hierárquicos</strong> (funcionários e chefia) com emissão de relatórios semanais, além da construção de <strong>aplicações desktop executáveis</strong> exclusivas para gestão e monitoramento em áreas de licitações de vigilância.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEÇÃO 5: CALL TO ACTION -->
+  <section class="k-social-section" style="padding: 120px 0 80px !important;">
+    <div class="wrap">
+      <div class="cta-banner reveal d1" style="background: linear-gradient(180deg, var(--bg2) 0%, var(--bg) 100%); border-color: rgba(87, 195, 146, 0.2);">
+        <span class="eyebrow" style="justify-content: center;">próximos passos</span>
+        <h2 style="font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.15; color: #FFF; margin-bottom: 20px;">Pronto para deixar a concorrência <br>estagnada no tempo?</h2>
+        <p style="color: var(--muted); font-size: 1.05rem; margin-bottom: 40px; max-width: 580px;">Sua infraestrutura digital não deveria ser o que limita os seus resultados. Inicie o diagnóstico agora e descubra como a Kernely pode transformar sua presença web.</p>
+        
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="simulador.html" class="btn-primary" style="font-size: 1.05rem; padding: 16px 32px;">Iniciar Simulador Técnico →</a>
+          <a href="https://wa.me/5511995620111?text=Ol%C3%A1!%20Li%20a%20hist%C3%B3ria%20da%20Kernely%20e%20gostaria%20de%20bater%20um%20papo%20sobre%20o%20meu%20projeto." target="_blank" rel="noopener noreferrer" class="btn-ghost" style="font-size: 1.05rem; padding: 16px 32px;">Falar via WhatsApp</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section>
+  <section class="k-social-section">
     <div class="wrap">
-      <div class="cta-banner reveal">
-        <h2>Vamos conversar sobre o seu projeto?</h2>
-        <p>Conte um pouco sobre o seu negócio e a gente te mostra como podemos ajudar.</p>
-        <a class="btn-primary" href="contato.html">Fale com a gente</a>
+    
+      <div class="section-head reveal" style="text-align: center; margin: 0 auto 50px;">
+        <span class="eyebrow" style="justify-content: center;">redes sociais</span>
+        <h2>Acompanhe a Kernely no Instagram</h2>
+        <p>Bastidores do desenvolvimento, dicas de performance web e nossos projetos mais recentes em tempo real no nosso perfil.</p>
       </div>
+
+
+      <!-- GRID DE POSTS (5 NO DESKTOP / 3 NO MOBILE) -->
+      <div class="insta-grid reveal d1" id="insta-feed-container">
+        <!-- O Javascript irá injetar os seus posts reais do Behold.so aqui automaticamente -->
+      </div>
+
+
     </div>
   </section>
 
 </main>
 
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M46 34H84V96L84 96" stroke="#57C392" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M46 96V166H84V150" stroke="#57C392" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M150 34L96 96" stroke="#57C392" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M104 104L150 166" stroke="#57C392" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <span class="footer-tag">Kernely — sites que vendem por você.</span>
-      </div>
-      <div class="footer-links">
-        <a href="servicos.html">Serviços</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="blog.html">Blog</a>
+<footer class="k-footer">
+  <div class="footer-glow"></div>
+ 
+  <div class="wrap footer-main-grid">
+   
+    <!-- COLUNA 1: MARCA & MISSÃO -->
+    <div class="footer-col brand-col">
+      <a href="index.html" class="footer-brand">
+        <img src="imagens/logo-kernely.png" alt="Kernely Logo" class="logo-img-footer">
+      </a>
+      <p class="footer-desc">Engenharia de software e sites de alta performance focados em conversão, velocidade extrema e autoridade digital.</p>
+      <div class="footer-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>100% Código Limpo / Zero Page Builders</span>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Kernely</span>
-      <span>feito com atenção aos detalhes</span>
+
+
+    <!-- COLUNA 2: NAVEGAÇÃO -->
+    <div class="footer-col">
+      <span class="footer-title">Navegação</span>
+      <ul class="footer-nav">
+        <li><a href="/">Início</a></li>
+        <li><a href="servicos.html">Serviços & Soluções</a></li>
+        <li><a href="sobre.html">Sobre a Kernely</a></li>
+        <li><a href="index.html#processo">Como Funciona</a></li>
+        <li><a href="simulador.html" target="_blank" rel="noopener noreferrer" class="link-highlight">Simular Projeto →</a></li>
+      </ul>
     </div>
+
+
+    <!-- COLUNA 3: O QUE CRIAMOS -->
+    <div class="footer-col">
+      <span class="footer-title">O Que Criamos</span>
+      <ul class="footer-nav">
+        <li><a href="servicos.html#guia-solucoes">Sites Institucionais</a></li>
+        <li><a href="servicos.html#guia-solucoes">Landing Pages de Vendas</a></li>
+        <li><a href="servicos.html#guia-solucoes">Sistemas Web & Dashboards</a></li>
+        <li><a href="servicos.html#guia-solucoes">Aplicações Desktop Executáveis</a></li>
+        <li><a href="servicos.html#seo-geo">Otimização SEO & Performance</a></li>
+      </ul>
+
+
+    </div>
+
+
+    <!-- COLUNA 4: CONTATO & STATUS -->
+    <div class="footer-col contact-col">
+      <span class="footer-title">Conexão Direta</span>
+     
+      <div class="status-indicator">
+        <span class="status-dot"></span>
+        <span class="status-text">Disponível para novos projetos</span>
+      </div>
+
+
+      <div class="contact-info">
+        <a href="mailto:kernelyltda@gmail.com" class="contact-email">kernelyltda@gmail.com</a>
+        <span class="contact-loc">São Paulo, SP — Atendimento Global</span>
+      </div>
+
+
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/kernely" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/guih-barbz" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://github.com/kernelyltda" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <!-- LINHA INFERIOR (SUB-FOOTER) -->
+  <div class="wrap footer-bottom-bar">
+    <div class="fb-left">© 2026 Kernely. Todos os direitos reservados.</div>
+    <div class="fb-center">
+  <a href="termos.html">Termos de Uso</a>
+  <span>•</span>
+  <a href="privacidade.html">Política de Privacidade</a>
+</div>
+    <div class="fb-right">feito com atenção aos detalhes</div>
   </div>
 </footer>
 
-<!--
-  WhatsApp flutuante: desativado até a Kernely ter um número oficial.
-  Quando tiver o chip, é só descomentar e trocar SEUNUMERO por 55DDDNUMERO.
 
-  <a href="https://wa.me/SEUNUMERO?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Kernely%20e%20quero%20saber%20mais." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.72-.85-1.99-.94-.27-.1-.46-.15-.66.15-.2.29-.76.94-.93 1.13-.17.2-.34.22-.63.07-.29-.15-1.22-.45-2.32-1.43-.86-.76-1.44-1.71-1.61-2-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.07-.15-.66-1.58-.9-2.17-.24-.57-.48-.49-.66-.5-.17-.01-.37-.01-.56-.01-.2 0-.51.07-.78.37-.27.29-1.02 1-1.02 2.44 0 1.43 1.04 2.82 1.19 3.01.15.2 2.05 3.13 4.97 4.39.69.3 1.24.48 1.66.61.7.22 1.34.19 1.84.12.56-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.27-.19-.56-.34z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.47 3.47 1.29 4.93L2 22l5.31-1.39a9.87 9.87 0 004.73 1.2h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.06h-.01a8.2 8.2 0 01-4.18-1.15l-.3-.18-3.15.83.84-3.07-.2-.31a8.19 8.19 0 01-1.26-4.36c0-4.54 3.7-8.24 8.26-8.24 2.21 0 4.28.86 5.84 2.42a8.2 8.2 0 012.42 5.83c0 4.55-3.7 8.24-8.26 8.24z"/></svg>
-  </a>
--->
 
-<!-- Voltar ao topo -->
-<button class="scroll-top-btn" id="scroll-top-btn" aria-label="Voltar ao topo">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-</button>
+<a href="https://wa.me/5511995620111?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Kernely%20e%20gostaria%20de%20um%20or%C3%A7amento."
+   class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp com a Kernely">
+  <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+
 
 <script src="script.js"></script>
 </body>

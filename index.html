@@ -31,19 +31,6 @@
 <meta name="twitter:image" content="https://kernely.com.br/imagens/favicon-512.png">
 <link rel="canonical" href="https://kernely.com.br/">
 
-<!-- Structured data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Kernely",
-  "description": "Estúdio de desenvolvimento web focado em sites institucionais, lojas virtuais e sistemas sob medida.",
-  "url": "https://kernely.com.br/",
-  "email": "contato@kernely.com.br",
-  "areaServed": "BR",
-  "slogan": "Code that matters."
-}
-</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -77,6 +64,75 @@
   ]
 }
 </script>
+
+<!-- DADOS ESTRUTURADOS (SEO & GEO) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://kernely.com.br/#organization",
+  "name": "Kernely",
+  "alternateName": "Kernely Engenharia Web",
+  "slogan": "Code that matters.",
+  "url": "https://kernely.com.br/",
+  "logo": "https://kernely.com.br/imagens/logo-kernely.png",
+  "image": "https://kernely.com.br/imagens/capa-og.jpg",
+  "description": "Engenharia de software focada em alta performance. Desenvolvemos Sistemas Web com painéis hierárquicos, Aplicações Desktop executáveis e Sites Otimizados para conversão.",
+  "email": "kernelyltda@gmail.com",
+  "areaServed": "BR",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "São Paulo",
+    "addressRegion": "SP",
+    "addressCountry": "BR"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+55-11-99562-0111",
+    "email": "kernelyltda@gmail.com",
+    "contactType": "Atendimento Comercial",
+    "areaServed": "BR",
+    "availableLanguage": "Portuguese"
+  },
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Desenvolvimento de Sistemas Web e Dashboards"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Desenvolvimento de Aplicações Desktop Executáveis"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Criação de Landing Pages e Sites Institucionais"
+      }
+    }
+  ],
+  "knowsAbout": [
+    "Desenvolvimento Web",
+    "Sites Institucionais",
+    "Landing Pages de Alta Conversão",
+    "Sistemas Web e Dashboards",
+    "Aplicações Desktop Executáveis",
+    "SEO",
+    "GEO (Generative Engine Optimization)"
+  ],
+  "sameAs": [
+    "https://www.instagram.com/kernely",
+    "https://github.com/kernelyltda",
+    "https://linkedin.com/company/kernely"
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -86,7 +142,7 @@
 
 <header>
   <nav>
-    <a class="brand" href="index.html">
+    <a class="brand" href="/">
       <img src="imagens/logo-kernely.png" alt="Logo Kernely" class="logo-img">
     </a>
     <div class="nav-links">
@@ -95,7 +151,7 @@
       <a href="sobre.html">Sobre</a>
       <a href="simulador.html">Simulador</a>
     </div>
-    <a class="nav-cta" href="contato.html">Quero um orçamento</a>
+    <a class="nav-cta" href="https://wa.me/5511995620111?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20com%20a%20Kernely." target="_blank" rel="noopener noreferrer">Quero um orçamento</a>
   </nav>
 </header>
 
@@ -408,8 +464,6 @@
         </button>
       </div>
 
-      </div>
-
       <p style="text-align:center;color:var(--muted);font-family:var(--mono);font-size:.78rem;margin-top:30px;">mais projetos em breve, conforme novos clientes forem lançados</p>
     </div>
   </section>
@@ -613,7 +667,6 @@
 
   </div>
 </section>
-  </section>
 
   <!-- FAQ -->
   <section>
@@ -646,6 +699,8 @@
       </div>
     </div>
   </section>
+
+</main>
 
 <!-- ==========================================================================
      SEÇÃO 9: REDES SOCIAIS (SEMPRE ANTES DO FOOTER EM TODAS AS PÁGINAS)
@@ -703,11 +758,11 @@
     <div class="footer-col">
       <span class="footer-title">O Que Criamos</span>
       <ul class="footer-nav">
-        <li><a href="servicos.html">Sites Institucionais</a></li>
-        <li><a href="servicos.html">Landing Pages de Vendas</a></li>
-        <li><a href="servicos.html">Sistemas Web & Dashboards</a></li>
-        <li><a href="servicos.html">Aplicações Desktop Executáveis</a></li>
-        <li><a href="servicos.html">Otimização SEO & Performance</a></li>
+        <li><a href="servicos.html#guia-solucoes">Sites Institucionais</a></li>
+        <li><a href="servicos.html#guia-solucoes">Landing Pages de Vendas</a></li>
+        <li><a href="servicos.html#guia-solucoes">Sistemas Web & Dashboards</a></li>
+        <li><a href="servicos.html#guia-solucoes">Aplicações Desktop Executáveis</a></li>
+        <li><a href="servicos.html#seo-geo">Otimização SEO & Performance</a></li>
       </ul>
     </div>
 
@@ -751,11 +806,6 @@
     <div class="fb-right">feito com atenção aos detalhes</div>
   </div>
 </footer>
-
-<!-- BOTÃO FLUTUANTE WHATSAPP -->
-<a href="https://wa.me/5511995204050?text=Olá,%20gostaria%20de%20simular%20um%20projeto%20com%20a%20Kernely!" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.19 1.6 6L.05 24l6.15-1.6A11.96 11.96 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.21-3.48-8.52zM12 21.95c-1.8 0-3.55-.48-5.09-1.4l-.36-.22-3.65.95.97-3.56-.24-.37A9.94 9.94 0 0 1 2.05 12c0-5.49 4.47-9.96 9.95-9.96 2.66 0 5.16 1.04 7.04 2.92a9.92 9.92 0 0 1 2.91 7.04c0 5.49-4.47 9.95-9.95 9.95zm5.46-7.44c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17 0-.37-.01-.57-.01-.2 0-.52.08-.79.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.11 3.22 5.11 4.51.71.31 1.27.49 1.7.63.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35z"/></svg>
-</a>
 
 <a href="https://wa.me/5511995620111?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Kernely%20e%20gostaria%20de%20um%20or%C3%A7amento." 
    class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp com a Kernely">

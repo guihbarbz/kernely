@@ -4,21 +4,55 @@
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const isTouch = window.matchMedia('(hover: none)').matches;
 
-// 1. Forçar rolagem ao topo na atualização da página
+// 1. Forçar rolagem ao topo na atualização da página (Blindado contra erros)
 if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
 }
 window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
-window.addEventListener('load', () => setTimeout(() => window.scrollTo(0, 0), 10));
 
-// 2. Transição de página (Efeito cortina)
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    try {
+      const hash = window.location.hash;
+      // Verifica se a URL tem um hash válido (maior que 1 para evitar "#" vazio)
+      if (hash && hash.length > 1) {
+        const target = document.querySelector(hash);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+          return; // Interrompe para não jogar pro topo
+        }
+      }
+      // Se não houver âncora, rola pro topo normalmente
+      window.scrollTo(0, 0);
+    } catch (err) {
+      // Se der qualquer erro bizarro na leitura da URL, rola pro topo e não trava o Globo 3D
+      window.scrollTo(0, 0);
+    }
+  }, 10);
+});
+
+// 2. Transição de página (Efeito cortina com suporte a âncoras)
 const overlay = document.getElementById('page-transition');
 if (overlay) {
   requestAnimationFrame(() => setTimeout(() => overlay.classList.add('hide'), 60));
   document.querySelectorAll('a[href]').forEach(link => {
     const href = link.getAttribute('href');
-    if (!href || !/^[a-zA-Z0-9_-]+\.html$/.test(href) || link.target === '_blank') return;
+    
+    // Ignora links vazios, links externos ou links que são APENAS âncoras na mesma tela
+    if (!href || href.startsWith('#') || link.target === '_blank') return;
+    
+    // A Regex agora aceita arquivos .html e também âncoras acopladas (ex: servicos.html#seo-geo)
+    if (!/^[a-zA-Z0-9_-]+\.html(#.*)?$/.test(href)) return;
+
     link.addEventListener('click', (e) => {
+      // Descobre a página atual e a página de destino do link
+      const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+      const linkPath = href.split('#')[0];
+      
+      // Se for um link para a MESMA página que você já está, deixa o clique funcionar normal
+      if (linkPath === currentPath || linkPath === '') return;
+
+      // Se for para OUTRA página, aplica a animação da cortina preta
       e.preventDefault();
       overlay.classList.remove('hide');
       setTimeout(() => { window.location.href = href; }, 380);
@@ -539,3 +573,63 @@ function initInstagramFeed() {
 }
 
 document.addEventListener('DOMContentLoaded', initInstagramFeed);
+
+//Efeito de Digitação na página de serviços
+
+const browserEl = document.getElementById('hero-browser');
+  const titleEl = document.getElementById('bc-title-text');
+
+  if (browserEl && titleEl) {
+    const titlePhrases = [
+      'Feito para vender.',
+      'Feito para converter.',
+      'Feito para crescer.',
+      'Feito para impressionar.'
+    ];
+
+    const wait = (ms) => new Promise(r => setTimeout(r, ms));
+
+    async function typeText(el, text, speed) {
+      for (let i = 0; i <= text.length; i++) {
+        el.textContent = text.slice(0, i);
+        await wait(speed);
+      }
+    }
+
+    async function eraseText(el, speed) {
+      const text = el.textContent;
+      for (let i = text.length; i >= 0; i--) {
+        el.textContent = text.slice(0, i);
+        await wait(speed);
+      }
+    }
+
+    async function titleLoop() {
+      await typeText(titleEl, titlePhrases[0], 45);
+      if (reduceMotion) return;
+
+      let i = 1;
+      while (true) {
+        await wait(2200);
+        await eraseText(titleEl, 28);
+        await wait(250);
+        await typeText(titleEl, titlePhrases[i % titlePhrases.length], 45);
+        i++;
+      }
+    }
+
+    if (reduceMotion) {
+      titleEl.textContent = titlePhrases[0];
+    } else {
+      const bObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            titleLoop();
+            bObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+
+      bObserver.observe(browserEl);
+    }
+  }

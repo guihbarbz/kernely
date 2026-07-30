@@ -155,98 +155,7 @@ nav {
 .bc-check svg { width: 16px; height: 16px; stroke: var(--accent); stroke-width: 2.5; }
 .bc-cursor { display: inline-block; width: 3px; height: 1.1em; background-color: var(--accent); margin-left: 4px; vertical-align: -2px; animation: blink-cursor 0.8s infinite; }
 @keyframes blink-cursor { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-
-/* --- 05. SCROLLYTELLING "POR QUE A KERNELY" (ZOOM NO K) --- */
-.k-scrolly-section {
-  position: relative;
-  height: 400vh;
-  background-color: var(--bg);
-  padding: 0 !important; margin: 0 !important; overflow: clip;
-}
-.k-sticky-container {
-  position: sticky; top: 0; left: 0; width: 100%; height: 100vh;
-  display: flex; align-items: center; justify-content: center;
-  overflow: hidden; padding: 0 clamp(24px, 6vw, 100px);
-}
-.k-intro-box {
-  position: absolute; width: 100%; max-width: 1100px; display: flex;
-  align-items: center; justify-content: space-between; gap: 40px;
-  transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease; z-index: 2;
-}
-.k-intro-box.exited { opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-30px); }
-.k-intro-text { max-width: 500px; }
-.k-dot::before { content: '•'; color: var(--accent); margin-right: 6px; font-size: 1.1em; }
-.k-main-title { font-family: var(--display); font-size: clamp(2.4rem, 4.5vw, 3.8rem); font-weight: 700; line-height: 1.1; color: #FFF; margin: 16px 0 20px; }
-.k-main-desc { color: var(--muted); font-size: clamp(1rem, 1.2vw, 1.15rem); line-height: 1.6; }
-
-.k-logo-hero {
-  display: flex; 
-  align-items: center; 
-  justify-content: center;
-  transform-origin: 50% 35%; 
-  will-change: transform, opacity; 
-  z-index: 1;
-  transition: opacity 0.2s ease;
-}
-.k-logo-img { width: clamp(180px, 22vw, 240px); height: auto; object-fit: contain; filter: drop-shadow(0 0 35px rgba(87, 195, 146, 0.25)); }
-
-/* --- 06. PALCO DOS DIFERENCIAIS (ESTRUTURA COMPLETA LADO A LADO) --- */
-.k-differentials-stage {
-  position: absolute; inset: 0; width: 100%; max-width: 1140px; height: 100%; margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between; gap: 60px;
-  padding: 0 clamp(24px, 5vw, 80px); opacity: 0; visibility: hidden; pointer-events: none;
-  transition: opacity 0.5s ease, visibility 0.5s ease; z-index: 10;
-}
-.k-differentials-stage.active { opacity: 1; visibility: visible; pointer-events: auto; }
-
-.k-visual-left { position: relative; width: 100%; flex: 1; max-width: 500px; min-height: 380px; display: flex; align-items: center; }
-.k-visual-item {
-  position: absolute; top: 50%; left: 0; width: 100%; transform: translateY(-50%) scale(0.95);
-  opacity: 0; visibility: hidden; pointer-events: none; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  display: flex; flex-direction: column; gap: 18px;
-}
-.k-visual-item.active { opacity: 1; visibility: visible; transform: translateY(-50%) scale(1); pointer-events: auto; }
-
-.k-svg-pill-group { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-.k-svg-pill {
-  display: inline-flex; align-items: center; gap: 8px; background: #141417;
-  border: 1px solid rgba(255, 255, 255, 0.15); color: #FFFFFF; font-family: var(--display);
-  font-weight: 600; font-size: 0.92rem; padding: 10px 22px; border-radius: 999px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-}
-.k-svg-pill svg { width: 16px; height: 16px; stroke: var(--accent); }
-
-.k-dark-card {
-  background: rgba(18, 18, 20, 0.95); border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 40px;
-  padding: 42px 38px; width: 100%; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7); backdrop-filter: blur(12px);
-}
-.k-dark-card h3 { font-family: var(--display); font-size: 1.5rem; font-weight: 700; color: #FFFFFF; margin-bottom: 12px; letter-spacing: -0.01em; }
-.k-dark-card p { color: var(--muted); font-size: 0.96rem; line-height: 1.65; margin: 0; }
-
-.k-text-right { position: relative; width: 100%; flex: 1; max-width: 480px; min-height: 300px; display: flex; align-items: center; }
-.diff-item {
-  position: absolute; top: 50%; left: 0; width: 100%; transform: translateY(-50%) translateX(30px);
-  opacity: 0; visibility: hidden; pointer-events: none; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.diff-item.active { opacity: 1; visibility: visible; transform: translateY(-50%) translateX(0); pointer-events: auto; }
-.diff-badge {
-  background: rgba(87, 195, 146, 0.12); color: var(--accent); font-family: var(--mono); font-size: 0.78rem; font-weight: 700;
-  padding: 6px 16px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.08em; display: inline-block;
-  margin-bottom: 18px; border: 1px solid rgba(87, 195, 146, 0.25);
-}
-.diff-item h2 { font-family: var(--display); font-size: clamp(2.2rem, 3.8vw, 2.8rem); font-weight: 700; color: #FFFFFF; line-height: 1.15; margin-bottom: 18px; letter-spacing: -0.02em; }
-.diff-item p { color: var(--muted); font-size: clamp(1.02rem, 1.15vw, 1.12rem); line-height: 1.65; margin: 0; }
-
-/* --- 07. SEÇÃO FINAL DO SCROLLYTELLING (GRID DE 3 COLUNAS & TRAVA DE SVG) --- */
-.k-grid-section {
-  position: relative; z-index: 5; padding: 120px 0; background-color: var(--bg);
-  border-top: 1px solid var(--border); clear: both;
-}
 .k-features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; align-items: stretch; width: 100%; }
-.k-grid-col { display: flex; flex-direction: column; align-items: center; width: 100%; }
-.k-svg-pill-static {
-  background: #141417; border: 1px solid rgba(87, 195, 146, 0.3); color: #FFF; font-family: var(--display);
-  font-weight: 600; font-size: 0.88rem; padding: 8px 24px; border-radius: 999px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
 .k-feature-card {
   background: #161619; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; padding: 36px 28px; width: 100%;
   height: 100%; display: flex; flex-direction: column; align-items: flex-start;
@@ -285,9 +194,6 @@ section.no-border { border-top: none; }
   color: var(--bg); padding: 14px 26px; border-radius: 7px; transition: transform .2s, box-shadow .2s; display: inline-block; border: none; cursor: pointer;
 }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(87, 195, 146, .28); }
-
-.card-grid { display: grid; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
-.grid-3 { grid-template-columns: repeat(3, 1fr); }
 .card { background: var(--bg2); padding: 36px 32px; transition: background .25s, transform .25s; position: relative; }
 .card:hover { background: var(--bg3); }
 .card .icon { width: 42px; height: 42px; border-radius: 10px; background: rgba(87, 195, 146, .1); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; transition: all .25s; }
@@ -384,21 +290,6 @@ section.no-border { border-top: none; }
   object-position: center bottom; 
   z-index: -1;
   transition: transform 0.6s ease;
-}
-
-.p-logo-wrap {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-}
-
-.p-logo-text {
-  font-family: var(--display);
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #FFFFFF;
-  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
-  letter-spacing: -0.02em;
 }
 
 .p-card:hover .p-card-base {
@@ -650,19 +541,6 @@ body:has(.p-modal-overlay.active) .whatsapp-float {
 .quality-icon svg { width: 24px; height: 24px; stroke: var(--accent); }
 .quality-card h3 { font-family: var(--display); font-weight: 600; font-size: 1.18rem; margin-bottom: 10px; }
 .quality-card p { color: var(--muted); font-size: 0.92rem; }
-
-.process-list { display: flex; flex-direction: column; }
-.process-item { display: grid; grid-template-columns: 70px 1fr; gap: 26px; padding: 28px 0; border-top: 1px solid var(--border); align-items: baseline; }
-.process-item:last-child { border-bottom: 1px solid var(--border); }
-.process-num { font-family: var(--display); font-weight: 600; color: var(--accent); font-size: 1.6rem; }
-.process-item h3 { font-family: var(--display); font-weight: 600; font-size: 1.12rem; margin-bottom: 8px; }
-.process-item p { color: var(--muted); font-size: .92rem; max-width: 520px; }
-
-.slogan-typewriter {
-  font-family: var(--body); font-size: 1.1rem; color: var(--muted); font-weight: 400;
-  white-space: nowrap; overflow: hidden; border-right: 2px solid var(--accent); width: 0; margin: 0 auto;
-}
-.reveal.in .slogan-typewriter { animation: type-slogan 1.5s steps(25, end) 0.4s forwards, blink-cursor 0.8s step-end infinite; }
 @keyframes type-slogan { from { width: 0; } to { width: 14.5ch; } }
 
 /* --- 14. CTA BANNER & FAQ ACCORDION --- */
@@ -1150,7 +1028,18 @@ body:has(.p-modal-overlay.active) .whatsapp-float {
 
 @media (max-width: 600px) {
   .browser-canvas { padding: 28px 20px; }
-  .bc-check { position: relative; top: auto; right: auto; margin-bottom: 16px; align-self: flex-end; }
+  .browser-canvas {
+    padding: 24px 20px !important;
+  }
+
+  /* Força o "site pronto" a ficar no topo direito, na exata linha de "sua empresa" */
+  .bc-check {
+    position: absolute !important;
+    top: 24px !important;
+    right: 20px !important;
+    margin: 0 !important;
+    align-self: auto !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2199,88 +2088,7 @@ body:has(.p-modal-overlay.active) .whatsapp-float {
   }
 }
 
-/* --- ESTILOS DO SIMULADOR DE PROJETO --- */
-.sim-card {
-  background: var(--bg3);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 22px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  transition: all 0.25s ease;
-}
-
-.sim-card:hover {
-  border-color: rgba(87, 195, 146, 0.4);
-  transform: translateY(-2px);
-}
-
-.sim-card.selected {
-  background: rgba(87, 195, 146, 0.08);
-  border-color: var(--accent);
-  box-shadow: 0 0 20px rgba(87, 195, 146, 0.15);
-}
-
-.sim-title {
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 1.05rem;
-  color: #FFFFFF;
-}
-
-.sim-desc {
-  font-size: 0.85rem;
-  color: var(--muted);
-  line-height: 1.4;
-}
-
 @media (max-width: 768px) {
-  .sim-options-grid {
-    grid-template-columns: 1fr !important;
-  }
-  .simulador-container {
-    padding: 24px !important;
-  }
-}
-
-/* --- ESTILOS DO SIMULADOR E DIAGNÓSTICO --- */
-.sim-card {
-  background: var(--bg3);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 22px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  transition: all 0.25s ease;
-  user-select: none;
-}
-
-.sim-card:hover {
-  border-color: rgba(87, 195, 146, 0.4);
-  transform: translateY(-2px);
-}
-
-.sim-card.selected {
-  background: rgba(87, 195, 146, 0.08);
-  border-color: var(--accent);
-  box-shadow: 0 0 20px rgba(87, 195, 146, 0.15);
-}
-
-.sim-title {
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 1.05rem;
-  color: #FFFFFF;
-}
-
-.sim-desc {
-  font-size: 0.85rem;
-  color: var(--muted);
-  line-height: 1.4;
 }
 
 @keyframes fadeInDiag {
@@ -2289,14 +2097,613 @@ body:has(.p-modal-overlay.active) .whatsapp-float {
 }
 
 @media (max-width: 768px) {
-  .sim-options-grid, .diag-metrics-grid {
-    grid-template-columns: 1fr !important;
-  }
-  .simulador-container {
-    padding: 24px !important;
-  }
   #btn-processar {
     font-size: 0.9rem !important;
     padding: 16px !important;
+  }
+}
+
+/* ==========================================================================
+   TABELA DE PREÇOS (PLANOS DE MANUTENÇÃO MENSAL)
+   ========================================================================== */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.pricing-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 38px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+}
+
+.pricing-card.highlighted {
+  background: linear-gradient(180deg, rgba(87, 195, 146, 0.08) 0%, var(--bg2) 100%);
+  border: 2px solid var(--accent);
+  box-shadow: 0 20px 50px rgba(87, 195, 146, 0.18);
+  transform: scale(1.03);
+  z-index: 2;
+}
+
+.pricing-card.highlighted:hover {
+  transform: scale(1.03) translateY(-6px);
+  box-shadow: 0 25px 60px rgba(87, 195, 146, 0.28);
+}
+
+.p-badge-top {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: #121214;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  box-shadow: 0 4px 15px rgba(87, 195, 146, 0.4);
+}
+
+.p-tier {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.p-price {
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.p-price span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--muted);
+  font-family: var(--body);
+}
+
+.p-desc {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.pricing-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 26px;
+}
+
+/* ==========================================================================
+   CORREÇÃO DA LISTA DOS PLANOS (SUBSTITUA ESTE BLOCO NO STYLES.CSS)
+   ========================================================================== */
+.pricing-features {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+  flex-grow: 1;
+  list-style: none;
+}
+
+.pricing-features li {
+  font-size: 0.94rem;
+  color: #E4E6EB;
+  line-height: 1.5;
+  display: block; /* Mata o flex que dividia a frase em duas colunas */
+  padding-left: 20px;
+  text-indent: -20px; /* Alinha o ícone ✓ ou ✕ para fora, deixando o texto perfeitamente reto */
+}
+
+.pricing-features li strong {
+  font-weight: 600;
+  color: #FFFFFF; /* Deixa o texto em negrito bem nítido em branco */
+}
+
+.pricing-features li.disabled {
+  color: rgba(255, 255, 255, 0.28);
+  text-decoration: line-through;
+}
+
+.pricing-features li.disabled strong {
+  color: rgba(255, 255, 255, 0.28);
+}
+
+@media (max-width: 960px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .pricing-card.highlighted {
+    transform: none;
+  }
+  .pricing-card.highlighted:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* ==========================================================================
+   CORREÇÃO DA HERO DE SERVIÇOS NO MOBILE (COLE NO FINAL DO STYLES.CSS)
+   ========================================================================== */
+@media (max-width: 900px) {
+  /* 1. Força o grid a virar 1 única coluna (texto em cima, navegador embaixo) */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    text-align: center !important;
+  }
+
+  /* 2. Centraliza os textos, a bolinha verde do eyebrow e os botões */
+  .hero-grid .eyebrow {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+  
+  .hero-grid p {
+    margin: 0 auto 28px !important;
+  }
+
+  .hero-ctas {
+    justify-content: center !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+
+  .hero-ctas a {
+    width: 100% !important;
+    max-width: 320px !important;
+    text-align: center !important;
+  }
+
+  /* 3. Expande o cartão do navegador para a largura inteira da tela */
+  .browser {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 10px 0 0 0 !important;
+    text-align: left !important; /* Mantém o código/texto interno alinhado à esquerda */
+  }
+
+  .browser-canvas {
+    padding: 24px 20px !important;
+  }
+
+  /* 4. Dá um respiro extra no fundo para o menu mobile e o WhatsApp não cobrirem o cartão */
+  .hero-services-section, 
+  section.no-border:has(.hero-grid) {
+    padding-top: 130px !important;
+    padding-bottom: 90px !important;
+  }
+}
+
+/* ==========================================================================
+   TELA DE CARREGAMENTO PROPOSITIVA (MARKETING)
+   ========================================================================== */
+.k-marketing-loader {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background-color: var(--bg);
+  z-index: 2147483647 !important; /* Valor máximo permitido pela computação em navegadores (32-bit int) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.k-marketing-loader.finished {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.k-loader-step {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px) scale(0.98);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.k-loader-step.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.k-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(87, 195, 146, 0.15);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin-loader 0.8s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin-loader {
+  to { transform: rotate(360deg); }
+}
+
+.k-loader-text h2 {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 4.5vw, 3.6rem);
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  max-width: 900px;
+  padding: 0 24px;
+}
+
+.k-loader-text p {
+  color: var(--muted);
+  margin-top: 20px;
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  font-family: var(--body);
+}
+
+/* ==========================================================================
+   CORREÇÕES DE RESPONSIVIDADE PARA A PÁGINA SOBRE.HTML
+   ========================================================================== */
+@media (max-width: 1024px) {
+  /* No tablet, a grade dos 3 pilares passa a ter 2 colunas para não esmagar o texto */
+  .k-features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 800px) {
+  /* No celular, os 3 pilares ficam perfeitamente empilhados (1 coluna) */
+  .k-features-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Ajusta o espaçamento interno do banner escuro no final da página (CTA) */
+  .cta-banner {
+    padding: 48px 24px !important;
+  }
+  
+  /* Força os botões do banner a empilharem verticalmente e ocuparem 100% da tela */
+  .cta-banner div {
+    flex-direction: column !important;
+  }
+  
+  .cta-banner a {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 18px 24px !important;
+  }
+}
+
+/* ==========================================================================
+   CORREÇÃO DO ECOSSISTEMA DE PROJETOS (SOBRE.HTML) NO MOBILE
+   ========================================================================== */
+@media (max-width: 860px) {
+  /* Ignora o estilo forçado no HTML e obriga a grade a ter apenas 1 coluna no celular */
+  .bento-grid, 
+  .bento-grid[style] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ==========================================================================
+   WIZARD DE DIAGNÓSTICO (SIMULADOR.HTML)
+   ========================================================================== */
+.wizard-container {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 50px 60px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  margin: 24px 0 12px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  width: 0%;
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.progress-text {
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 40px;
+}
+
+.wizard-body {
+  transition: opacity 0.3s ease;
+}
+
+.question-title {
+  font-family: var(--display);
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-weight: 600;
+  color: #FFF;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.opt-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: slideUpFade 0.5s forwards; /* A CORREÇÃO FOI AQUI: removida a palavra "opacity" que estava quebrando a animação */
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+@keyframes slideUpFade {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.opt-card:hover {
+  background: rgba(87, 195, 146, 0.08);
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(87, 195, 146, 0.15);
+}
+
+.opt-icon {
+  font-size: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  flex-shrink: 0;
+}
+
+.opt-card:hover .opt-icon {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.opt-text {
+  color: #E4E6EB;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* Telas Finais (Loading e Resultado) */
+.wizard-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.wizard-result {
+  text-align: center;
+  animation: slideUpFade 0.6s forwards;
+}
+
+.result-card {
+  background: #121316;
+  border: 1px solid rgba(87, 195, 146, 0.4);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.result-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+}
+
+.r-service-tag {
+  display: inline-block;
+  background: rgba(87, 195, 146, 0.15);
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+  letter-spacing: 0.05em;
+}
+
+.r-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+  margin: 24px 0;
+}
+
+/* Responsividade do Wizard */
+@media (max-width: 768px) {
+  .wizard-container {
+    padding: 30px 20px;
+    border-radius: 16px;
+  }
+  .opt-card {
+    padding: 20px;
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  .opt-text {
+    font-size: 0.95rem;
+  }
+  .result-card {
+    padding: 30px 20px;
+  }
+}
+
+/* ==========================================================================
+   PÁGINA DE BRIEFING (FORMULÁRIO AVANÇADO)
+   ========================================================================== */
+.briefing-container {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 50px 60px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.briefing-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-row {
+  display: flex;
+  gap: 24px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-family: var(--display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #E4E6EB;
+}
+
+.form-group .req {
+  color: var(--accent);
+}
+
+.form-group input, 
+.form-group textarea, 
+.form-group select {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: #FFF;
+  font-family: var(--body);
+  font-size: 0.95rem;
+  padding: 16px 20px;
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.form-group input::placeholder, 
+.form-group textarea::placeholder {
+  color: #555A64;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus, 
+.form-group select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(87, 195, 146, 0.1);
+}
+
+/* Customização da setinha do Select */
+.custom-select-wrapper {
+  position: relative;
+}
+
+.custom-select-wrapper::after {
+  content: "▼";
+  font-size: 0.7rem;
+  color: var(--muted);
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.form-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .briefing-container {
+    padding: 36px 24px;
+    border-radius: 16px;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 24px;
   }
 }

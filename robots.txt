@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kernely.com.br/sitemap.xml
